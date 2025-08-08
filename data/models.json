@@ -1,0 +1,76 @@
+{
+  "models": [
+    {
+      "id": 1,
+      "name": "Sophia Laurent",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.78m",
+      "city": "Paris",
+      "image": "images/model-1.svg",
+      "description": "Spécialisée dans la haute couture parisienne"
+    },
+    {
+      "id": 2,
+      "name": "Isabella Chen",
+      "specialty": "Commercial & Beauty",
+      "height": "1.75m",
+      "city": "Milan",
+      "image": "images/model-2.svg",
+      "description": "Experte en beauté et mode commerciale"
+    },
+    {
+      "id": 3,
+      "name": "Amara Johnson",
+      "specialty": "Runway & Editorial",
+      "height": "1.80m",
+      "city": "New York",
+      "image": "images/model-3.svg",
+      "description": "Star des podiums internationaux"
+    },
+    {
+      "id": 4,
+      "name": "Luca Rodriguez",
+      "specialty": "Men's Fashion & Luxury",
+      "height": "1.85m",
+      "city": "Barcelona",
+      "image": "images/model-4.svg",
+      "description": "Référence en mode masculine de luxe"
+    },
+    {
+      "id": 5,
+      "name": "Maya Patel",
+      "specialty": "Beauty & Cosmetics",
+      "height": "1.73m",
+      "city": "Mumbai",
+      "image": "images/model-5.svg",
+      "description": "Ambassadrice beauté internationale"
+    },
+    {
+      "id": 6,
+      "name": "Emma Williams",
+      "specialty": "High Fashion & Couture",
+      "height": "1.79m",
+      "city": "London",
+      "image": "images/model-6.svg",
+      "description": "Icône de la mode londonienne"
+    },
+    {
+      "id": 7,
+      "name": "Alexandra Novak",
+      "specialty": "Editorial & Art Fashion",
+      "height": "1.77m",
+      "city": "Prague",
+      "image": "images/model-7.svg",
+      "description": "Artiste de la mode éditoriale"
+    },
+    {
+      "id": 8,
+      "name": "James Mitchell",
+      "specialty": "Commercial & Fitness",
+      "height": "1.88m",
+      "city": "Sydney",
+      "image": "images/model-8.svg",
+      "description": "Spécialiste fitness et mode sportive"
+    }
+  ]
+}

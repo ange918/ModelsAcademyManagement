@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.4" />
+    </linearGradient>
+    <pattern id="fashionPattern" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="#f8f9fa"/>
+      <circle cx="50" cy="50" r="20" fill="#e9ecef" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#fashionPattern)"/>
+  
+  <!-- Elegant geometric shapes representing fashion -->
+  <g opacity="0.7">
+    <polygon points="400,200 600,300 500,500 300,400" fill="#1e3a8a" opacity="0.1"/>
+    <polygon points="1200,100 1500,250 1400,450 1100,300" fill="#d4af37" opacity="0.1"/>
+    <polygon points="800,600 1000,700 900,900 700,800" fill="#3b82f6" opacity="0.1"/>
+  </g>
+  
+  <!-- Abstract fashion silhouettes -->
+  <g opacity="0.3">
+    <!-- Female silhouette 1 -->
+    <path d="M200 300 Q220 280 240 300 L235 400 Q240 450 235 500 L225 600 Q215 620 205 600 L200 500 Q195 450 200 400 Z" fill="#1e3a8a"/>
+    
+    <!-- Male silhouette -->
+    <path d="M1600 250 Q1620 230 1640 250 L1635 350 Q1640 400 1635 450 L1625 550 Q1615 570 1605 550 L1600 450 Q1595 400 1600 350 Z" fill="#d4af37"/>
+    
+    <!-- Female silhouette 2 -->
+    <path d="M960 800 Q980 780 1000 800 L995 900 Q1000 950 995 1000 L985 1050 Q975 1070 965 1050 L960 1000 Q955 950 960 900 Z" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Gradient overlay -->
+  <rect width="1920" height="1080" fill="url(#heroGradient)"/>
+  
+  <!-- Elegant lines and curves -->
+  <g stroke="#d4af37" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M0 540 Q480 400 960 540 T1920 540"/>
+    <path d="M0 600 Q480 460 960 600 T1920 600"/>
+  </g>
+</svg>

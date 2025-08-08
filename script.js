@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initSmoothScrolling();
     initImageLoading();
+    
+    // Load models data if on models page
+    if (window.location.pathname.includes('mannequins.html')) {
+        loadModelsData();
+    }
 });
 
 // Navigation functionality
@@ -246,6 +251,56 @@ function initPageTransitions() {
 
 // Initialize page transitions
 initPageTransitions();
+
+// Function to load models data from JSON
+async function loadModelsData() {
+    try {
+        const response = await fetch('data/models.json');
+        const data = await response.json();
+        renderModels(data.models);
+    } catch (error) {
+        console.error('Erreur lors du chargement des données des mannequins:', error);
+        // Fallback: show error message
+        const modelsGrid = document.getElementById('models-grid');
+        if (modelsGrid) {
+            modelsGrid.innerHTML = '<p class="error-message">Erreur lors du chargement des mannequins. Veuillez réessayer plus tard.</p>';
+        }
+    }
+}
+
+// Function to render models from JSON data
+function renderModels(models) {
+    const modelsGrid = document.getElementById('models-grid');
+    if (!modelsGrid) return;
+    
+    modelsGrid.innerHTML = '';
+    
+    models.forEach(model => {
+        const modelCard = document.createElement('div');
+        modelCard.className = 'model-card fade-in';
+        
+        modelCard.innerHTML = `
+            <div class="model-image">
+                <img src="${model.image}" alt="${model.name} - Mannequin" loading="lazy">
+                <div class="model-overlay">
+                    <div class="model-info">
+                        <h3>${model.name}</h3>
+                        <p>${model.specialty}</p>
+                        <div class="model-stats">
+                            <span>${model.height}</span>
+                            <span>${model.city}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        modelsGrid.appendChild(modelCard);
+    });
+    
+    // Re-initialize animations for new elements
+    initScrollAnimations();
+}
 
 // Form handling (for future contact forms)
 function initFormHandling() {
