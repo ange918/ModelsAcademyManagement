@@ -873,84 +873,75 @@ initLazyLoading();
 function initFormationCarousels() {
     const carousels = document.querySelectorAll('.formation-carousel');
 
-    // Map dataset keys to filename bases
-    const formationBaseMap = {
-        defile: 'defile',
-        photo: 'photo',
-        developpement: 'dev'
+    // Map dataset keys to filename bases with actual existing images
+    const formationImages = {
+        defile: [
+            'defile1.jpg', 'defile2.jpg', 'defile4.jpg', 'defile5.jpg', 'defile6.jpg', 
+            'defile7.jpg', 'defile8.jpg', 'defile9.jpg', 'defile10.jpg', 'defile11.jpg', 
+            'defile13.jpg', 'defile15.jpg', 'defile17.jpg', 'defile18.jpg', 'defile19.jpg', 
+            'defile20.jpg', 'defile21.jpg', 'defile22.jpg', 'defile23.jpg', 'defile24.jpg'
+        ],
+        photo: [
+            'shoot.jpg', 'shoot2.jpg', 'shoot3.jpg', 'shoot4.jpg', 'shoot5.jpg', 
+            'shoot6.jpg', 'shoot7.jpg', 'shoot8.jpg', 'shoot9.jpg', 'shoot10.jpg', 
+            'shoot11.jpg', 'shoot12.jpg', 'shoot13.jpg', 'shoot14.jpg', 'shoot15.jpg', 
+            'shoot16.jpg', 'shoot17.jpg', 'shoot18.jpg', 'shoot19.jpg', 'shoot20.jpg', 'shoot21.jpg'
+        ],
+        developpement: [
+            'about.jpg', 'creativie.jpg', 'diversité.jpg', 'profe.jpg', 'heroback.jpg', 
+            'herobackee.jpg', 'luciapola.jpg', 'danielle.jpg', 'rita.jpg'
+        ]
     };
 
     carousels.forEach(carousel => {
         const key = carousel.dataset.formation;
-        const base = formationBaseMap[key] || key || '';
-        const maxImages = key === 'photo' ? 21 : 18;
+        const images = formationImages[key] || [];
+        
+        if (images.length === 0) return;
 
-        // Track existing srcs to avoid duplicates
-        const existingSrcs = new Set(Array.from(carousel.querySelectorAll('img')).map(img => img.getAttribute('src')));
+        // Clear existing images
+        carousel.innerHTML = '';
 
-        // Ensure up to maxImages present, auto-generate missing ones
-        for (let i = 1; i <= maxImages; i += 1) {
-            const url = `images/gallery/${base}${i}.jpg`;
-            if (!existingSrcs.has(url)) {
-                const img = document.createElement('img');
-                img.src = url;
-                img.alt = `Formation ${key || ''} - ${i}`.trim();
-                img.className = 'carousel-image';
-                img.loading = 'lazy';
-                img.onerror = function() {
-                    img.classList.add('hidden');
-                };
-                carousel.appendChild(img);
+        // Add only existing images
+        images.forEach((imageName, index) => {
+            const img = document.createElement('img');
+            img.src = `images/gallery/${imageName}`;
+            img.alt = `Formation ${key || ''} - ${index + 1}`;
+            img.className = 'carousel-image';
+            img.loading = 'lazy';
+            
+            // Set first image as active
+            if (index === 0) {
+                img.classList.add('active');
             }
-        }
+            
+            // Handle image errors gracefully
+            img.onerror = function() {
+                console.warn(`Image non trouvée: ${imageName}`);
+                img.style.display = 'none';
+            };
+            
+            carousel.appendChild(img);
+        });
 
-        // Normalize active state: pick first visible image
-        let allImages = Array.from(carousel.querySelectorAll('.carousel-image'));
-        let visibleImages = allImages.filter(img => !img.classList.contains('hidden'));
-
-        // If fewer than maxImages visible images, duplicate existing to reach max
-        if (visibleImages.length > 0 && visibleImages.length < maxImages) {
-            const needed = maxImages - visibleImages.length;
-            for (let i = 0; i < needed; i += 1) {
-                const src = visibleImages[i % visibleImages.length].getAttribute('src');
-                const dup = document.createElement('img');
-                dup.src = src;
-                dup.alt = `Formation ${key || ''} - copie ${(i + 1)}`.trim();
-                dup.className = 'carousel-image';
-                dup.loading = 'lazy';
-                carousel.appendChild(dup);
+        // Start carousel if we have multiple images
+        if (images.length > 1) {
+            let currentIndex = 0;
+            
+            function nextImage() {
+                const allImages = carousel.querySelectorAll('.carousel-image');
+                if (allImages.length <= 1) return;
+                
+                allImages[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % allImages.length;
+                allImages[currentIndex].classList.add('active');
             }
-            allImages = Array.from(carousel.querySelectorAll('.carousel-image'));
-            visibleImages = allImages.filter(img => !img.classList.contains('hidden'));
+            
+            setInterval(nextImage, 5000);
         }
-
-        // If no active or active is hidden, set first visible as active
-        let active = carousel.querySelector('.carousel-image.active');
-        if (!active || active.classList.contains('hidden')) {
-            allImages.forEach(img => img.classList.remove('active'));
-            if (visibleImages.length > 0) {
-                visibleImages[0].classList.add('active');
-            }
-        }
-
-        let currentIndex = visibleImages.findIndex(img => img.classList.contains('active'));
-        if (currentIndex < 0) currentIndex = 0;
-
-        function nextImage() {
-            // Refresh visible set in case some failed to load
-            visibleImages = allImages.filter(img => !img.classList.contains('hidden'));
-            if (visibleImages.length <= 1) return;
-
-            const current = carousel.querySelector('.carousel-image.active');
-            if (current) current.classList.remove('active');
-
-            // Advance to next visible image
-            currentIndex = (visibleImages.indexOf(current) + 1) % visibleImages.length;
-            visibleImages[currentIndex].classList.add('active');
-        }
-
-        setInterval(nextImage, 5000);
     });
 }
+
+
 
 // Formation carousels are initialized on DOMContentLoaded
