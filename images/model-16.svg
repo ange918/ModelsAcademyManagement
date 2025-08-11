@@ -1,0 +1,29 @@
+<svg width="200" height="300" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#45B7D1;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="200" height="300" fill="url(#bgGradient9)" rx="10"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="80" r="25" fill="#333"/>
+  
+  <!-- Body -->
+  <rect x="75" y="105" width="50" height="120" fill="#333" rx="25"/>
+  
+  <!-- Arms -->
+  <rect x="45" y="115" width="15" height="80" fill="#333" rx="7.5"/>
+  <rect x="140" y="115" width="15" height="80" fill="#333" rx="7.5"/>
+  
+  <!-- Legs -->
+  <rect x="75" y="225" width="20" height="60" fill="#333" rx="10"/>
+  <rect x="105" y="225" width="20" height="60" fill="#333" rx="10"/>
+  
+  <!-- Face details -->
+  <circle cx="95" cy="75" r="3" fill="#fff"/>
+  <circle cx="105" cy="75" r="3" fill="#fff"/>
+  <path d="M95 85 Q100 90 105 85" stroke="#fff" stroke-width="2" fill="none"/>
+</svg>

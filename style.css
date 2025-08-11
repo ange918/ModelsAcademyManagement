@@ -151,6 +151,248 @@ p {
     display: none;
 }
 
+.btn-inscription {
+    background: var(--accent-color) !important;
+    color: var(--white) !important;
+    padding: 0.8rem 1.5rem !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+}
+
+.btn-inscription:hover {
+    background: var(--accent-light) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
+}
+
+.btn-inscription::after {
+    display: none !important;
+}
+
+/* Inscription Section */
+.inscription {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #f8f9fa 100%);
+}
+
+.inscription-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.inscription-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.inscription-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inscription-info li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.inscription-info li:last-child {
+    border-bottom: none;
+}
+
+.inscription-image {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.inscription-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(78, 205, 196, 0.05) 100%);
+}
+
+.inscription-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Styling */
+.form-styled {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #6c757d;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.checkbox-group {
+    margin-top: 2rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    transform: scale(1.2);
+}
+
+.checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.checkbox-label input[type="checkbox"]:checked + .checkmark {
+    background: var(--accent-color);
+}
+
+.form-styled .btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Responsive Design for Inscription */
+@media (max-width: 768px) {
+    .inscription-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-styled {
+        padding: 1.5rem;
+    }
+    
+    .inscription-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .inscription-info li {
+        font-size: 1rem;
+    }
+}
+
+/* Success Message */
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+    z-index: 1000;
+    animation: slideInRight 0.5s ease-out;
+    max-width: 400px;
+}
+
+.success-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.success-content p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -182,13 +424,11 @@ p {
     width: 100%;
     height: 100%;
     z-index: -2;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    background-image: url('../images/gallery/heroback.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .hero-overlay {
@@ -313,6 +553,7 @@ section {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    object-position: center top;
     border-radius: 10px;
     box-shadow: var(--shadow);
 }
@@ -377,6 +618,7 @@ section {
     width: 100%;
     height: 250px;
     object-fit: cover;
+    object-position: center top;
 }
 
 .valeur-content {
@@ -412,10 +654,45 @@ section {
     box-shadow: var(--shadow-hover);
 }
 
-.formation-image img {
+.formation-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.formation-carousel {
+    position: relative;
     width: 100%;
-    height: 250px;
+    height: 320px;
+}
+
+@media (min-width: 768px) {
+    .formation-carousel {
+        height: 360px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .formation-carousel {
+        height: 420px;
+    }
+}
+
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    object-position: center top;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.hidden { display: none; }
+
+.carousel-image.active {
+    opacity: 1;
 }
 
 .formation-content {
@@ -445,6 +722,31 @@ section {
     left: 0;
     color: var(--accent-color);
     font-weight: bold;
+}
+
+.formation-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.formation-cta .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    border: 2px solid var(--accent-color);
+    background: var(--accent-color);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.formation-cta .btn:hover {
+    background: var(--white);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Models Page */
@@ -537,6 +839,239 @@ section {
     gap: 1rem;
     font-size: 0.9rem;
     opacity: 0.8;
+}
+
+/* New Model Card Styles */
+.model-details {
+    padding: 1.5rem;
+}
+
+.model-basic-info {
+    margin-bottom: 1.5rem;
+}
+
+.model-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.model-specialty {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.model-location {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.model-measurements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--secondary-color);
+    border-radius: 8px;
+}
+
+.measurement {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.measurement .label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.measurement .value {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.model-characteristics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.characteristic {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.characteristic .label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.characteristic .value {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.model-languages {
+    margin-bottom: 1.5rem;
+}
+
+.model-languages .label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.languages-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.language {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.model-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.model-cta {
+    text-align: center;
+}
+
+.btn-gallery {
+    background: var(--accent-color);
+    color: var(--white);
+    border: 2px solid var(--accent-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-gallery:hover {
+    background: var(--white);
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Gallery Modal Styles */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.gallery-overlay {
+    background: var(--white);
+    border-radius: 15px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.gallery-container {
+    padding: 2rem;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.gallery-header h2 {
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.close-gallery {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.close-gallery:hover {
+    color: var(--accent-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-info {
+    background: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.gallery-info p {
+    margin-bottom: 0.5rem;
+}
+
+.gallery-info p:last-child {
+    margin-bottom: 0;
 }
 
 /* CTA Section */
@@ -697,6 +1232,25 @@ section {
     .models-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1.5rem;
+    }
+    
+    .model-measurements {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .model-characteristics {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .gallery-container {
+        padding: 1rem;
     }
 
     .hero-cta {
