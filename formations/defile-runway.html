@@ -8,6 +8,273 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .formation-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/gallery/defile.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 80px;
+            margin-top: 0;
+        }
+        
+        .formation-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.6);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            display: inline-block;
+        }
+        
+        .formation-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.6);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .formation-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .formation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 60px 0;
+        }
+        
+        .formation-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .formation-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .formation-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .formation-text h2 {
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        
+        .formation-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #374151;
+        }
+        
+        .formation-features {
+            background: #f8fafc;
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #d4af37, #1e3a8a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .gallery-section {
+            padding: 60px 20px;
+            background: #f8fafc;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e3a8a, #d4af37);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-formation {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-formation:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .formation-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .formation-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+            
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                background-color: #1e3a8a;
+            }
+            
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #1e3a8a;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -20,9 +287,9 @@
             <div class="nav-menu">
                 <a href="../index.html" class="nav-link">Accueil</a>
                 <a href="../index.html#about" class="nav-link">À Propos</a>
-                <a href="../index.html#valeurs" class="nav-link">Nos Valeurs</a>
-                <a href="../index.html#formations" class="nav-link active">Formations</a>
-                <a href="../mannequins.html" class="nav-link nav-cta">Nos Mannequins</a>
+                <a href="../index.html#formations" class="nav-link">Formations</a>
+                <a href="../mannequins.html" class="nav-link">Nos Mannequins</a>
+                <a href="../index.html#inscription" class="nav-link btn-inscription">S'inscrire</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -32,172 +299,84 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <div class="page-header-content fade-in">
-                <h1>Formation Défilé & Runway</h1>
-                <p>Maîtrisez l'art du défilé et brillez sur les podiums internationaux</p>
+    <!-- Hero Section -->
+    <section class="formation-hero">
+        <h1>Formation Défilé & Runway</h1>
+        <p>Maîtrisez l'art du défilé avec nos coaches professionnels et brillez sur les podiums internationaux</p>
+    </section>
+
+    <!-- Formation Content -->
+    <div class="formation-content">
+        <div class="formation-grid">
+            <div class="formation-image">
+                <img src="../images/gallery/defile1.jpg" alt="Formation défilé mode - Podium international">
+            </div>
+            <div class="formation-text">
+                <h2>L'Excellence du Défilé</h2>
+                <p>Notre formation Défilé & Runway est conçue pour transformer votre potentiel en excellence scénique. Apprenez auprès de professionnels expérimentés qui ont foulé les plus prestigieux podiums du monde.</p>
+                <p>Développez votre présence, votre confiance et votre technique pour devenir un mannequin de défilé accompli, capable de captiver l'attention sur n'importe quelle scène internationale.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="formation-features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">👠</div>
+                <h3>Techniques de Marche</h3>
+                <p>Maîtrisez la démarche professionnelle, la posture et l'élégance naturelle requises pour les défilés de haute couture.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3>Présence Scénique</h3>
+                <p>Développez votre charisme et votre capacité à captiver l'audience, même dans les situations les plus stressantes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👗</div>
+                <h3>Adaptation Vestimentaire</h3>
+                <p>Apprenez à vous adapter à différents styles de vêtements et à mettre en valeur chaque création de manière unique.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧘</div>
+                <h3>Gestion du Stress</h3>
+                <p>Acquérez des techniques de respiration et de concentration pour performer sous pression lors des défilés.</p>
             </div>
         </div>
     </section>
 
-    <!-- Formation Details -->
-    <section class="formation-details">
+    <!-- Gallery Section -->
+    <section class="gallery-section">
         <div class="container">
-            <div class="formation-overview fade-in">
-                <div class="formation-hero">
-                    <div class="formation-image">
-                        <img src="../images/formation-1.svg" alt="Formation Défilé & Runway">
-                    </div>
-                    <div class="formation-info">
-                        <h2>Défilé & Runway</h2>
-                        <p class="formation-description">Notre formation Défilé & Runway est conçue pour transformer les débutants en mannequins professionnels capables de briller sur les podiums les plus prestigieux du monde. Cette formation intensive combine théorie et pratique pour vous donner tous les outils nécessaires à une carrière réussie dans le mannequinat.</p>
-                        
-                        <div class="formation-highlights">
-                            <div class="highlight">
-                                <span class="highlight-icon">⏱️</span>
-                                <div>
-                                    <h4>Durée</h4>
-                                    <p>12 semaines</p>
-                                </div>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon">💰</span>
-                                <div>
-                                    <h4>Coût</h4>
-                                    <p>2,800 €</p>
-                                </div>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon">📅</span>
-                                <div>
-                                    <h4>Horaires</h4>
-                                    <p>Lundi, Mercredi, Vendredi<br>14h-17h</p>
-                                </div>
-                            </div>
-                            <div class="highlight">
-                                <span class="highlight-icon">🎓</span>
-                                <div>
-                                    <h4>Certification</h4>
-                                    <p>Certificat professionnel MAM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <h2 style="text-align: center; color: #1e3a8a; margin-bottom: 40px; font-size: 2.5rem;">Galerie de Formation</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../images/gallery/defile2.jpg" alt="Formation défilé - Technique de marche">
                 </div>
-            </div>
-
-            <!-- Modules Section -->
-            <div class="modules-section fade-in">
-                <h2>Programme de Formation</h2>
-                <div class="modules-grid">
-                    <div class="module-card">
-                        <div class="module-header">
-                            <h3>Module 1 : Fondamentaux de la marche</h3>
-                            <span class="module-duration">3 semaines</span>
-                        </div>
-                        <ul class="module-content">
-                            <li>Posture et alignement corporel</li>
-                            <li>Techniques de marche de base</li>
-                            <li>Rythme et coordination</li>
-                            <li>Gestion de l'espace scénique</li>
-                        </ul>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <h3>Module 2 : Techniques avancées</h3>
-                            <span class="module-duration">4 semaines</span>
-                        </div>
-                        <ul class="module-content">
-                            <li>Marche haute couture</li>
-                            <li>Marche prêt-à-porter</li>
-                            <li>Adaptation aux différents styles</li>
-                            <li>Travail avec la musique</li>
-                        </ul>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <h3>Module 3 : Présence scénique</h3>
-                            <span class="module-duration">3 semaines</span>
-                        </div>
-                        <ul class="module-content">
-                            <li>Confiance en soi et charisme</li>
-                            <li>Expression faciale et corporelle</li>
-                            <li>Gestion du stress</li>
-                            <li>Performance en conditions réelles</li>
-                        </ul>
-                    </div>
-
-                    <div class="module-card">
-                        <div class="module-header">
-                            <h3>Module 4 : Préparation professionnelle</h3>
-                            <span class="module-duration">2 semaines</span>
-                        </div>
-                        <ul class="module-content">
-                            <li>Simulation de défilés</li>
-                            <li>Travail avec stylistes et maquilleurs</li>
-                            <li>Gestion des imprévus</li>
-                            <li>Préparation aux castings</li>
-                        </ul>
-                    </div>
+                <div class="gallery-item">
+                    <img src="../images/gallery/defile4.jpg" alt="Formation défilé - Présence scénique">
                 </div>
-            </div>
-
-            <!-- Prerequisites Section -->
-            <div class="prerequisites-section fade-in">
-                <h2>Prérequis</h2>
-                <div class="prerequisites-list">
-                    <div class="prerequisite-item">
-                        <span class="prerequisite-icon">👤</span>
-                        <p>Âge minimum : 16 ans</p>
-                    </div>
-                    <div class="prerequisite-item">
-                        <span class="prerequisite-icon">📏</span>
-                        <p>Taille minimum : 1.70m pour les femmes, 1.80m pour les hommes</p>
-                    </div>
-                    <div class="prerequisite-item">
-                        <span class="prerequisite-icon">💪</span>
-                        <p>Motivation et assiduité requises</p>
-                    </div>
+                <div class="gallery-item">
+                    <img src="../images/gallery/defile5.jpg" alt="Formation défilé - Podium international">
                 </div>
-            </div>
-
-            <!-- Career Opportunities -->
-            <div class="career-section fade-in">
-                <h2>Débouchés Professionnels</h2>
-                <div class="career-grid">
-                    <div class="career-item">
-                        <span class="career-icon">👗</span>
-                        <h4>Défilés haute couture</h4>
-                    </div>
-                    <div class="career-item">
-                        <span class="career-icon">🛍️</span>
-                        <h4>Shows prêt-à-porter</h4>
-                    </div>
-                    <div class="career-item">
-                        <span class="career-icon">🎭</span>
-                        <h4>Événements mode</h4>
-                    </div>
-                    <div class="career-item">
-                        <span class="career-icon">🌍</span>
-                        <h4>Agences internationales</h4>
-                    </div>
+                <div class="gallery-item">
+                    <img src="../images/gallery/defile6.jpg" alt="Formation défilé - Élégance et style">
                 </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="formation-cta-section fade-in">
-                <h2>Prêt à commencer votre formation ?</h2>
-                <p>Rejoignez notre formation Défilé & Runway et transformez votre passion en carrière professionnelle.</p>
-                <div class="cta-buttons">
-                    <a href="mailto:contact@modelsacademy.com?subject=Inscription Formation Défilé & Runway" class="btn btn-primary btn-large">S'inscrire maintenant</a>
-                    <a href="../index.html#formations" class="btn btn-secondary">Voir autres formations</a>
+                <div class="gallery-item">
+                    <img src="../images/gallery/defile7.jpg" alt="Formation défilé - Haute couture">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/gallery/defile8.jpg" alt="Formation défilé - Professionnalisme">
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Prêt à Briller sur les Podiums ?</h2>
+        <p>Rejoignez notre formation Défilé & Runway et transformez votre rêve de mannequin en réalité. Nos experts vous accompagneront vers l'excellence.</p>
+        <a href="../index.html#inscription" class="btn-formation">S'inscrire à la Formation</a>
     </section>
 
     <!-- Footer -->
@@ -207,12 +386,6 @@
                 <div class="footer-section">
                     <h3>MODELS ACADEMY MANAGEMENT</h3>
                     <p>L'excellence au service de votre talent depuis 2008.</p>
-                    <div class="footer-social">
-                        <a href="#" aria-label="Instagram">📸</a>
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="#" aria-label="LinkedIn">💼</a>
-                        <a href="#" aria-label="Twitter">🐦</a>
-                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
@@ -220,7 +393,6 @@
                         <li><a href="../index.html#formations">Formations</a></li>
                         <li><a href="../mannequins.html">Nos Mannequins</a></li>
                         <li><a href="../index.html#about">À Propos</a></li>
-                        <li><a href="../index.html#valeurs">Nos Valeurs</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -237,7 +409,36 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Navigation mobile functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-    <script src="../script.js"></script>
+        // Mobile menu toggle
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
