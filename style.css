@@ -415,6 +415,7 @@ p {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    
 }
 
 .hero-background {
@@ -464,6 +465,7 @@ p {
 
 .hero-description {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #f8f8f8;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
