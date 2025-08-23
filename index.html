@@ -6,7 +6,8 @@
     <title>MODELS ACADEMY MANAGEMENT - Agence de Mannequinat Professionnelle</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,7 +36,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <img src="images/gallery/heroback.jpg" alt="Fashion Models Portfolio" class="hero-image">
+            <img src="images/gallery/bacc.jpg" alt="Fashion Models Portfolio" class="hero-image">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -254,89 +255,266 @@
                 <h2>Inscription</h2>
                 <p>Rejoignez notre agence et commencez votre carrière dans le mannequinat</p>
             </div>
-            <div class="inscription-content">
-                <div class="inscription-info fade-in">
-                    <h3>Pourquoi s'inscrire chez Models Academy Management ?</h3>
-                    <ul>
-                        <li>✅ Accompagnement personnalisé par des experts</li>
-                        <li>✅ Opportunités internationales</li>
-                        <li>✅ Formations professionnelles de qualité</li>
-                        <li>✅ Réseau de partenaires prestigieux</li>
-                        <li>✅ Suivi de carrière à long terme</li>
-                        <li>✅ Support médiatique et communication</li>
-                    </ul>
-                    <div class="inscription-image">
-                        <img src="images/gallery/herobackee.jpg" alt="Avantages de l'inscription chez Models Academy Management">
+            
+            <!-- Multi-Step Form -->
+            <div class="multi-step-form fade-in">
+                <div class="form-progress">
+                    <div class="progress-step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Informations de base</span>
                     </div>
-                    <div class="inscription-image">
-                        <img src="images/gallery/heroback.jpg" alt="Avantages de l'inscription chez Models Academy Management">
+                    <div class="progress-step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Mesures</span>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Photos</span>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-title">Vidéo</span>
                     </div>
                 </div>
-                <div class="inscription-form fade-in">
-                    <form id="inscriptionForm" class="form-styled">
-                        <div class="form-group">
-                            <label for="nom">Nom  *</label>
-                            <input type="text" id="nom" name="nom" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nom">Prenom *</label>
-                            <input type="text" id="nom" name="nom" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telephone">Téléphone</label>
-                            <input type="tel" id="telephone" name="telephone">
-                        </div>
-                        <div class="form-row">
+
+                <form id="multiStepForm" class="multi-step-form-container" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <!-- Step 1: Basic Information -->
+                    <div class="form-step active" data-step="1">
+                        <h3>STEP 1: INFORMATIONS DE BASE</h3>
+                        <p class="age-requirement">Exigence d'âge : 16-25 ans</p>
+                        
+                        <div class="form-grid">
                             <div class="form-group">
-                                <label for="age">Âge *</label>
-                                <input type="number" id="age" name="age" min="16" max="35" required>
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
                             </div>
                             <div class="form-group">
-                                <label for="taille">Taille (cm) *</label>
-                                <input type="number" id="taille" name="taille" min="160" max="200" required>
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Genre *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="femme">Femme</option>
+                                    <option value="homme">Homme</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="birthDate">Date de naissance *</label>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="instagram">Instagram (Optionnel)</label>
+                                <input type="text" id="instagram" name="instagram" placeholder="@votre_instagram">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Pays de résidence *</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="benin">Bénin</option>
+                                    <option value="france">France</option>
+                                    <option value="usa">États-Unis</option>
+                                    <option value="uk">Royaume-Uni</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Ville de résidence *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneCode">Code pays</label>
+                                <input type="text" id="phoneCode" name="phoneCode" placeholder="+229">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Numéro de téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="nationality">Nationalité *</label>
+                                <input type="text" id="nationality" name="nationality" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="school">Êtes-vous actuellement en formation ?</label>
+                                <select id="school" name="school">
+                                    <option value="">Sélectionnez Oui/Non</option>
+                                    <option value="yes">Oui</option>
+                                    <option value="no">Non</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="ville">Ville *</label>
-                            <input type="text" id="ville" name="ville" required>
+                    </div>
+
+                    <!-- Step 2: Measurements -->
+                    <div class="form-step" data-step="2">
+                        <h3>STEP 2: MESURES</h3>
+                        <p class="measurement-info">Mesures en centimètres • Système de pointure européenne</p>
+                        <p class="height-requirement">Exigence de taille minimale - Femmes : 175cm / Hommes : 185cm</p>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="height">Taille (cm) *</label>
+                                <input type="number" id="height" name="height" min="150" max="220" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bust">Buste/Poitrine (cm) *</label>
+                                <input type="number" id="bust" name="bust" min="60" max="150" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="waist">Taille (cm) *</label>
+                                <input type="number" id="waist" name="waist" min="50" max="120" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hips">Hanche (cm) *</label>
+                                <input type="number" id="hips" name="hips" min="60" max="150" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hairColor">Couleur des cheveux *</label>
+                                <select id="hairColor" name="hairColor" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="noir">Noir</option>
+                                    <option value="brun">Brun</option>
+                                    <option value="blond">Blond</option>
+                                    <option value="roux">Roux</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="eyeColor">Couleur des yeux *</label>
+                                <select id="eyeColor" name="eyeColor" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="marron">Marron</option>
+                                    <option value="bleu">Bleu</option>
+                                    <option value="vert">Vert</option>
+                                    <option value="gris">Gris</option>
+                                    <option value="noir">Noir</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="shoeSize">Pointure *</label>
+                                <input type="number" id="shoeSize" name="shoeSize" min="35" max="50" required>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="experience">Expérience en mannequinat</label>
-                            <select id="experience" name="experience">
-                                <option value="">Sélectionnez votre niveau</option>
-                                <option value="debutant">Débutant</option>
-                                <option value="intermediaire">Intermédiaire</option>
-                                <option value="avance">Avancé</option>
-                                <option value="professionnel">Professionnel</option>
-                            </select>
+                    </div>
+
+                    <!-- Step 3: Photo Submissions -->
+                    <div class="form-step" data-step="3">
+                        <h3>STEP 3: SOUMISSION DE PHOTOS</h3>
+                        <p class="photo-instructions">
+                            Nous aurions besoin de 4 photos de vous : en pied, jusqu'aux genoux, en gros plan et de profil. 
+                            Les photos n'ont pas besoin d'être prises par un professionnel. Cependant, nous vous recommandons de suivre les instructions suivantes :
+                        </p>
+                        <ul class="photo-requirements">
+                            <li>Les photos doivent être prises à la lumière naturelle du jour, sur un fond blanc.</li>
+                            <li>Veuillez porter des vêtements qui montrent votre silhouette : un short ou un jean skinny, un débardeur de couleur unie et des talons.</li>
+                            <li>Ne souriez pas, ne vous maquillez pas, gardez vos cheveux lâchés ou en queue de cheval basse.</li>
+                        </ul>
+
+                        <div class="photo-upload-section">
+                            <div class="photo-upload">
+                                <h4>FULL LENGTH</h4>
+                                <div class="upload-area">
+                                    <input type="file" id="fullLength" name="fullLength" accept="image/*" required>
+                                    <label for="fullLength">
+                                        <span class="upload-text">Choisir un fichier</span>
+                                        <span class="file-name">Aucun fichier sélectionné</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="photo-upload">
+                                <h4>KNEES UP</h4>
+                                <div class="upload-area">
+                                    <input type="file" id="kneesUp" name="kneesUp" accept="image/*" required>
+                                    <label for="kneesUp">
+                                        <span class="upload-text">Choisir un fichier</span>
+                                        <span class="file-name">Aucun fichier sélectionné</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="photo-upload">
+                                <h4>CLOSE UP</h4>
+                                <div class="upload-area">
+                                    <input type="file" id="closeUp" name="closeUp" accept="image/*" required>
+                                    <label for="closeUp">
+                                        <span class="upload-text">Choisir un fichier</span>
+                                        <span class="file-name">Aucun fichier sélectionné</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="photo-upload">
+                                <h4>PROFILE</h4>
+                                <div class="upload-area">
+                                    <input type="file" id="profile" name="profile" accept="image/*" required>
+                                    <label for="profile">
+                                        <span class="upload-text">Choisir un fichier</span>
+                                        <span class="file-name">Aucun fichier sélectionné</span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="formation">Formation d'intérêt</label>
-                            <select id="formation" name="formation">
-                                <option value="">Sélectionnez une formation</option>
-                                <option value="defile-runway">Défilé & Runway</option>
-                                <option value="photo-shooting">Photo & Shooting</option>
-                                <option value="developpement-personnel">Développement Personnel</option>
-                            </select>
+                    </div>
+
+                    <!-- Step 4: Video Submission -->
+                    <div class="form-step" data-step="4">
+                        <h3>STEP 4: SOUMISSION DE VIDÉO</h3>
+                        <p class="video-instructions">
+                            Dans cette vidéo, nous voulons vous voir en gros plan et en pied. 
+                            Vous devez être debout devant la caméra et vous présenter, montrer vos deux profils et sourire. 
+                            Nous aimerions aussi entendre un peu plus sur vous et voir votre personnalité ! 
+                            La vidéo doit être en français ou en anglais. 
+                            N'oubliez pas de ne pas porter de maquillage et de garder vos cheveux lâchés ou en queue de cheval basse.
+                        </p>
+
+                        <div class="video-upload-section">
+                            <h4>TÉLÉCHARGEZ VOTRE VIDÉO CI-DESSOUS</h4>
+                            <p class="video-constraint">(votre vidéo ne doit pas dépasser 45 secondes) :</p>
+                            
+                            <div class="upload-area video-upload">
+                                <input type="file" id="video" name="video" accept="video/*" required>
+                                <label for="video">
+                                    <span class="upload-text">Choisir un fichier</span>
+                                    <span class="file-name">Aucun fichier sélectionné</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message (optionnel)</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Parlez-nous de vous, de vos objectifs..."></textarea>
+
+                        <div class="final-step">
+                            <h4>ÉTAPE FINALE :</h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="ageConsent" name="ageConsent" required>
+                                    <span class="checkmark"></span>
+                                    Je certifie que j'ai plus de 16 ans ou que j'ai obtenu le consentement parental pour la soumission sur votre site web.
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                                    <span class="checkmark"></span>
+                                    J'ai lu et j'accepte la <a href="#" class="link">Politique de confidentialité</a> et les <a href="#" class="link">Mentions légales</a>.
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    J'aimerais recevoir, par email et/ou SMS, des nouvelles et informations sur les événements à venir, les offres spéciales et le nouveau contenu de MODELS ACADEMY MANAGEMENT. (Optionnel)
+                                </label>
+                            </div>
                         </div>
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="conditions" name="conditions" required>
-                                <span class="checkmark"></span>
-                                J'accepte les conditions d'utilisation et la politique de confidentialité *
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-large">Envoyer ma candidature</button>
-                    </form>
-                </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Précédent</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Suivant</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">SOUMETTRE LA CANDIDATURE</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -390,6 +568,8 @@
         </div>
     </footer>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

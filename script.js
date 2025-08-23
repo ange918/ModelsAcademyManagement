@@ -504,7 +504,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 6,
+                "id": 7,
                 "name": "TRAORE Khady",
                 "gender": "Femme",
                 "specialty": "High Fashion & Couture",
@@ -527,7 +527,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 7,
+                "id": 8,
                 "name": "AMAH Rodéric",
                 "gender": "Homme",
                 "specialty": "Luxury & Editorial",
@@ -549,7 +549,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 8,
+                "id": 9,
                 "name": "HESSOU Cyr-God",
                 "gender": "Homme",
                 "specialty": "Commercial & Fitness",
@@ -571,7 +571,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 8,
+                "id": 9,
                 "name": "FAMIWA Dalil",
                 "gender": "Homme",
                 "specialty": "Commercial & Fitness",
@@ -593,7 +593,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 6,
+                "id": 10,
                 "name": "HOUNDJREBO Rose",
                 "gender": "Femme",
                 "specialty": "High Fashion & Couture",
@@ -616,7 +616,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 8,
+                "id": 11,
                 "name": "SAGBO Amen",
                 "gender": "Homme",
                 "specialty": "Commercial & Fitness",
@@ -638,7 +638,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 8,
+                "id": 12,
                 "name": "MIDJNDOU Gildas",
                 "gender": "Homme",
                 "specialty": "Commercial & Fitness",
@@ -660,7 +660,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 8,
+                "id": 13,
                 "name": "HOUNGBEDJI Abou-Bacar",
                 "gender": "Homme",
                 "specialty": "Commercial & Fitness",
@@ -682,7 +682,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 8,
+                "id": 14,
                 "name": "GBEDEGLA Geordys",
                 "gender": "Homme",
                 "specialty": "Commercial & Fitness",
@@ -704,7 +704,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 6,
+                "id": 15,
                 "name": "MISSIHOUN Merveille",
                 "gender": "Femme",
                 "specialty": "High Fashion & Couture",
@@ -727,7 +727,7 @@ function getEmbeddedModelsData() {
                 ]
             },
             {
-                "id": 6,
+                "id": 16,
                 "name": "DATO Marie-Michelle",
                 "gender": "Femme",
                 "specialty": "High Fashion & Couture",
@@ -881,7 +881,7 @@ function openGallery(modelId) {
                 </div>
                 <div class="gallery-grid">
                     ${model.gallery.slice(0, 18).map((image, index) => `
-                        <div class="gallery-item">
+                        <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Photo ${index + 1}')">
                             <img src="${image}" alt="${model.name} - Photo ${index + 1}" loading="lazy" onerror="this.style.display='none'">
                         </div>
                     `).join('')}
@@ -910,6 +910,47 @@ function closeGallery() {
     const modal = document.querySelector('.gallery-modal');
     if (modal) {
         modal.remove();
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Function to open fullscreen image
+function openFullscreenImage(imageSrc, imageAlt) {
+    const fullscreenModal = document.createElement('div');
+    fullscreenModal.className = 'fullscreen-modal';
+    fullscreenModal.innerHTML = `
+        <div class="fullscreen-overlay">
+            <div class="fullscreen-container">
+                <button class="close-fullscreen" onclick="closeFullscreenImage()">×</button>
+                <img src="${imageSrc}" alt="${imageAlt}" class="fullscreen-image">
+                <div class="fullscreen-caption">${imageAlt}</div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(fullscreenModal);
+    document.body.style.overflow = 'hidden';
+    
+    // Add click outside to close
+    fullscreenModal.addEventListener('click', function(e) {
+        if (e.target === fullscreenModal) {
+            closeFullscreenImage();
+        }
+    });
+    
+    // Add keyboard support (ESC key)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeFullscreenImage();
+        }
+    });
+}
+
+// Function to close fullscreen image
+function closeFullscreenImage() {
+    const fullscreenModal = document.querySelector('.fullscreen-modal');
+    if (fullscreenModal) {
+        fullscreenModal.remove();
         document.body.style.overflow = 'auto';
     }
 }
@@ -944,88 +985,238 @@ function initFormHandling() {
     });
 }
 
-// Inscription form handling
-function initInscriptionForm() {
-    const inscriptionForm = document.getElementById('inscriptionForm');
+// Multi-Step Form handling
+function initMultiStepForm() {
+    const form = document.getElementById('multiStepForm');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    const formSteps = document.querySelectorAll('.form-step');
     
-    if (inscriptionForm) {
-        inscriptionForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic validation
-            const requiredFields = this.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.style.borderColor = '#dc3545';
-                    field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-                } else {
-                    field.style.borderColor = '#e9ecef';
-                    field.style.boxShadow = 'none';
-                }
-            });
-            
-            if (!isValid) {
-                alert('Veuillez remplir tous les champs obligatoires.');
-                return;
+    let currentStep = 1;
+    const totalSteps = 4;
+    
+    if (!form) return;
+    
+    // Initialize file upload handlers
+    initFileUploads();
+    
+    // Next button handler
+    nextBtn.addEventListener('click', function() {
+        if (validateCurrentStep()) {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateFormDisplay();
             }
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                submitBtn.textContent = 'Candidature envoyée !';
-                submitBtn.style.background = '#28a745';
-                
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-content">
-                        <h3>🎉 Candidature envoyée avec succès !</h3>
-                        <p>Nous avons bien reçu votre candidature. Notre équipe vous contactera dans les plus brefs délais.</p>
-                    </div>
-                `;
-                
-                this.parentNode.insertBefore(successMessage, this);
-                
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = '';
-                    this.reset();
-                    successMessage.remove();
-                }, 3000);
-            }, 1500);
+        }
+    });
+    
+    // Previous button handler
+    prevBtn.addEventListener('click', function() {
+        if (currentStep > 1) {
+            currentStep--;
+            updateFormDisplay();
+        }
+    });
+    
+    // Submit button handler
+    submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (validateCurrentStep()) {
+            submitForm();
+        }
+    });
+    
+    // Form submit handler
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (validateCurrentStep()) {
+            submitForm();
+        }
+    });
+    
+    function updateFormDisplay() {
+        // Update progress steps
+        progressSteps.forEach((step, index) => {
+            if (index + 1 <= currentStep) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
         });
         
-        // Real-time validation
-        const inputs = inscriptionForm.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && !this.value.trim()) {
-                    this.style.borderColor = '#dc3545';
-                    this.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-                } else {
-                    this.style.borderColor = '#e9ecef';
-                    this.style.boxShadow = 'none';
-                }
-            });
-            
-            input.addEventListener('input', function() {
-                if (this.value.trim()) {
-                    this.style.borderColor = '#e9ecef';
-                    this.style.boxShadow = 'none';
-                }
-            });
+        // Update form steps
+        formSteps.forEach((step, index) => {
+            if (index + 1 === currentStep) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
         });
+        
+        // Update navigation buttons
+        if (currentStep === 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'inline-block';
+            submitBtn.style.display = 'none';
+        } else if (currentStep === totalSteps) {
+            prevBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-block';
+        } else {
+            prevBtn.style.display = 'inline-block';
+            nextBtn.style.display = 'inline-block';
+            submitBtn.style.display = 'none';
+        }
     }
+    
+    function validateCurrentStep() {
+        const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+        const requiredFields = currentStepElement.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.style.borderColor = '#dc3545';
+                field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
+                
+                // Show error message
+                showFieldError(field, 'Ce champ est obligatoire');
+            } else {
+                field.style.borderColor = '#e9ecef';
+                field.style.boxShadow = 'none';
+                clearFieldError(field);
+            }
+        });
+        
+        // Additional validation for specific steps
+        if (currentStep === 1) {
+            // Age validation
+            const birthDate = document.getElementById('birthDate');
+            if (birthDate.value) {
+                const age = calculateAge(birthDate.value);
+                if (age < 16 || age > 25) {
+                    isValid = false;
+                    showFieldError(birthDate, 'L\'âge doit être entre 16 et 25 ans');
+                }
+            }
+        }
+        
+        if (!isValid) {
+            alert('Veuillez corriger les erreurs avant de continuer.');
+        }
+        
+        return isValid;
+    }
+    
+    function calculateAge(birthDate) {
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        
+        return age;
+    }
+    
+    function showFieldError(field, message) {
+        clearFieldError(field);
+        
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'field-error';
+        errorDiv.textContent = message;
+        errorDiv.style.color = '#dc3545';
+        errorDiv.style.fontSize = '0.8rem';
+        errorDiv.style.marginTop = '0.25rem';
+        
+        field.parentNode.appendChild(errorDiv);
+    }
+    
+    function clearFieldError(field) {
+        const existingError = field.parentNode.querySelector('.field-error');
+        if (existingError) {
+            existingError.remove();
+        }
+    }
+    
+    function submitForm() {
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Envoi en cours...';
+        submitBtn.disabled = true;
+        
+        // Add hidden fields for better email formatting
+        const formData = new FormData(form);
+        
+        // Add a subject field for Formspree
+        const subjectField = document.createElement('input');
+        subjectField.type = 'hidden';
+        subjectField.name = '_subject';
+        subjectField.value = `Nouvelle candidature - ${formData.get('firstName')} ${formData.get('lastName')}`;
+        form.appendChild(subjectField);
+        
+        // Add recipient email
+        const recipientField = document.createElement('input');
+        recipientField.type = 'hidden';
+        recipientField.name = '_replyto';
+        recipientField.value = formData.get('email');
+        form.appendChild(recipientField);
+        
+        // Submit the form to Formspree
+        form.submit();
+        
+        // Show success message (Formspree will redirect to a success page)
+        submitBtn.textContent = 'Candidature envoyée !';
+        submitBtn.style.background = '#28a745';
+        
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = `
+            <div class="success-content">
+                <h3>🎉 Candidature envoyée avec succès !</h3>
+                <p>Nous avons bien reçu votre candidature. Notre équipe vous contactera dans les plus brefs délais.</p>
+            </div>
+        `;
+        
+        form.parentNode.insertBefore(successMessage, form);
+        
+        setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.background = '';
+            form.reset();
+            successMessage.remove();
+            // Reset to first step
+            currentStep = 1;
+            updateFormDisplay();
+        }, 3000);
+    }
+}
+
+// File upload handling
+function initFileUploads() {
+    const fileInputs = document.querySelectorAll('input[type="file"]');
+    
+    fileInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'Aucun fichier sélectionné';
+            const label = this.parentNode.querySelector('.file-name');
+            if (label) {
+                label.textContent = fileName;
+            }
+        });
+    });
+}
+
+// Inscription form handling (legacy - keeping for compatibility)
+function initInscriptionForm() {
+    // Initialize multi-step form instead
+    initMultiStepForm();
 }
 
 // Initialize form handling
