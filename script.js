@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             loadModelsData();
         }, 100);
+    } else if (window.location.pathname.includes('model-profile.html') || document.getElementById('model-profile-content')) {
+        console.log('Page de profil de mannequin détectée');
+        // Load data first, then create profile page
+        setTimeout(() => {
+            loadModelsData().then(() => {
+                createModelProfilePage();
+            });
+        }, 100);
     } else {
         console.log('Page des mannequins non detectee');
     }
@@ -810,7 +818,7 @@ function renderModels(models) {
                     <div class="model-location">📍 ${model.city}</div>
                 </div>
                 
-                <div class="model-measurements">
+                <div class="model-measurements" id="measurements-${model.id}">
                     <div class="measurement">
                         <span class="label">Taille:</span>
                         <span class="value">${model.height}</span>
@@ -848,9 +856,12 @@ function renderModels(models) {
                     ${model.description}
                 </div>
                 
-                <div class="model-cta">
-                    <button class="btn btn-secondary btn-gallery" onclick="openGallery(${model.id})">
-                        📸 Voir la galerie (${Math.min((model.gallery || []).length, 18)} photos)
+                <div class="model-buttons">
+                    <button class="btn btn-mensurations" onclick="toggleMeasurements(${model.id})">
+                        📏 MENSURATIONS
+                    </button>
+                    <button class="btn btn-savoir-plus" onclick="navigateToModelPage(${model.id})">
+                        👁️ EN SAVOIR PLUS
                     </button>
                 </div>
             </div>
@@ -1336,3 +1347,146 @@ function initFormationCarousels() {
 
 
 // Formation carousels are initialized on DOMContentLoaded
+
+// Function to toggle measurements display
+function toggleMeasurements(modelId) {
+    const measurementsElement = document.getElementById(`measurements-${modelId}`);
+    if (measurementsElement) {
+        measurementsElement.classList.toggle('show');
+    }
+}
+
+// Function to navigate to individual model page
+function navigateToModelPage(modelId) {
+    // Store the model ID in sessionStorage for the individual page
+    sessionStorage.setItem('selectedModelId', modelId);
+    
+    // Navigate to the individual model page
+    window.location.href = `model-profile.html?id=${modelId}`;
+}
+
+// Function to create individual model page
+function createModelProfilePage() {
+    // Get model ID from URL parameters or sessionStorage
+    const urlParams = new URLSearchParams(window.location.search);
+    const modelId = parseInt(urlParams.get('id')) || parseInt(sessionStorage.getItem('selectedModelId'));
+    
+    if (!modelId || !window.modelsData) {
+        console.error('Model ID not found or data not loaded');
+        return;
+    }
+    
+    const model = window.modelsData.find(m => m.id === modelId);
+    if (!model) {
+        console.error('Model not found');
+        return;
+    }
+    
+    // Update page title
+    document.title = `${model.name} - MODELS ACADEMY MANAGEMENT`;
+    
+    // Handle both old (array) and new (categorized) gallery formats
+    let shootingImages, fashionShowImages, portfolioImages;
+    
+    if (model.gallery && typeof model.gallery === 'object' && !Array.isArray(model.gallery)) {
+        // New categorized format
+        shootingImages = model.gallery.shooting || [];
+        fashionShowImages = model.gallery.fashionShow || [];
+        portfolioImages = model.gallery.portfolio || [];
+    } else {
+        // Fallback: old array format - distribute evenly
+        const gallery = model.gallery || [];
+        shootingImages = gallery.slice(0, Math.ceil(gallery.length / 3));
+        fashionShowImages = gallery.slice(Math.ceil(gallery.length / 3), Math.ceil(2 * gallery.length / 3));
+        portfolioImages = gallery.slice(Math.ceil(2 * gallery.length / 3));
+    }
+    
+    // Create the page content
+    const profileContainer = document.getElementById('model-profile-content');
+    if (profileContainer) {
+        profileContainer.innerHTML = `
+            <div class="model-profile-header">
+                <div class="model-profile-image">
+                    <img src="${model.image}" alt="${model.name}" />
+                </div>
+                <div class="model-profile-info">
+                    <h1>${model.name}</h1>
+                    <div class="model-profile-specialty">${model.specialty}</div>
+                    <div class="model-profile-location">📍 ${model.city}</div>
+                    <div class="model-profile-experience">✨ ${model.experience} d'expérience</div>
+                    <div class="model-profile-description">${model.description}</div>
+                </div>
+            </div>
+            
+            <div class="model-profile-sections">
+                <div class="section-tabs">
+                    <button class="tab-btn active" onclick="showSection('shooting')">SHOOTING</button>
+                    <button class="tab-btn" onclick="showSection('fashion-show')">FASHION SHOW</button>
+                    <button class="tab-btn" onclick="showSection('portfolio')">PORTFOLIO</button>
+                </div>
+                
+                <div class="section-content">
+                    <div id="shooting-section" class="section active">
+                        <h2>📸 Photos de Shooting</h2>
+                        <div class="gallery-grid">
+                            ${shootingImages.map((image, index) => `
+                                <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Shooting ${index + 1}')">
+                                    <img src="${image}" alt="${model.name} - Shooting ${index + 1}" loading="lazy" onerror="this.style.display='none'">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div id="fashion-show-section" class="section">
+                        <h2>👗 Photos de Défilé</h2>
+                        <div class="gallery-grid">
+                            ${fashionShowImages.map((image, index) => `
+                                <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Défilé ${index + 1}')">
+                                    <img src="${image}" alt="${model.name} - Défilé ${index + 1}" loading="lazy" onerror="this.style.display='none'">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div id="portfolio-section" class="section">
+                        <h2>💼 Photos Professionnelles</h2>
+                        <div class="gallery-grid">
+                            ${portfolioImages.map((image, index) => `
+                                <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Portfolio ${index + 1}')">
+                                    <img src="${image}" alt="${model.name} - Portfolio ${index + 1}" loading="lazy" onerror="this.style.display='none'">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Function to show specific section in model profile
+function showSection(sectionName) {
+    // Remove active class from all tabs and sections
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+    
+    // Add active class to clicked tab and corresponding section
+    event.target.classList.add('active');
+    document.getElementById(`${sectionName}-section`).classList.add('active');
+}
+
+// Helper function to get total gallery count for both old and new formats
+function getGalleryCount(model) {
+    if (!model.gallery) return 0;
+    
+    if (typeof model.gallery === 'object' && !Array.isArray(model.gallery)) {
+        // New categorized format
+        const shooting = (model.gallery.shooting || []).length;
+        const fashionShow = (model.gallery.fashionShow || []).length;
+        const portfolio = (model.gallery.portfolio || []).length;
+        return Math.min(shooting + fashionShow + portfolio, 18);
+    } else {
+        // Old array format
+        return Math.min((model.gallery || []).length, 18);
+    }
+}

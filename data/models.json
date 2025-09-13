@@ -1,0 +1,71 @@
+{
+  "models": [
+    {
+      "id": 1,
+      "name": "Lucia Padanou",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.80m",
+      "bust": "85cm",
+      "waist": "60cm",
+      "hips": "88cm",
+      "shoeSize": "38 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "3 ans",
+      "languages": ["Francais", "Anglais"],
+      "image": "images/gallery/luciapola.jpg",
+      "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
+      "gallery": {
+        "shooting": [
+          "images/gallery/lucia.jpg",
+          "images/gallery/lucia2.jpg",
+          "images/gallery/lucia3.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/lucua1.jpg",
+          "images/gallery/lucia7.jpg",
+          "images/gallery/lucia8.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/lucia9.jpg",
+          "images/gallery/lucia10.jpg",
+          "images/gallery/lucia11.jpg"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "AZONWANOU Rita",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.80m",
+      "bust": "82cm",
+      "waist": "62cm",
+      "hips": "96cm",
+      "shoeSize": "41 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/rita.jpg",
+      "description": "Spécialisée dans la haute couture avec une élégance naturelle",
+      "gallery": {
+        "shooting": [
+          "images/gallery/rita2.jpg",
+          "images/gallery/rita3.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/rita4.jpg",
+          "images/gallery/rita5.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/rita6.jpg",
+          "images/gallery/rita7.jpg"
+        ]
+      }
+    }
+  ]
+}
