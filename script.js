@@ -53,15 +53,15 @@ function initNavigation() {
         });
     }
 
-    // Navbar scroll effect
+    // Resizable Navbar scroll effect (Aceternity UI inspired)
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.15)';
+        const scrollThreshold = 100;
+        
+        if (window.scrollY > scrollThreshold) {
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+            navbar.classList.remove('scrolled');
         }
     });
 }

@@ -59,26 +59,50 @@ p {
     padding: 0 2rem;
 }
 
-/* Navigation */
+/* Navigation - Resizable Navbar Effect */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1400px;
     background: transparent;
     backdrop-filter: none;
     border-bottom: none;
     z-index: 1000;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1rem 2rem;
+}
+
+.navbar.scrolled {
+    top: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    padding: 0.75rem 2rem;
+}
+
+@media (max-width: 768px) {
+    .navbar.scrolled {
+        width: 95%;
+        border-radius: 30px;
+        padding: 0.75rem 1rem;
+    }
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-logo {
@@ -90,6 +114,12 @@ p {
 .logo-icon {
     width: 40px;
     height: 40px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo-icon {
+    width: 35px;
+    height: 35px;
 }
 
 .nav-logo h2 {
@@ -97,20 +127,56 @@ p {
     font-weight: 700;
     color: var(--primary-color);
     margin: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.navbar.scrolled .nav-logo h2 {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-logo h2 {
+        font-size: 1rem;
+    }
+    .navbar.scrolled .nav-logo h2 {
+        font-size: 0.9rem;
+    }
 }
 
 .nav-menu {
     display: flex;
     gap: 2rem;
     align-items: center;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .nav-menu {
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 1rem;
+    }
+    .navbar.scrolled .nav-menu {
+        gap: 0.75rem;
+    }
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-primary);
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     position: relative;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.navbar.scrolled .nav-link {
+    font-size: 0.9rem;
 }
 
 .nav-link:hover,
