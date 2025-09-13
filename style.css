@@ -1198,27 +1198,32 @@ section {
 
 /* New Card Structure Styles */
 .model-basic-info {
-    padding: 20px;
+    padding: 20px 20px 15px 20px;
     text-align: center;
     border-bottom: 1px solid #f0f0f0;
+}
+
+.model-basic-info .btn-mensurations {
+    margin: 0 -20px;
+    border-radius: 0;
 }
 
 .model-name {
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--primary);
+    color: #1a1a1a;
     margin-bottom: 8px;
 }
 
 .model-specialty {
-    color: var(--accent);
+    color: #d4af37;
     font-weight: 500;
     margin-bottom: 15px;
     font-size: 0.95rem;
 }
 
 .btn-mensurations {
-    background: linear-gradient(135deg, var(--primary), #333);
+    background: linear-gradient(135deg, #1a1a1a, #333);
     color: white;
     border: none;
     padding: 12px 20px;
@@ -1228,15 +1233,16 @@ section {
     transition: all var(--transition);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin: 0 auto;
+    width: 100%;
     font-size: 0.9rem;
 }
 
 .btn-mensurations:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #333, var(--primary));
+    background: linear-gradient(135deg, #333, #1a1a1a);
 }
 
 .btn-mensurations i {
@@ -1259,15 +1265,19 @@ section {
 
 .measurement-group {
     margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .measurement {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    padding: 8px 0;
+    gap: 8px;
+    padding: 8px;
     border-bottom: 1px solid #e9ecef;
+    background: #fff;
+    border-radius: 4px;
 }
 
 .measurement:last-child {
@@ -1275,48 +1285,53 @@ section {
 }
 
 .measurement i {
-    color: var(--accent);
+    color: #d4af37;
     font-size: 1.1rem;
     width: 20px;
 }
 
 .measurement .label {
     font-weight: 500;
-    color: var(--primary);
+    color: #1a1a1a;
     min-width: 80px;
 }
 
 .measurement .value {
-    color: var(--text);
+    color: #333;
     font-weight: 600;
 }
 
 .model-characteristics {
     margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
 .characteristic {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    padding: 8px 0;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 4px;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .characteristic i {
-    color: var(--accent);
+    color: #d4af37;
     font-size: 1.1rem;
     width: 20px;
 }
 
 .characteristic .label {
     font-weight: 500;
-    color: var(--primary);
+    color: #1a1a1a;
     min-width: 80px;
 }
 
 .characteristic .value {
-    color: var(--text);
+    color: #333;
     font-weight: 600;
 }
 
@@ -1328,13 +1343,13 @@ section {
 }
 
 .model-languages i {
-    color: var(--accent);
+    color: #d4af37;
     font-size: 1.1rem;
 }
 
 .model-languages .label {
     font-weight: 500;
-    color: var(--primary);
+    color: #1a1a1a;
 }
 
 .languages-list {
@@ -1344,7 +1359,7 @@ section {
 }
 
 .language {
-    background: var(--accent);
+    background: #d4af37;
     color: white;
     padding: 4px 8px;
     border-radius: 12px;
@@ -1354,13 +1369,18 @@ section {
 
 /* Actions Section */
 .model-actions {
-    padding: 15px 20px 20px;
+    padding: 15px 0 0 0;
     text-align: center;
     border-top: 1px solid #f0f0f0;
 }
 
+.model-actions .btn-savoir-plus {
+    margin: 0;
+    border-radius: 0;
+}
+
 .btn-savoir-plus {
-    background: linear-gradient(135deg, var(--accent), #c8a027);
+    background: linear-gradient(135deg, #d4af37, #c8a027);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -1368,9 +1388,11 @@ section {
     font-weight: 600;
     cursor: pointer;
     transition: all var(--transition);
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    width: 100%;
     font-size: 0.9rem;
     text-decoration: none;
 }
@@ -1378,7 +1400,7 @@ section {
 .btn-savoir-plus:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-    background: linear-gradient(135deg, #c8a027, var(--accent));
+    background: linear-gradient(135deg, #c8a027, #d4af37);
 }
 
 .btn-savoir-plus i {
@@ -1446,56 +1468,7 @@ section {
     font-size: 0.9rem;
 }
 
-.model-measurements {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: var(--secondary-color);
-    border-radius: 8px;
-}
 
-.measurement {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.measurement .label {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.measurement .value {
-    font-weight: 600;
-    color: var(--accent-color);
-}
-
-.model-characteristics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.characteristic {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.characteristic .label {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    font-weight: 500;
-}
-
-.characteristic .value {
-    font-weight: 600;
-    color: var(--accent-color);
-}
 
 .model-languages {
     margin-bottom: 1.5rem;
