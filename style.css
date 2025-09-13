@@ -1156,29 +1156,9 @@ section {
 }
 
 .models-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    overflow-x: auto;
-    padding: 20px 0;
-    scroll-behavior: smooth;
-}
-
-.models-grid::-webkit-scrollbar {
-    height: 8px;
-}
-
-.models-grid::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
-}
-
-.models-grid::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-.models-grid::-webkit-scrollbar-thumb:hover {
-    background: #555;
 }
 
 .model-card {
@@ -1186,13 +1166,10 @@ section {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: var(--transition);
     background: var(--white);
     display: flex;
     flex-direction: column;
-    min-width: 280px;
-    max-width: 280px;
-    flex-shrink: 0;
 }
 
 .model-card:hover {
@@ -1208,10 +1185,10 @@ section {
 
 .model-image img {
     width: 100%;
-    height: 420px;
+    height: 350px;
     object-fit: cover;
     object-position: center 20%;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     border: none;
 }
 
