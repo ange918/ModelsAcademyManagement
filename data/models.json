@@ -21,7 +21,8 @@
         "shooting": [
           "images/gallery/lucia.jpg",
           "images/gallery/lucia2.jpg",
-          "images/gallery/lucia3.jpg"
+          "images/gallery/lucia3.jpg",
+          "images/gallery/lucia4.jpg"
         ],
         "fashionShow": [
           "images/gallery/lucua1.jpg",
@@ -55,15 +56,451 @@
       "gallery": {
         "shooting": [
           "images/gallery/rita2.jpg",
-          "images/gallery/rita3.jpg"
-        ],
-        "fashionShow": [
+          "images/gallery/rita3.jpg",
           "images/gallery/rita4.jpg",
           "images/gallery/rita5.jpg"
         ],
-        "portfolio": [
+        "fashionShow": [
           "images/gallery/rita6.jpg",
-          "images/gallery/rita7.jpg"
+          "images/gallery/rita7.jpg",
+          "images/gallery/rita8.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/rita9.jpg",
+          "images/gallery/rita10.jpg",
+          "images/gallery/rita12.jpg",
+          "images/gallery/rita17.jpg"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "TOUNDO Olerie",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.78m",
+      "bust": "84cm",
+      "waist": "69cm",
+      "hips": "102cm",
+      "shoeSize": "42 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "3 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/olerie1.jpg",
+      "description": "Experte en beauté et mode commerciale, visage photogénique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/olerie.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/olerie2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/olerie3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "EDJO Aurelle",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.75m",
+      "bust": "36cm",
+      "waist": "28cm",
+      "hips": "100cm",
+      "shoeSize": "41 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/shoot2.jpg",
+      "description": "Star des podiums internationaux avec une présence scénique exceptionnelle",
+      "gallery": {
+        "shooting": [
+          "images/gallery/amara-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/amara-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/amara-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "YEHOUN Barnard",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.87m",
+      "chest": "98cm",
+      "waist": "80cm",
+      "shoeSize": "45 EU",
+      "hairColor": "Châtain",
+      "eyeColor": "Bleu",
+      "city": "Cotonou",
+      "experience": "7 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/shoot7.jpg",
+      "description": "Référence en mode masculine de luxe, charisme et sophistication",
+      "gallery": {
+        "shooting": [
+          "images/gallery/barnard.jpg",
+          "images/gallery/barnard1.jpg",
+          "images/gallery/barnard2.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/barnard3.jpg",
+          "images/gallery/barnard4.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/barnard5.jpg",
+          "images/gallery/barnard6.jpg"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "AGBEWANOU Méyèvi Prisca",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.75m",
+      "bust": "80cm",
+      "waist": "78cm",
+      "hips": "90cm",
+      "shoeSize": "39 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/shoot5.jpg",
+      "description": "Ambassadrice beauté internationale, spécialiste des campagnes cosmétiques",
+      "gallery": {
+        "shooting": [
+          "images/gallery/maya-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/maya-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/maya-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "TRAORE Khady",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.79m",
+      "bust": "85cm",
+      "waist": "61cm",
+      "hips": "89cm",
+      "shoeSize": "38 EU",
+      "hairColor": "Blond",
+      "eyeColor": "Bleu",
+      "city": "London",
+      "experience": "9 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/creativie.jpg",
+      "description": "Élégance britannique, spécialiste de la haute couture européenne",
+      "gallery": {
+        "shooting": [
+          "images/gallery/emma-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/emma-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/emma-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "name": "AMAH Rodéric",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.85m",
+      "chest": "100cm",
+      "waist": "82cm",
+      "shoeSize": "45 EU",
+      "hairColor": "Brun",
+      "eyeColor": "Vert",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/defile5.jpg",
+      "description": "Modèle de luxe parisien, charisme et élégance française",
+      "gallery": {
+        "shooting": [
+          "images/gallery/alexandre-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/alexandre-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/alexandre-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "name": "HESSOU Cyr-God",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.90m",
+      "chest": "105cm",
+      "waist": "78cm",
+      "shoeSize": "45 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Anglais", "Francais"],
+      "image": "images/gallery/shoot11.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/marcus-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/marcus-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/marcus-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "name": "FAMIWA Dalil",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.89m",
+      "chest": "105cm",
+      "waist": "78cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Anglais", "Francais"],
+      "image": "images/gallery/shoot11.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/marcus-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/marcus-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/marcus-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "name": "HOUNDJREBO Rose",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.72m",
+      "bust": "85cm",
+      "waist": "61cm",
+      "hips": "89cm",
+      "shoeSize": "42 EU",
+      "hairColor": "Blond",
+      "eyeColor": "Bleu",
+      "city": "London",
+      "experience": "9 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/creativie.jpg",
+      "description": "Élégance britannique, spécialiste de la haute couture européenne",
+      "gallery": {
+        "shooting": [
+          "images/gallery/emma-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/emma-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/emma-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "name": "SAGBO Amen",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.84m",
+      "chest": "105cm",
+      "waist": "78cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Anglais", "Francais"],
+      "image": "images/gallery/shoot11.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/marcus-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/marcus-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/marcus-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "name": "MIDJNDOU Gildas",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.87m",
+      "chest": "105cm",
+      "waist": "78cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Anglais", "Francais"],
+      "image": "images/gallery/shoot11.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/marcus-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/marcus-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/marcus-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "name": "HOUNGBEDJI Abou-Bacar",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.86m",
+      "chest": "105cm",
+      "waist": "78cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Anglais", "Francais"],
+      "image": "images/gallery/shoot11.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/marcus-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/marcus-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/marcus-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "name": "GBEDEGLA Geordys",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.87m",
+      "chest": "105cm",
+      "waist": "78cm",
+      "shoeSize": "43 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Anglais", "Francais"],
+      "image": "images/gallery/shoot11.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/gallery/marcus-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/marcus-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/marcus-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "name": "MISSIHOUN Merveille",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.71m",
+      "bust": "85cm",
+      "waist": "61cm",
+      "hips": "89cm",
+      "shoeSize": "39 EU",
+      "hairColor": "Blond",
+      "eyeColor": "Bleu",
+      "city": "London",
+      "experience": "9 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/creativie.jpg",
+      "description": "Élégance britannique, spécialiste de la haute couture européenne",
+      "gallery": {
+        "shooting": [
+          "images/gallery/emma-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/emma-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/emma-3.jpg"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "name": "DATO Marie-Michelle",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.75m",
+      "bust": "85cm",
+      "waist": "61cm",
+      "hips": "89cm",
+      "shoeSize": "39 EU",
+      "hairColor": "Blond",
+      "eyeColor": "Bleu",
+      "city": "London",
+      "experience": "9 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/creativie.jpg",
+      "description": "Élégance britannique, spécialiste de la haute couture européenne",
+      "gallery": {
+        "shooting": [
+          "images/gallery/emma-1.jpg"
+        ],
+        "fashionShow": [
+          "images/gallery/emma-2.jpg"
+        ],
+        "portfolio": [
+          "images/gallery/emma-3.jpg"
         ]
       }
     }

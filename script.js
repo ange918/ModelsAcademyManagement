@@ -780,51 +780,56 @@ function renderModels(models) {
         // Determine measurements based on gender
         const measurements = model.gender === 'Femme' 
             ? `<div class="measurement">
+                 <i class='bx bx-body'></i>
                  <span class="label">Buste:</span>
                  <span class="value">${model.bust}</span>
                </div>
                <div class="measurement">
+                 <i class='bx bx-body'></i>
                  <span class="label">Taille:</span>
                  <span class="value">${model.waist}</span>
                </div>
                <div class="measurement">
+                 <i class='bx bx-body'></i>
                  <span class="label">Hanche:</span>
                  <span class="value">${model.hips}</span>
                </div>`
             : `<div class="measurement">
+                 <i class='bx bx-body'></i>
                  <span class="label">Poitrine:</span>
                  <span class="value">${model.chest}</span>
                </div>
                <div class="measurement">
+                 <i class='bx bx-body'></i>
                  <span class="label">Taille:</span>
                  <span class="value">${model.waist}</span>
                </div>`;
         
         modelCard.innerHTML = `
             <div class="model-image">
-                <img src="${model.image}" alt="${model.name} - Mannequin" loading="lazy" onerror="this.src='images/model-1.svg'" onload="console.log('Image loaded:', this.src)">
-                <div class="model-overlay">
-                    <div class="model-info">
-                        <h3>${model.name}</h3>
-                        <p class="model-specialty">${model.specialty}</p>
-                        <div class="model-gender">${model.gender}</div>
-                    </div>
-                </div>
+                <img src="${model.image}" alt="${model.name} - Mannequin" loading="lazy" onerror="this.src='images/model-1.svg'">
             </div>
-            <div class="model-details">
-                <div class="model-basic-info">
-                    <div class="model-name">${model.name}</div>
-                    <div class="model-specialty">${model.specialty}</div>
-                    <div class="model-location">📍 ${model.city}</div>
-                </div>
+            
+            <div class="model-basic-info">
+                <h3 class="model-name">${model.name}</h3>
+                <p class="model-specialty">Fashion & Haute Couture</p>
                 
-                <div class="model-measurements" id="measurements-${model.id}">
+                <button class="btn btn-mensurations" onclick="toggleMeasurements(${model.id})">
+                    <i class='bx bx-ruler'></i>
+                    MENSURATIONS
+                </button>
+            </div>
+            
+            <div class="model-measurements" id="measurements-${model.id}">
+                <div class="measurement-group">
                     <div class="measurement">
+                        <i class='bx bx-ruler'></i>
                         <span class="label">Taille:</span>
                         <span class="value">${model.height}</span>
                     </div>
                     ${measurements}
                     <div class="measurement">
+                        <i class='bx bx-store'></i>
                         <span class="label">Chaussure:</span>
                         <span class="value">${model.shoeSize}</span>
                     </div>
@@ -832,38 +837,41 @@ function renderModels(models) {
                 
                 <div class="model-characteristics">
                     <div class="characteristic">
+                        <i class='bx bx-palette'></i>
                         <span class="label">Cheveux:</span>
                         <span class="value">${model.hairColor}</span>
                     </div>
                     <div class="characteristic">
+                        <i class='bx bx-show'></i>
                         <span class="label">Yeux:</span>
                         <span class="value">${model.eyeColor}</span>
                     </div>
                     <div class="characteristic">
+                        <i class='bx bx-time'></i>
                         <span class="label">Expérience:</span>
                         <span class="value">${model.experience}</span>
+                    </div>
+                    <div class="characteristic">
+                        <i class='bx bx-map'></i>
+                        <span class="label">Ville:</span>
+                        <span class="value">${model.city}</span>
                     </div>
                 </div>
                 
                 <div class="model-languages">
+                    <i class='bx bx-world'></i>
                     <span class="label">Langues:</span>
                     <div class="languages-list">
                         ${model.languages.map(lang => `<span class="language">${lang}</span>`).join('')}
                     </div>
                 </div>
-                
-                <div class="model-description">
-                    ${model.description}
-                </div>
-                
-                <div class="model-buttons">
-                    <button class="btn btn-mensurations" onclick="toggleMeasurements(${model.id})">
-                        📏 MENSURATIONS
-                    </button>
-                    <button class="btn btn-savoir-plus" onclick="navigateToModelPage(${model.id})">
-                        👁️ EN SAVOIR PLUS
-                    </button>
-                </div>
+            </div>
+            
+            <div class="model-actions">
+                <button class="btn btn-savoir-plus" onclick="navigateToModelPage(${model.id})">
+                    <i class='bx bx-info-circle'></i>
+                    EN SAVOIR PLUS
+                </button>
             </div>
         `;
         
