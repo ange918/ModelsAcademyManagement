@@ -275,6 +275,56 @@
             margin: 3px 0;
             transition: 0.3s;
         }
+        
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+        
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #1e3a8a;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-back span {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn-back:hover span {
+            transform: translateX(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .back-to-home {
+                top: 15px;
+                left: 15px;
+            }
+            
+            .btn-back {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -302,6 +352,11 @@
 
     <!-- Hero Section -->
     <section class="formation-hero">
+        <div class="back-to-home">
+            <a href="../index.html" class="btn-back">
+                <span>←</span> Retour à l'accueil
+            </a>
+        </div>
         <h1>Formation Développement Personnel</h1>
         <p>Construisez une carrière durable avec nos formations en développement personnel, media training et gestion de votre image professionnelle</p>
     </section>

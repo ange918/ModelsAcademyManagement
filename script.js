@@ -288,19 +288,11 @@ async function loadModelsData() {
             data = await response.json();
             console.log('✅ Données chargées depuis le fichier JSON');
             
-            // Vérifier que Lucia Padanou est présente
-            const lucia = data.models.find(m => m.name.includes('Lucia') || m.name.includes('Padanou'));
-            if (lucia) {
-                console.log('✅ Lucia Padanou trouvée dans le JSON:', lucia.name);
-            } else {
-                console.log('⚠️ Lucia Padanou non trouvée dans le JSON, utilisation des données intégrées');
-                data = getEmbeddedModelsData();
-            }
+            console.log('✅ Données chargées depuis le fichier JSON avec', data.models.length, 'mannequins');
             
         } catch (fetchError) {
-            console.error('❌ Impossible de charger le fichier JSON, utilisation des données intégrées...', fetchError);
-            // Fallback: use embedded data
-            data = getEmbeddedModelsData();
+            console.error('❌ Erreur lors du chargement du fichier JSON:', fetchError);
+            throw new Error('Impossible de charger les données des mannequins depuis le serveur');
         }
         
         if (!data.models || !Array.isArray(data.models)) {
@@ -325,441 +317,21 @@ async function loadModelsData() {
         renderModels(data.models);
     } catch (error) {
         console.error('Erreur détaillée lors du chargement des données des mannequins:', error);
-        // Fallback: use embedded data if everything else fails
-        try {
-            console.log('Utilisation des données intégrées comme fallback...');
-            const fallbackData = getEmbeddedModelsData();
-            window.modelsData = fallbackData.models;
-            renderModels(fallbackData.models);
-        } catch (fallbackError) {
-            console.error('Erreur avec les données intégrées:', fallbackError);
-            // Show error message
-            const modelsGrid = document.getElementById('models-grid');
-            if (modelsGrid) {
-                modelsGrid.innerHTML = `
-                    <div class="error-message">
-                        <h3>Erreur lors du chargement des mannequins</h3>
-                        <p>Détails: ${error.message}</p>
-                        <p>Veuillez réessayer plus tard ou contacter l'administrateur.</p>
-                    </div>
-                `;
-            }
+        // Show error message
+        const modelsGrid = document.getElementById('models-grid');
+        if (modelsGrid) {
+            modelsGrid.innerHTML = `
+                <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement des mannequins</h3>
+                    <p style="margin-bottom: 10px;">Impossible de charger les données depuis le serveur.</p>
+                    <p>Veuillez réessayer plus tard ou contacter l'administrateur.</p>
+                    <button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #1e3a8a; color: white; border: none; border-radius: 5px; cursor: pointer;">Réessayer</button>
+                </div>
+            `;
         }
     }
 }
 
-// Embedded models data as fallback
-function getEmbeddedModelsData() {
-    return {
-        "models": [
-            {
-                "id": 1,
-                "name": "Lucia Padanou",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.80m",
-                "bust": "85cm",
-                "waist": "60cm",
-                "hips": "88cm",
-                "shoeSize": "38 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "3 ans",
-                "languages": ["Francais", "Anglais"],
-                "image": "images/gallery/luciapola.jpg",
-                "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
-                "gallery": [
-                    "images/gallery/lucia.jpg",
-                    "images/gallery/lucia2.jpg",
-                    "images/gallery/lucia3.jpg",
-                    "images/gallery/lucia4.jpg",
-                    "images/gallery/lucua1.jpg",
-                    "images/gallery/lucia7.jpg",
-                    "images/gallery/lucia8.jpg",
-                    "images/gallery/lucia9.jpg",
-                    "images/gallery/lucia10.jpg",
-                    "images/gallery/lucia11.jpg"
-                ]
-            },
-            {
-                "id": 2,
-                "name": "AZONWANOU Rita",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.80m",
-                "bust": "82cm",
-                "waist": "62cm",
-                "hips": "96cm",
-                "shoeSize": "41 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "2 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/rita.jpg",
-                "description": "Specialisee dans la haute couture  avec une elegance naturelle",
-                "gallery": [
-                    "images/gallery/rita2.jpg",
-                    "images/gallery/rita (2).jpg",
-                    "images/gallery/rita3.jpg",
-                    "images/gallery/rita4.jpg",
-                    "images/gallery/rita5.jpg",
-                    "images/gallery/rita6.jpg",
-                    "images/gallery/rita7.jpg",
-                    "images/gallery/rita8.jpg",
-                    "images/gallery/rita9.jpg",
-                    "images/gallery/rita10.jpg",
-                    "images/gallery/rita12.jpg",
-                    "images/gallery/rita17.jpg",
-                  
-                ]
-            },
-            {
-                "id": 3,
-                "name": "TOUNDO Olerie",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.78m",
-                "bust": "84cm",
-                "waist": "69cm",
-                "hips": "102cm",
-                "shoeSize": "42 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": " 3ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/olerie1.jpg",
-                "description": "Experte en beaute et mode commerciale, visage photogenique",
-                "gallery": [
-                    "images/gallery/olerie.jpg",
-                    "images/gallery/olerie2.jpg",
-                    "images/gallery/olerie3.jpg",
-                   
-                ]
-            },
-            {
-                "id": 4,
-                "name": "EDJO Aurelle",
-                "gender": "Femme",
-                "specialty": "Runway & Editorial",
-                "height": "1.75m",
-                "bust": "36cm",
-                "waist": "28cm",
-                "hips": "100cm",
-                "shoeSize": "41 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "2 ans",
-                "languages": [ "Francais"],
-                "image": "images/gallery/shoot2.jpg",
-                "description": "Star des podiums internationaux avec une presence scenique exceptionnelle",
-                "gallery": [
-                    "images/gallery/amara-1.jpg",
-                    "images/gallery/amara-2.jpg",
-                    "images/gallery/amara-3.jpg"
-                ]
-            },
-            {
-                "id": 5,
-                "name": "YEHOUN Barnard",
-                "gender": "Homme",
-                "specialty": "Men's Fashion & Luxury",
-                "height": "1.87m",
-                "chest": "98cm",
-                "waist": "80cm",
-                "shoeSize": "45 EU",
-                "hairColor": "Chataign",
-                "eyeColor": "Bleu",
-                "city": "Cotonou",
-                "experience": "7 ans",
-                "languages": [ "Francais"],
-                "image": "images/gallery/shoot7.jpg",
-                "description": "Reference en mode masculine de luxe, charisme et sophistication",
-                "gallery": [
-                    "images/gallery/barnard.jpg",
-                    "images/gallery/barnard1.jpg",
-                    "images/gallery/barnard2.jpg",
-                    "images/gallery/barnard3.jpg",
-                    "images/gallery/barnard4.jpg",
-                    "images/gallery/barnard5.jpg",
-                    "images/gallery/barnard6.jpg",
-                ]
-            },
-            {
-                "id": 6,
-                "name": "AGBEWANOU Méyèvi Prisca",
-                "gender": "Femme",
-                "specialty": "Beauty & Cosmetics",
-                "height": "1.75m",
-                "bust": "80cm",
-                "waist": "78cm",
-                "hips": "90cm",
-                "shoeSize": "39 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "2 ans",
-                "languages": [ "Francais"],
-                "image": "images/gallery/shoot5.jpg",
-                "description": "Ambassadrice beaute internationale, specialiste des campagnes cosmetiques",
-                "gallery": [
-                    "images/gallery/maya-1.jpg",
-                    "images/gallery/maya-2.jpg",
-                    "images/gallery/maya-3.jpg"
-                ]
-            },
-            {
-                "id": 7,
-                "name": "TRAORE Khady",
-                "gender": "Femme",
-                "specialty": "High Fashion & Couture",
-                "height": "1.79m",
-                "bust": "85cm",
-                "waist": "61cm",
-                "hips": "89cm",
-                "shoeSize": "38 EU",
-                "hairColor": "Blond",
-                "eyeColor": "Bleu",
-                "city": "London",
-                "experience": "9 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/creativie.jpg",
-                "description": "Elegance britannique, specialiste de la haute couture europeenne",
-                "gallery": [
-                    "images/gallery/emma-1.jpg",
-                    "images/gallery/emma-2.jpg",
-                    "images/gallery/emma-3.jpg"
-                ]
-            },
-            {
-                "id": 8,
-                "name": "AMAH Rodéric",
-                "gender": "Homme",
-                "specialty": "Luxury & Editorial",
-                "height": "1.85m",
-                "chest": "100cm",
-                "waist": "82cm",
-                "shoeSize": "45 EU",
-                "hairColor": "Brun",
-                "eyeColor": "Vert",
-                "city": "Cotonou",
-                "experience": "2 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/defile5.jpg",
-                "description": "Modele de luxe parisien, charisme et elegance francaise",
-                "gallery": [
-                    "images/gallery/alexandre-1.jpg",
-                    "images/gallery/alexandre-2.jpg",
-                    "images/gallery/alexandre-3.jpg"
-                ]
-            },
-            {
-                "id": 9,
-                "name": "HESSOU Cyr-God",
-                "gender": "Homme",
-                "specialty": "Commercial & Fitness",
-                "height": "1.90m",
-                "chest": "105cm",
-                "waist": "78cm",
-                "shoeSize": "45 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "1 ans",
-                "languages": ["Anglais", "Francais"],
-                "image": "images/gallery/shoot11.jpg",
-                "description": "Modele fitness et commercial, physique athletique",
-                "gallery": [
-                    "images/gallery/marcus-1.jpg",
-                    "images/gallery/marcus-2.jpg",
-                    "images/gallery/marcus-3.jpg"
-                ]
-            },
-            {
-                "id": 9,
-                "name": "FAMIWA Dalil",
-                "gender": "Homme",
-                "specialty": "Commercial & Fitness",
-                "height": "1.89m",
-                "chest": "105cm",
-                "waist": "78cm",
-                "shoeSize": "44 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "1 ans",
-                "languages": ["Anglais", "Francais"],
-                "image": "images/gallery/shoot11.jpg",
-                "description": "Modele fitness et commercial, physique athletique",
-                "gallery": [
-                    "images/gallery/marcus-1.jpg",
-                    "images/gallery/marcus-2.jpg",
-                    "images/gallery/marcus-3.jpg"
-                ]
-            },
-            {
-                "id": 10,
-                "name": "HOUNDJREBO Rose",
-                "gender": "Femme",
-                "specialty": "High Fashion & Couture",
-                "height": "1.72m",
-                "bust": "85cm",
-                "waist": "61cm",
-                "hips": "89cm",
-                "shoeSize": "42 EU",
-                "hairColor": "Blond",
-                "eyeColor": "Bleu",
-                "city": "London",
-                "experience": "9 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/creativie.jpg",
-                "description": "Elegance britannique, specialiste de la haute couture europeenne",
-                "gallery": [
-                    "images/gallery/emma-1.jpg",
-                    "images/gallery/emma-2.jpg",
-                    "images/gallery/emma-3.jpg"
-                ]
-            },
-            {
-                "id": 11,
-                "name": "SAGBO Amen",
-                "gender": "Homme",
-                "specialty": "Commercial & Fitness",
-                "height": "1.84m",
-                "chest": "105cm",
-                "waist": "78cm",
-                "shoeSize": "44 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "1 ans",
-                "languages": ["Anglais", "Francais"],
-                "image": "images/gallery/shoot11.jpg",
-                "description": "Modele fitness et commercial, physique athletique",
-                "gallery": [
-                    "images/gallery/marcus-1.jpg",
-                    "images/gallery/marcus-2.jpg",
-                    "images/gallery/marcus-3.jpg"
-                ]
-            },
-            {
-                "id": 12,
-                "name": "MIDJNDOU Gildas",
-                "gender": "Homme",
-                "specialty": "Commercial & Fitness",
-                "height": "1.87m",
-                "chest": "105cm",
-                "waist": "78cm",
-                "shoeSize": "44 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "1 ans",
-                "languages": ["Anglais", "Francais"],
-                "image": "images/gallery/shoot11.jpg",
-                "description": "Modele fitness et commercial, physique athletique",
-                "gallery": [
-                    "images/gallery/marcus-1.jpg",
-                    "images/gallery/marcus-2.jpg",
-                    "images/gallery/marcus-3.jpg"
-                ]
-            },
-            {
-                "id": 13,
-                "name": "HOUNGBEDJI Abou-Bacar",
-                "gender": "Homme",
-                "specialty": "Commercial & Fitness",
-                "height": "1.86m",
-                "chest": "105cm",
-                "waist": "78cm",
-                "shoeSize": "44 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "1 ans",
-                "languages": ["Anglais", "Francais"],
-                "image": "images/gallery/shoot11.jpg",
-                "description": "Modele fitness et commercial, physique athletique",
-                "gallery": [
-                    "images/gallery/marcus-1.jpg",
-                    "images/gallery/marcus-2.jpg",
-                    "images/gallery/marcus-3.jpg"
-                ]
-            },
-            {
-                "id": 14,
-                "name": "GBEDEGLA Geordys",
-                "gender": "Homme",
-                "specialty": "Commercial & Fitness",
-                "height": "1.87m",
-                "chest": "105cm",
-                "waist": "78cm",
-                "shoeSize": "43 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "1 ans",
-                "languages": ["Anglais", "Francais"],
-                "image": "images/gallery/shoot11.jpg",
-                "description": "Modele fitness et commercial, physique athletique",
-                "gallery": [
-                    "images/gallery/marcus-1.jpg",
-                    "images/gallery/marcus-2.jpg",
-                    "images/gallery/marcus-3.jpg"
-                ]
-            },
-            {
-                "id": 15,
-                "name": "MISSIHOUN Merveille",
-                "gender": "Femme",
-                "specialty": "High Fashion & Couture",
-                "height": "1.71m",
-                "bust": "85cm",
-                "waist": "61cm",
-                "hips": "89cm",
-                "shoeSize": "39 EU",
-                "hairColor": "Blond",
-                "eyeColor": "Bleu",
-                "city": "London",
-                "experience": "9 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/creativie.jpg",
-                "description": "Elegance britannique, specialiste de la haute couture europeenne",
-                "gallery": [
-                    "images/gallery/emma-1.jpg",
-                    "images/gallery/emma-2.jpg",
-                    "images/gallery/emma-3.jpg"
-                ]
-            },
-            {
-                "id": 16,
-                "name": "DATO Marie-Michelle",
-                "gender": "Femme",
-                "specialty": "High Fashion & Couture",
-                "height": "1.75m",
-                "bust": "85cm",
-                "waist": "61cm",
-                "hips": "89cm",
-                "shoeSize": "39 EU",
-                "hairColor": "Blond",
-                "eyeColor": "Bleu",
-                "city": "London",
-                "experience": "9 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/creativie.jpg",
-                "description": "Elegance britannique, specialiste de la haute couture europeenne",
-                "gallery": [
-                    "images/gallery/emma-1.jpg",
-                    "images/gallery/emma-2.jpg",
-                    "images/gallery/emma-3.jpg"
-                ]
-            },
-        ]
-    };
-}
 
 // Function to render models from JSON data
 function renderModels(models) {
@@ -777,32 +349,50 @@ function renderModels(models) {
         const modelCard = document.createElement('div');
         modelCard.className = 'model-card fade-in';
         
-        // Determine measurements based on gender
-        const measurements = model.gender === 'Femme' 
-            ? `<div class="measurement">
-                 <i class='bx bx-body'></i>
-                 <span class="label">Buste:</span>
-                 <span class="value">${model.bust}</span>
+        // Build improved measurements HTML based on gender
+        const bodyMeasurements = model.gender === 'Femme' 
+            ? `<div class="measurement-row">
+                 <div class="measurement-item">
+                   <i class='bx bx-female-sign'></i>
+                   <span class="label">Buste:</span>
+                   <span class="value">${model.bust}</span>
+                 </div>
+                 <div class="measurement-item">
+                   <i class='bx bx-diamond'></i>
+                   <span class="label">Taille:</span>
+                   <span class="value">${model.waist}</span>
+                 </div>
                </div>
-               <div class="measurement">
-                 <i class='bx bx-body'></i>
-                 <span class="label">Taille:</span>
-                 <span class="value">${model.waist}</span>
-               </div>
-               <div class="measurement">
-                 <i class='bx bx-body'></i>
-                 <span class="label">Hanche:</span>
-                 <span class="value">${model.hips}</span>
+               <div class="measurement-row">
+                 <div class="measurement-item">
+                   <i class='bx bx-body'></i>
+                   <span class="label">Hanche:</span>
+                   <span class="value">${model.hips}</span>
+                 </div>
+                 <div class="measurement-item">
+                   <i class='bx bx-closet'></i>
+                   <span class="label">Chaussure:</span>
+                   <span class="value">${model.shoeSize}</span>
+                 </div>
                </div>`
-            : `<div class="measurement">
-                 <i class='bx bx-body'></i>
-                 <span class="label">Poitrine:</span>
-                 <span class="value">${model.chest}</span>
+            : `<div class="measurement-row">
+                 <div class="measurement-item">
+                   <i class='bx bx-male-sign'></i>
+                   <span class="label">Poitrine:</span>
+                   <span class="value">${model.chest}</span>
+                 </div>
+                 <div class="measurement-item">
+                   <i class='bx bx-diamond'></i>
+                   <span class="label">Taille:</span>
+                   <span class="value">${model.waist}</span>
+                 </div>
                </div>
-               <div class="measurement">
-                 <i class='bx bx-body'></i>
-                 <span class="label">Taille:</span>
-                 <span class="value">${model.waist}</span>
+               <div class="measurement-row">
+                 <div class="measurement-item">
+                   <i class='bx bx-closet'></i>
+                   <span class="label">Chaussure:</span>
+                   <span class="value">${model.shoeSize}</span>
+                 </div>
                </div>`;
         
         modelCard.innerHTML = `
@@ -821,48 +411,61 @@ function renderModels(models) {
             </div>
             
             <div class="model-measurements" id="measurements-${model.id}">
-                <div class="measurement-group">
-                    <div class="measurement">
-                        <i class='bx bx-ruler'></i>
-                        <span class="label">Taille:</span>
-                        <span class="value">${model.height}</span>
+                <div class="measurements-container">
+                    <div class="measurement-section">
+                        <h4 class="measurement-title">
+                            <i class='bx bx-ruler'></i>
+                            Mensurations
+                        </h4>
+                        <div class="measurement-row">
+                            <div class="measurement-item">
+                                <i class='bx bx-ruler'></i>
+                                <span class="label">Taille:</span>
+                                <span class="value">${model.height}</span>
+                            </div>
+                        </div>
+                        ${bodyMeasurements}
                     </div>
-                    ${measurements}
-                    <div class="measurement">
-                        <i class='bx bx-store'></i>
-                        <span class="label">Chaussure:</span>
-                        <span class="value">${model.shoeSize}</span>
+                    
+                    <div class="characteristics-section">
+                        <h4 class="measurement-title">
+                            <i class='bx bx-user'></i>
+                            Caractéristiques
+                        </h4>
+                        <div class="measurement-row">
+                            <div class="measurement-item">
+                                <i class='bx bx-palette'></i>
+                                <span class="label">Cheveux:</span>
+                                <span class="value">${model.hairColor}</span>
+                            </div>
+                            <div class="measurement-item">
+                                <i class='bx bx-show'></i>
+                                <span class="label">Yeux:</span>
+                                <span class="value">${model.eyeColor}</span>
+                            </div>
+                        </div>
+                        <div class="measurement-row">
+                            <div class="measurement-item">
+                                <i class='bx bx-time'></i>
+                                <span class="label">Expérience:</span>
+                                <span class="value">${model.experience}</span>
+                            </div>
+                            <div class="measurement-item">
+                                <i class='bx bx-map'></i>
+                                <span class="label">Ville:</span>
+                                <span class="value">${model.city}</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="model-characteristics">
-                    <div class="characteristic">
-                        <i class='bx bx-palette'></i>
-                        <span class="label">Cheveux:</span>
-                        <span class="value">${model.hairColor}</span>
-                    </div>
-                    <div class="characteristic">
-                        <i class='bx bx-show'></i>
-                        <span class="label">Yeux:</span>
-                        <span class="value">${model.eyeColor}</span>
-                    </div>
-                    <div class="characteristic">
-                        <i class='bx bx-time'></i>
-                        <span class="label">Expérience:</span>
-                        <span class="value">${model.experience}</span>
-                    </div>
-                    <div class="characteristic">
-                        <i class='bx bx-map'></i>
-                        <span class="label">Ville:</span>
-                        <span class="value">${model.city}</span>
-                    </div>
-                </div>
-                
-                <div class="model-languages">
-                    <i class='bx bx-world'></i>
-                    <span class="label">Langues:</span>
-                    <div class="languages-list">
-                        ${model.languages.map(lang => `<span class="language">${lang}</span>`).join('')}
+                    
+                    <div class="languages-section">
+                        <h4 class="measurement-title">
+                            <i class='bx bx-world'></i>
+                            Langues
+                        </h4>
+                        <div class="languages-list">
+                            ${model.languages.map(lang => `<span class="language-badge">${lang}</span>`).join('')}
+                        </div>
                     </div>
                 </div>
             </div>
