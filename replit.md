@@ -21,7 +21,7 @@ The application follows a traditional multi-page website architecture built with
 ### Design System
 The website implements a sophisticated design system featuring:
 
-- **Typography**: Space Grotesk font family for modern, professional appearance
+- **Typography**: Georgia serif font family for elegant, professional appearance
 - **Color Palette**: Elegant color scheme with primary black (#1a1a1a), accent gold (#d4af37), and navy blue (#1e3a8a)
 - **Animation Framework**: Fade-in animations and smooth transitions for enhanced user experience
 - **Visual Hierarchy**: Strategic use of typography scales and spacing for content organization
@@ -40,7 +40,7 @@ The website implements a sophisticated design system featuring:
 ## External Dependencies
 
 ### Font Services
-- **Google Fonts**: Space Grotesk font family loaded via CDN for typography consistency
+- **System Fonts**: Georgia serif font family for elegant typography and excellent readability
 
 ### Media Assets
 - **Image Dependencies**: Local image storage for model portfolios and hero backgrounds

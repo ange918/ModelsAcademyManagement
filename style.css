@@ -20,7 +20,7 @@
 }
 
 body {
-    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-family: 'Georgia', 'Times New Roman', serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--white);
