@@ -1,3 +1,174 @@
+// Embedded models data for fallback when fetch fails (file:// protocol)
+function getEmbeddedModelsData() {
+    return {
+        "models": [
+            {
+                "id": 1,
+                "name": "Lucia Padanou",
+                "gender": "Femme",
+                "specialty": "Fashion & Haute Couture",
+                "height": "1.80m",
+                "bust": "85cm",
+                "waist": "60cm",
+                "hips": "88cm",
+                "shoeSize": "38 EU",
+                "hairColor": "Noir",
+                "eyeColor": "Marron",
+                "city": "Cotonou",
+                "experience": "3 ans",
+                "languages": ["Francais", "Anglais"],
+                "image": "images/gallery/luciapola.jpg",
+                "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
+                "gallery": {
+                    "shooting": [
+                        "images/gallery/lucia.jpg",
+                        "images/gallery/lucia2.jpg",
+                        "images/gallery/lucia3.jpg",
+                        "images/gallery/lucia4.jpg"
+                    ],
+                    "fashionShow": [
+                        "images/gallery/lucua1.jpg",
+                        "images/gallery/lucia7.jpg",
+                        "images/gallery/lucia8.jpg"
+                    ],
+                    "portfolio": [
+                        "images/gallery/lucia9.jpg",
+                        "images/gallery/lucia10.jpg",
+                        "images/gallery/lucia11.jpg"
+                    ]
+                }
+            },
+            {
+                "id": 2,
+                "name": "AZONWANOU Rita",
+                "gender": "Femme",
+                "specialty": "Fashion & Haute Couture",
+                "height": "1.80m",
+                "bust": "82cm",
+                "waist": "62cm",
+                "hips": "96cm",
+                "shoeSize": "41 EU",
+                "hairColor": "Noir",
+                "eyeColor": "Marron",
+                "city": "Cotonou",
+                "experience": "2 ans",
+                "languages": ["Francais"],
+                "image": "images/gallery/rita.jpg",
+                "description": "Spécialisée dans la haute couture avec une élégance naturelle",
+                "gallery": {
+                    "shooting": [
+                        "images/gallery/rita2.jpg",
+                        "images/gallery/rita3.jpg",
+                        "images/gallery/rita4.jpg",
+                        "images/gallery/rita5.jpg"
+                    ],
+                    "fashionShow": [
+                        "images/gallery/rita6.jpg",
+                        "images/gallery/rita7.jpg",
+                        "images/gallery/rita8.jpg"
+                    ],
+                    "portfolio": [
+                        "images/gallery/rita9.jpg",
+                        "images/gallery/rita10.jpg",
+                        "images/gallery/rita12.jpg",
+                        "images/gallery/rita17.jpg"
+                    ]
+                }
+            },
+            {
+                "id": 3,
+                "name": "TOUNDO Olerie",
+                "gender": "Femme",
+                "specialty": "Fashion & Haute Couture",
+                "height": "1.78m",
+                "bust": "84cm",
+                "waist": "69cm",
+                "hips": "102cm",
+                "shoeSize": "42 EU",
+                "hairColor": "Noir",
+                "eyeColor": "Marron",
+                "city": "Cotonou",
+                "experience": "3 ans",
+                "languages": ["Francais"],
+                "image": "images/gallery/olerie1.jpg",
+                "description": "Experte en beauté et mode commerciale, visage photogénique",
+                "gallery": {
+                    "shooting": [
+                        "images/gallery/olerie.jpg"
+                    ],
+                    "fashionShow": [
+                        "images/gallery/olerie2.jpg"
+                    ],
+                    "portfolio": [
+                        "images/gallery/olerie3.jpg"
+                    ]
+                }
+            },
+            {
+                "id": 4,
+                "name": "EDJO Aurelle",
+                "gender": "Femme",
+                "specialty": "Fashion & Haute Couture",
+                "height": "1.75m",
+                "bust": "36cm",
+                "waist": "28cm",
+                "hips": "100cm",
+                "shoeSize": "41 EU",
+                "hairColor": "Noir",
+                "eyeColor": "Marron",
+                "city": "Cotonou",
+                "experience": "2 ans",
+                "languages": ["Francais"],
+                "image": "images/gallery/shoot2.jpg",
+                "description": "Star des podiums internationaux avec une présence scénique exceptionnelle",
+                "gallery": {
+                    "shooting": [
+                        "images/gallery/amara-1.jpg"
+                    ],
+                    "fashionShow": [
+                        "images/gallery/amara-2.jpg"
+                    ],
+                    "portfolio": [
+                        "images/gallery/amara-3.jpg"
+                    ]
+                }
+            },
+            {
+                "id": 5,
+                "name": "YEHOUN Barnard",
+                "gender": "Homme",
+                "specialty": "Fashion & Haute Couture",
+                "height": "1.87m",
+                "chest": "98cm",
+                "waist": "80cm",
+                "shoeSize": "45 EU",
+                "hairColor": "Châtain",
+                "eyeColor": "Bleu",
+                "city": "Cotonou",
+                "experience": "7 ans",
+                "languages": ["Francais"],
+                "image": "images/gallery/shoot7.jpg",
+                "description": "Référence en mode masculine de luxe, charisme et sophistication",
+                "gallery": {
+                    "shooting": [
+                        "images/gallery/barnard.jpg",
+                        "images/gallery/barnard1.jpg",
+                        "images/gallery/barnard2.jpg"
+                    ],
+                    "fashionShow": [
+                        "images/gallery/barnard3.jpg",
+                        "images/gallery/barnard4.jpg"
+                    ],
+                    "portfolio": [
+                        "images/gallery/barnard5.jpg",
+                        "images/gallery/barnard6.jpg"
+                    ]
+                }
+            }
+        ]
+    };
+}
+
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
@@ -15,11 +186,22 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (window.location.pathname.includes('model-profile.html') || document.getElementById('model-profile-content')) {
         console.log('Page de profil de mannequin détectée');
         // Load data first, then create profile page
-        setTimeout(() => {
-            loadModelsData().then(() => {
-                createModelProfilePage();
-            });
-        }, 100);
+        loadModelsData().then(() => {
+            console.log('Données chargées, création de la page de profil...');
+            createModelProfilePage();
+        }).catch(error => {
+            console.error('Erreur lors du chargement des données:', error);
+            const profileContainer = document.getElementById('model-profile-content');
+            if (profileContainer) {
+                profileContainer.innerHTML = `
+                    <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
+                        <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement</h3>
+                        <p style="margin-bottom: 10px;">Impossible de charger les données des mannequins.</p>
+                        <p>Veuillez <a href="mannequins.html" style="color: #1e3a8a;">retourner à la liste</a> et réessayer.</p>
+                    </div>
+                `;
+            }
+        });
     } else {
         console.log('Page des mannequins non detectee');
     }
@@ -84,21 +266,26 @@ function initScrollAnimations() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                // Only add visible class if not already visible to prevent flickering
+                if (!entry.target.classList.contains('visible')) {
+                    entry.target.classList.add('visible');
+                }
                 
                 // Add staggered animation for grid items
                 const gridItems = entry.target.querySelectorAll('.valeur-card, .formation-card, .model-card');
                 gridItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add('visible');
-                    }, index * 100);
+                    if (!item.classList.contains('visible')) {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 50); // Reduced delay to prevent flickering
+                    }
                 });
             }
         });
     }, observerOptions);
 
-    // Observe all fade-in elements
-    const fadeElements = document.querySelectorAll('.fade-in');
+    // Observe all fade-in elements that are not already visible
+    const fadeElements = document.querySelectorAll('.fade-in:not(.visible)');
     fadeElements.forEach(element => {
         observer.observe(element);
     });
@@ -292,7 +479,11 @@ async function loadModelsData() {
             
         } catch (fetchError) {
             console.error('❌ Erreur lors du chargement du fichier JSON:', fetchError);
-            throw new Error('Impossible de charger les données des mannequins depuis le serveur');
+            console.log('🔄 Tentative de chargement des données intégrées...');
+            
+            // Fallback: Use embedded data if fetch fails (for file:// protocol)
+            data = getEmbeddedModelsData();
+            console.log('✅ Données chargées depuis les données intégrées avec', data.models.length, 'mannequins');
         }
         
         if (!data.models || !Array.isArray(data.models)) {
@@ -315,6 +506,7 @@ async function loadModelsData() {
         }
         
         renderModels(data.models);
+        return data.models; // Return the data for promise chain
     } catch (error) {
         console.error('Erreur détaillée lors du chargement des données des mannequins:', error);
         // Show error message
@@ -329,6 +521,7 @@ async function loadModelsData() {
                 </div>
             `;
         }
+        throw error; // Re-throw to reject the promise
     }
 }
 
@@ -347,7 +540,7 @@ function renderModels(models) {
     models.forEach((model, index) => {
         console.log(`Rendu mannequin ${index + 1}:`, model.name, 'ID:', model.id);
         const modelCard = document.createElement('div');
-        modelCard.className = 'model-card fade-in';
+        modelCard.className = 'model-card fade-in visible'; // Add visible class immediately
         
         // Build improved measurements HTML based on gender
         const bodyMeasurements = model.gender === 'Femme' 
@@ -481,8 +674,10 @@ function renderModels(models) {
         modelsGrid.appendChild(modelCard);
     });
     
-    // Re-initialize animations for new elements
-    initScrollAnimations();
+    // Re-initialize animations for new elements (only if not already visible)
+    setTimeout(() => {
+        initScrollAnimations();
+    }, 100);
 }
 
 // Function to open model gallery
@@ -982,14 +1177,45 @@ function createModelProfilePage() {
     const urlParams = new URLSearchParams(window.location.search);
     const modelId = parseInt(urlParams.get('id')) || parseInt(sessionStorage.getItem('selectedModelId'));
     
+    console.log('createModelProfilePage appelée avec modelId:', modelId);
+    console.log('modelsData disponible:', !!window.modelsData);
+    console.log('Nombre de mannequins:', window.modelsData ? window.modelsData.length : 0);
+    
     if (!modelId || !window.modelsData) {
         console.error('Model ID not found or data not loaded');
+        console.error('modelId:', modelId);
+        console.error('modelsData:', window.modelsData);
+        
+        // Show error message to user
+        const profileContainer = document.getElementById('model-profile-content');
+        if (profileContainer) {
+            profileContainer.innerHTML = `
+                <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement du profil</h3>
+                    <p style="margin-bottom: 10px;">Impossible de charger les informations du mannequin.</p>
+                    <p>Veuillez retourner à la <a href="mannequins.html" style="color: #1e3a8a;">liste des mannequins</a> et réessayer.</p>
+                </div>
+            `;
+        }
         return;
     }
     
     const model = window.modelsData.find(m => m.id === modelId);
     if (!model) {
-        console.error('Model not found');
+        console.error('Model not found for ID:', modelId);
+        console.error('Available models:', window.modelsData.map(m => ({ id: m.id, name: m.name })));
+        
+        // Show error message to user
+        const profileContainer = document.getElementById('model-profile-content');
+        if (profileContainer) {
+            profileContainer.innerHTML = `
+                <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">Mannequin non trouvé</h3>
+                    <p style="margin-bottom: 10px;">Le mannequin demandé n'existe pas dans notre base de données.</p>
+                    <p>Veuillez retourner à la <a href="mannequins.html" style="color: #1e3a8a;">liste des mannequins</a> et réessayer.</p>
+                </div>
+            `;
+        }
         return;
     }
     
@@ -1014,6 +1240,9 @@ function createModelProfilePage() {
     
     // Create the page content
     const profileContainer = document.getElementById('model-profile-content');
+    console.log('profileContainer trouvé:', !!profileContainer);
+    console.log('Données du mannequin:', model);
+    
     if (profileContainer) {
         profileContainer.innerHTML = `
             <div class="model-profile-header">
