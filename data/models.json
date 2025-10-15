@@ -2,7 +2,7 @@
   "models": [
     {
       "id": 1,
-      "name": "Lucia Padanou",
+      "name": "Lucia Padonou",
       "gender": "Femme",
       "specialty": "Fashion & Haute Couture",
       "height": "1.80m",
@@ -14,10 +14,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "3 ans",
-      "languages": [
-        "Francais",
-        "Anglais"
-      ],
+      "languages": ["Francais", "Anglais"],
       "image": "images/lucia/portfolio/lucia.jpg",
       "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
       "gallery": {
@@ -54,9 +51,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/gallery/rita.jpg",
       "description": "Spécialisée dans la haute couture avec une élégance naturelle",
       "gallery": {
@@ -95,7 +90,7 @@
     },
     {
       "id": 3,
-      "name": "TOUNDO Olerie",
+      "name": "TOUNDOH Olerie",
       "gender": "Femme",
       "specialty": "Fashion & Haute Couture",
       "height": "1.78m",
@@ -107,9 +102,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "3 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/olerie/portfolio/olerie.jpg",
       "description": "Experte en beauté et mode commerciale, visage photogénique",
       "gallery": {
@@ -137,9 +130,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/edjo/portfolio/IMG-20250820-WA0530.jpg",
       "description": "Star des podiums internationaux avec une présence scénique exceptionnelle",
       "gallery": {
@@ -204,9 +195,7 @@
       "eyeColor": "Bleu",
       "city": "Cotonou",
       "experience": "7 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/barnard/portfolio/barnard.jpg",
       "description": "Référence en mode masculine de luxe, charisme et sophistication",
       "gallery": {
@@ -243,9 +232,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/prisca/portfolio/IMG-20250820-WA0519.jpg",
       "description": "Ambassadrice beauté internationale, spécialiste des campagnes cosmétiques",
       "gallery": {
@@ -296,9 +283,7 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/gallery/creativie.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
@@ -320,9 +305,7 @@
       "eyeColor": "Vert",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/gallery/defile5.jpg",
       "description": "Modèle de luxe parisien, charisme et élégance française",
       "gallery": {
@@ -349,10 +332,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Anglais",
-        "Francais"
-      ],
+      "languages": ["Anglais", "Francais"],
       "image": "images/cyr/portfolio/cyr.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -381,10 +361,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Anglais",
-        "Francais"
-      ],
+      "languages": ["Anglais", "Francais"],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -407,9 +384,7 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/rose/portfolio/IMG-20250820-WA0516.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
@@ -441,10 +416,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Anglais",
-        "Francais"
-      ],
+      "languages": ["Anglais", "Francais"],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -466,10 +438,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Anglais",
-        "Francais"
-      ],
+      "languages": ["Anglais", "Francais"],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -506,10 +475,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Anglais",
-        "Francais"
-      ],
+      "languages": ["Anglais", "Francais"],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -531,10 +497,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Anglais",
-        "Francais"
-      ],
+      "languages": ["Anglais", "Francais"],
       "image": "images/geordys/portfolio/geordys.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -563,9 +526,7 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/merveille/portfolio/IMG-20250820-WA0520.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
@@ -604,9 +565,7 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/michelle/portfolio/IMG-20250820-WA0512.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
@@ -642,9 +601,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": [
-        "Francais"
-      ],
+      "languages": ["Francais"],
       "image": "images/jediel/shooting/IMG-20251013-WA0008.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
@@ -703,10 +660,7 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": [
-        "Francais",
-        "Anglais"
-      ],
+      "languages": ["Francais", "Anglais"],
       "image": "images/honel/portfolio/IMG-20251013-WA0002.jpg",
       "description": "Modèle de luxe, charisme et élégance",
       "gallery": {
