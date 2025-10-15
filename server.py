@@ -34,6 +34,9 @@ if __name__ == "__main__":
     # Change to the directory containing the website files
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
+    # Allow port reuse
+    socketserver.TCPServer.allow_reuse_address = True
+    
     with socketserver.TCPServer((HOST, PORT), NoCacheHTTPRequestHandler) as httpd:
         print(f"Serving at http://{HOST}:{PORT}/")
         print("Cache control headers enabled for Replit compatibility")

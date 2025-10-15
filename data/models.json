@@ -14,25 +14,29 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "3 ans",
-      "languages": ["Francais", "Anglais"],
-      "image": "images/gallery/luciapola.jpg",
+      "languages": [
+        "Francais",
+        "Anglais"
+      ],
+      "image": "images/lucia/portfolio/lucia.jpg",
       "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
       "gallery": {
-        "shooting": [
-          "images/gallery/lucia.jpg",
-          "images/gallery/lucia2.jpg",
-          "images/gallery/lucia3.jpg",
-          "images/gallery/lucia4.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/lucua1.jpg",
-          "images/gallery/lucia7.jpg",
-          "images/gallery/lucia8.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/lucia9.jpg",
-          "images/gallery/lucia10.jpg",
-          "images/gallery/lucia11.jpg"
+          "images/lucia/portfolio/lucia.jpg",
+          "images/lucia/portfolio/lucia10.jpg",
+          "images/lucia/portfolio/lucia11.jpg",
+          "images/lucia/portfolio/lucia2.jpg",
+          "images/lucia/portfolio/lucia3.jpg",
+          "images/lucia/portfolio/lucia4.jpg",
+          "images/lucia/portfolio/lucia5.jpg",
+          "images/lucia/portfolio/lucia7.jpg",
+          "images/lucia/portfolio/lucia8.jpg",
+          "images/lucia/portfolio/lucia9.jpg",
+          "images/lucia/portfolio/luciapola.jpg",
+          "images/lucia/portfolio/lucie6.jpg",
+          "images/lucia/portfolio/lucua1.jpg"
         ]
       }
     },
@@ -50,27 +54,43 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": ["Francais"],
+      "languages": [
+        "Francais"
+      ],
       "image": "images/gallery/rita.jpg",
       "description": "Spécialisée dans la haute couture avec une élégance naturelle",
       "gallery": {
         "shooting": [
-          "images/gallery/rita2.jpg",
-          "images/gallery/rita3.jpg",
-          "images/gallery/rita4.jpg",
-          "images/gallery/rita5.jpg"
+          "images/rita/shooting/IMG-20250915-WA0060.jpg",
+          "images/rita/shooting/IMG-20250915-WA0088.jpg",
+          "images/rita/shooting/IMG-20250920-WA0082.jpg",
+          "images/rita/shooting/IMG-20250920-WA0083.jpg",
+          "images/rita/shooting/IMG-20250920-WA0084.jpg",
+          "images/rita/shooting/IMG-20250920-WA0085.jpg",
+          "images/rita/shooting/IMG-20250920-WA0086.jpg",
+          "images/rita/shooting/IMG-20250920-WA0087.jpg",
+          "images/rita/shooting/IMG-20250920-WA0088.jpg",
+          "images/rita/shooting/IMG-20250920-WA0089.jpg",
+          "images/rita/shooting/IMG-20250920-WA0090.jpg",
+          "images/rita/shooting/IMG-20250920-WA0091.jpg"
         ],
         "fashionShow": [
-          "images/gallery/rita6.jpg",
-          "images/gallery/rita7.jpg",
-          "images/gallery/rita8.jpg"
+          "images/rita/defile/IMG-20250915-WA0075.jpg",
+          "images/rita/defile/IMG-20250915-WA0076.jpg",
+          "images/rita/defile/IMG-20250915-WA0077.jpg",
+          "images/rita/defile/IMG-20250915-WA0078.jpg",
+          "images/rita/defile/IMG-20250915-WA0079.jpg",
+          "images/rita/defile/IMG-20250915-WA0080.jpg",
+          "images/rita/defile/IMG-20250915-WA0081.jpg",
+          "images/rita/defile/IMG-20250915-WA0082.jpg",
+          "images/rita/defile/IMG-20250915-WA0087.jpg",
+          "images/rita/defile/IMG-20250920-WA0093.jpg",
+          "images/rita/defile/IMG-20250920-WA0094.jpg",
+          "images/rita/defile/IMG-20250920-WA0095.jpg",
+          "images/rita/defile/IMG-20250920-WA0096.jpg",
+          "images/rita/defile/IMG-20250920-WA0097.jpg"
         ],
-        "portfolio": [
-          "images/gallery/rita9.jpg",
-          "images/gallery/rita10.jpg",
-          "images/gallery/rita12.jpg",
-          "images/gallery/rita17.jpg"
-        ]
+        "portfolio": []
       }
     },
     {
@@ -87,18 +107,19 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "3 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/olerie1.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/olerie/portfolio/olerie.jpg",
       "description": "Experte en beauté et mode commerciale, visage photogénique",
       "gallery": {
-        "shooting": [
-          "images/gallery/olerie.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/olerie2.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/olerie3.jpg"
+          "images/olerie/portfolio/olerie.jpg",
+          "images/olerie/portfolio/olerie1.jpg",
+          "images/olerie/portfolio/olerie2.jpg",
+          "images/olerie/portfolio/olerie3.jpg"
         ]
       }
     },
@@ -116,18 +137,57 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/shoot2.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/edjo/portfolio/IMG-20250820-WA0530.jpg",
       "description": "Star des podiums internationaux avec une présence scénique exceptionnelle",
       "gallery": {
         "shooting": [
-          "images/gallery/amara-1.jpg"
+          "images/edjo/shooting/083eae34-9ac3-4ef7-910c-f083695d5098.jpg",
+          "images/edjo/shooting/1F208B7B-EA8B-47AB-A14C-031A2624322E.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0205.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0207.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0209.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0210.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0211.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0213.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0216.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0218.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0219.jpg",
+          "images/edjo/shooting/IMG-20251001-WA0220.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0211.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0212.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0214.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0215.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0216.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0217.jpg",
+          "images/edjo/shooting/IMG-20251006-WA0219.jpg",
+          "images/edjo/shooting/IMG_4035.PNG",
+          "images/edjo/shooting/IMG_4036.PNG",
+          "images/edjo/shooting/dc2e254d-8d9d-4061-a85c-9ce85b9df0a3.jpg"
         ],
         "fashionShow": [
-          "images/gallery/amara-2.jpg"
+          "images/edjo/defile/02b6fc0a-2d14-4e0a-89e7-489a942b777f.jpg",
+          "images/edjo/defile/1aa08658-80ed-4492-a792-66d008263944.jpg",
+          "images/edjo/defile/242d323a-9ee7-4af3-81c5-e0f1f32963c9.jpg",
+          "images/edjo/defile/3aff6832-7d02-4d8b-8fa7-a9f5bd1898bf.jpg",
+          "images/edjo/defile/6b5671f6-52b3-410c-9f2d-3be2461924de.jpg",
+          "images/edjo/defile/IMG_2295.PNG",
+          "images/edjo/defile/IMG_2296.PNG",
+          "images/edjo/defile/IMG_2406.PNG",
+          "images/edjo/defile/IMG_7048.JPG",
+          "images/edjo/defile/IMG_7049.JPG",
+          "images/edjo/defile/IMG_8038.JPG",
+          "images/edjo/defile/a1f43e25-f6e3-4038-a672-8c9fe98f3dcb.jpg",
+          "images/edjo/defile/c2deac63-7595-4322-8544-86100bcbbc44.jpg",
+          "images/edjo/defile/c4404a89-d825-4951-9150-4770086b180e.jpg",
+          "images/edjo/defile/f4ea76cc-8b01-4cb1-8fae-1a368030d440.jpg"
         ],
         "portfolio": [
-          "images/gallery/amara-3.jpg"
+          "images/edjo/portfolio/IMG-20250820-WA0530.jpg",
+          "images/edjo/portfolio/IMG-20250820-WA0538.jpg",
+          "images/edjo/portfolio/IMG-20250820-WA0547.jpg"
         ]
       }
     },
@@ -144,22 +204,28 @@
       "eyeColor": "Bleu",
       "city": "Cotonou",
       "experience": "7 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/shoot7.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/barnard/portfolio/barnard.jpg",
       "description": "Référence en mode masculine de luxe, charisme et sophistication",
       "gallery": {
-        "shooting": [
-          "images/gallery/barnard.jpg",
-          "images/gallery/barnard1.jpg",
-          "images/gallery/barnard2.jpg"
-        ],
+        "shooting": [],
         "fashionShow": [
-          "images/gallery/barnard3.jpg",
-          "images/gallery/barnard4.jpg"
+          "images/barnard/defile/IMG-20250916-WA0065.jpg",
+          "images/barnard/defile/IMG-20250916-WA0066.jpg",
+          "images/barnard/defile/IMG-20250916-WA0067.jpg",
+          "images/barnard/defile/IMG-20250916-WA0068.jpg",
+          "images/barnard/defile/IMG-20250916-WA0070.jpg",
+          "images/barnard/defile/IMG-20250916-WA0071.jpg"
         ],
         "portfolio": [
-          "images/gallery/barnard5.jpg",
-          "images/gallery/barnard6.jpg"
+          "images/barnard/portfolio/barnard.jpg",
+          "images/barnard/portfolio/barnard1.jpg",
+          "images/barnard/portfolio/barnard2.jpg",
+          "images/barnard/portfolio/barnard3.jpg",
+          "images/barnard/portfolio/barnard4.jpg",
+          "images/barnard/portfolio/barnard6.jpg"
         ]
       }
     },
@@ -177,18 +243,42 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/shoot5.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/prisca/portfolio/IMG-20250820-WA0519.jpg",
       "description": "Ambassadrice beauté internationale, spécialiste des campagnes cosmétiques",
       "gallery": {
         "shooting": [
-          "images/gallery/maya-1.jpg"
+          "images/prisca/shooting/IMG-20250815-WA0193.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0194.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0195.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0199.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0200.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0203.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0204.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0205.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0206.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0207.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0209.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0210.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0211.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0212.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0213.jpg",
+          "images/prisca/shooting/IMG-20250815-WA0216.jpg"
         ],
-        "fashionShow": [
-          "images/gallery/maya-2.jpg"
-        ],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/maya-3.jpg"
+          "images/prisca/portfolio/IMG-20250820-WA0519.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0523.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0527.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0535.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0539.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0542.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0548.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0577.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0580.jpg",
+          "images/prisca/portfolio/IMG-20250820-WA0602.jpg"
         ]
       }
     },
@@ -206,19 +296,15 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": ["Francais"],
+      "languages": [
+        "Francais"
+      ],
       "image": "images/gallery/creativie.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
-        "shooting": [
-          "images/gallery/emma-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/emma-2.jpg"
-        ],
-        "portfolio": [
-          "images/gallery/emma-3.jpg"
-        ]
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
       }
     },
     {
@@ -234,19 +320,20 @@
       "eyeColor": "Vert",
       "city": "Cotonou",
       "experience": "2 ans",
-      "languages": ["Francais"],
+      "languages": [
+        "Francais"
+      ],
       "image": "images/gallery/defile5.jpg",
       "description": "Modèle de luxe parisien, charisme et élégance française",
       "gallery": {
         "shooting": [
-          "images/gallery/alexandre-1.jpg"
+          "images/roderic/shooting/IMG-20250826-WA0072.jpg",
+          "images/roderic/shooting/IMG-20250826-WA0073.jpg",
+          "images/roderic/shooting/IMG-20250826-WA0074.jpg",
+          "images/roderic/shooting/IMG-20250826-WA0075.jpg"
         ],
-        "fashionShow": [
-          "images/gallery/alexandre-2.jpg"
-        ],
-        "portfolio": [
-          "images/gallery/alexandre-3.jpg"
-        ]
+        "fashionShow": [],
+        "portfolio": []
       }
     },
     {
@@ -262,18 +349,22 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": ["Anglais", "Francais"],
-      "image": "images/gallery/shoot11.jpg",
+      "languages": [
+        "Anglais",
+        "Francais"
+      ],
+      "image": "images/cyr/portfolio/cyr.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
-        "shooting": [
-          "images/gallery/marcus-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/marcus-2.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/marcus-3.jpg"
+          "images/cyr/portfolio/cyr.jpg",
+          "images/cyr/portfolio/cyr1.jpg",
+          "images/cyr/portfolio/cyr2.jpg",
+          "images/cyr/portfolio/cyr3.jpg",
+          "images/cyr/portfolio/cyr4.jpg",
+          "images/cyr/portfolio/cyr5.jpg"
         ]
       }
     },
@@ -290,19 +381,16 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": ["Anglais", "Francais"],
+      "languages": [
+        "Anglais",
+        "Francais"
+      ],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
-        "shooting": [
-          "images/gallery/marcus-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/marcus-2.jpg"
-        ],
-        "portfolio": [
-          "images/gallery/marcus-3.jpg"
-        ]
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
       }
     },
     {
@@ -319,18 +407,24 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/creativie.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/rose/portfolio/IMG-20250820-WA0516.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
-        "shooting": [
-          "images/gallery/emma-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/emma-2.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/emma-3.jpg"
+          "images/rose/portfolio/IMG-20250820-WA0516.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0517.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0531.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0534.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0536.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0567.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0569.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0583.jpg",
+          "images/rose/portfolio/IMG-20250820-WA0603.jpg"
         ]
       }
     },
@@ -347,19 +441,16 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": ["Anglais", "Francais"],
+      "languages": [
+        "Anglais",
+        "Francais"
+      ],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
-        "shooting": [
-          "images/gallery/marcus-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/marcus-2.jpg"
-        ],
-        "portfolio": [
-          "images/gallery/marcus-3.jpg"
-        ]
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
       }
     },
     {
@@ -375,19 +466,31 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": ["Anglais", "Francais"],
+      "languages": [
+        "Anglais",
+        "Francais"
+      ],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [
-          "images/gallery/marcus-1.jpg"
+          "images/gildas/shooting/IMG-20250917-WA0071.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0072.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0073.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0074.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0075.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0076.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0077.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0078.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0079.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0080.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0081.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0082.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0084.jpg",
+          "images/gildas/shooting/IMG-20250917-WA0085.jpg"
         ],
-        "fashionShow": [
-          "images/gallery/marcus-2.jpg"
-        ],
-        "portfolio": [
-          "images/gallery/marcus-3.jpg"
-        ]
+        "fashionShow": [],
+        "portfolio": []
       }
     },
     {
@@ -403,19 +506,16 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": ["Anglais", "Francais"],
+      "languages": [
+        "Anglais",
+        "Francais"
+      ],
       "image": "images/gallery/shoot11.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
-        "shooting": [
-          "images/gallery/marcus-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/marcus-2.jpg"
-        ],
-        "portfolio": [
-          "images/gallery/marcus-3.jpg"
-        ]
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
       }
     },
     {
@@ -431,18 +531,21 @@
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
-      "languages": ["Anglais", "Francais"],
-      "image": "images/gallery/shoot11.jpg",
+      "languages": [
+        "Anglais",
+        "Francais"
+      ],
+      "image": "images/geordys/portfolio/geordys.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
-        "shooting": [
-          "images/gallery/marcus-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/marcus-2.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/marcus-3.jpg"
+          "images/geordys/portfolio/geordys.jpg",
+          "images/geordys/portfolio/geordys1.jpg",
+          "images/geordys/portfolio/geordys3.jpg",
+          "images/geordys/portfolio/geordys4.jpg",
+          "images/geordys/portfolio/geordys5.jpg"
         ]
       }
     },
@@ -460,18 +563,30 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/creativie.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/merveille/portfolio/IMG-20250820-WA0520.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
-        "shooting": [
-          "images/gallery/emma-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/emma-2.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/emma-3.jpg"
+          "images/merveille/portfolio/IMG-20250820-WA0520.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0522.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0524.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0529.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0533.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0541.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0543.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0546.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0553.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0565.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0568.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0582.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0589.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0591.jpg",
+          "images/merveille/portfolio/IMG-20250820-WA0592.jpg"
         ]
       }
     },
@@ -489,18 +604,28 @@
       "eyeColor": "Bleu",
       "city": "London",
       "experience": "9 ans",
-      "languages": ["Francais"],
-      "image": "images/gallery/creativie.jpg",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/michelle/portfolio/IMG-20250820-WA0512.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
-        "shooting": [
-          "images/gallery/emma-1.jpg"
-        ],
-        "fashionShow": [
-          "images/gallery/emma-2.jpg"
-        ],
+        "shooting": [],
+        "fashionShow": [],
         "portfolio": [
-          "images/gallery/emma-3.jpg"
+          "images/michelle/portfolio/IMG-20250820-WA0512.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0526.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0528.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0550.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0552.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0555.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0557.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0563.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0564.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0588.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0599.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0604.jpg",
+          "images/michelle/portfolio/IMG-20250820-WA0606.jpg"
         ]
       }
     }

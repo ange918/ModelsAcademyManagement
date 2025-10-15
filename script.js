@@ -1,215 +1,27 @@
-// Embedded models data for fallback when fetch fails (file:// protocol)
-function getEmbeddedModelsData() {
-    return {
-        "models": [
-            {
-                "id": 1,
-                "name": "Lucia Padanou",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.80m",
-                "bust": "85cm",
-                "waist": "60cm",
-                "hips": "88cm",
-                "shoeSize": "38 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "3 ans",
-                "languages": ["Francais", "Anglais"],
-                "image": "images/gallery/luciapola.jpg",
-                "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
-                "gallery": {
-                    "shooting": [
-                        "images/gallery/lucia.jpg",
-                        "images/gallery/lucia2.jpg",
-                        "images/gallery/lucia3.jpg",
-                        "images/gallery/lucia4.jpg"
-                    ],
-                    "fashionShow": [
-                        "images/gallery/lucua1.jpg",
-                        "images/gallery/lucia7.jpg",
-                        "images/gallery/lucia8.jpg"
-                    ],
-                    "portfolio": [
-                        "images/gallery/lucia9.jpg",
-                        "images/gallery/lucia10.jpg",
-                        "images/gallery/lucia11.jpg"
-                    ]
-                }
-            },
-            {
-                "id": 2,
-                "name": "AZONWANOU Rita",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.80m",
-                "bust": "82cm",
-                "waist": "62cm",
-                "hips": "96cm",
-                "shoeSize": "41 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "2 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/rita.jpg",
-                "description": "Spécialisée dans la haute couture avec une élégance naturelle",
-                "gallery": {
-                    "shooting": [
-                        "images/gallery/rita2.jpg",
-                        "images/gallery/rita3.jpg",
-                        "images/gallery/rita4.jpg",
-                        "images/gallery/rita5.jpg"
-                    ],
-                    "fashionShow": [
-                        "images/gallery/rita6.jpg",
-                        "images/gallery/rita7.jpg",
-                        "images/gallery/rita8.jpg"
-                    ],
-                    "portfolio": [
-                        "images/gallery/rita9.jpg",
-                        "images/gallery/rita10.jpg",
-                        "images/gallery/rita12.jpg",
-                        "images/gallery/rita17.jpg"
-                    ]
-                }
-            },
-            {
-                "id": 3,
-                "name": "TOUNDO Olerie",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.78m",
-                "bust": "84cm",
-                "waist": "69cm",
-                "hips": "102cm",
-                "shoeSize": "42 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "3 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/olerie1.jpg",
-                "description": "Experte en beauté et mode commerciale, visage photogénique",
-                "gallery": {
-                    "shooting": [
-                        "images/gallery/olerie.jpg"
-                    ],
-                    "fashionShow": [
-                        "images/gallery/olerie2.jpg"
-                    ],
-                    "portfolio": [
-                        "images/gallery/olerie3.jpg"
-                    ]
-                }
-            },
-            {
-                "id": 4,
-                "name": "EDJO Aurelle",
-                "gender": "Femme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.75m",
-                "bust": "36cm",
-                "waist": "28cm",
-                "hips": "100cm",
-                "shoeSize": "41 EU",
-                "hairColor": "Noir",
-                "eyeColor": "Marron",
-                "city": "Cotonou",
-                "experience": "2 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/shoot2.jpg",
-                "description": "Star des podiums internationaux avec une présence scénique exceptionnelle",
-                "gallery": {
-                    "shooting": [
-                        "images/gallery/amara-1.jpg"
-                    ],
-                    "fashionShow": [
-                        "images/gallery/amara-2.jpg"
-                    ],
-                    "portfolio": [
-                        "images/gallery/amara-3.jpg"
-                    ]
-                }
-            },
-            {
-                "id": 5,
-                "name": "YEHOUN Barnard",
-                "gender": "Homme",
-                "specialty": "Fashion & Haute Couture",
-                "height": "1.87m",
-                "chest": "98cm",
-                "waist": "80cm",
-                "shoeSize": "45 EU",
-                "hairColor": "Châtain",
-                "eyeColor": "Bleu",
-                "city": "Cotonou",
-                "experience": "7 ans",
-                "languages": ["Francais"],
-                "image": "images/gallery/shoot7.jpg",
-                "description": "Référence en mode masculine de luxe, charisme et sophistication",
-                "gallery": {
-                    "shooting": [
-                        "images/gallery/barnard.jpg",
-                        "images/gallery/barnard1.jpg",
-                        "images/gallery/barnard2.jpg"
-                    ],
-                    "fashionShow": [
-                        "images/gallery/barnard3.jpg",
-                        "images/gallery/barnard4.jpg"
-                    ],
-                    "portfolio": [
-                        "images/gallery/barnard5.jpg",
-                        "images/gallery/barnard6.jpg"
-                    ]
-                }
-            }
-        ]
-    };
-}
+// Global variables
+let modelsDataLoaded = false;
 
-// DOM Content Loaded
+// DOM Content Loaded - Single entry point
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
     initNavigation();
     initScrollAnimations();
     initSmoothScrolling();
     initImageLoading();
     
-    // Load models data if on models page
     if (window.location.pathname.includes('mannequins.html') || document.getElementById('models-grid')) {
-        console.log('Page des mannequins detectee, chargement des donnees...');
-        setTimeout(() => {
+        if (!modelsDataLoaded) {
             loadModelsData();
-        }, 100);
+        }
     } else if (window.location.pathname.includes('model-profile.html') || document.getElementById('model-profile-content')) {
-        console.log('Page de profil de mannequin détectée');
-        // Load data first, then create profile page
         loadModelsData().then(() => {
-            console.log('Données chargées, création de la page de profil...');
             createModelProfilePage();
         }).catch(error => {
             console.error('Erreur lors du chargement des données:', error);
-            const profileContainer = document.getElementById('model-profile-content');
-            if (profileContainer) {
-                profileContainer.innerHTML = `
-                    <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
-                        <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement</h3>
-                        <p style="margin-bottom: 10px;">Impossible de charger les données des mannequins.</p>
-                        <p>Veuillez <a href="mannequins.html" style="color: #1e3a8a;">retourner à la liste</a> et réessayer.</p>
-                    </div>
-                `;
-            }
+            showProfileError();
         });
-    } else {
-        console.log('Page des mannequins non detectee');
     }
     
-    // Initialize inscription form
     initInscriptionForm();
-    
-    // Initialize formation carousels
     initFormationCarousels();
 });
 
@@ -219,14 +31,12 @@ function initNavigation() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Mobile menu toggle
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
@@ -234,7 +44,6 @@ function initNavigation() {
             });
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -243,7 +52,6 @@ function initNavigation() {
         });
     }
 
-    // Resizable Navbar scroll effect (Aceternity UI inspired)
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         const scrollThreshold = 100;
@@ -265,32 +73,26 @@ function initScrollAnimations() {
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Only add visible class if not already visible to prevent flickering
-                if (!entry.target.classList.contains('visible')) {
-                    entry.target.classList.add('visible');
-                }
+            if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+                entry.target.classList.add('visible');
                 
-                // Add staggered animation for grid items
                 const gridItems = entry.target.querySelectorAll('.valeur-card, .formation-card, .model-card');
                 gridItems.forEach((item, index) => {
                     if (!item.classList.contains('visible')) {
                         setTimeout(() => {
                             item.classList.add('visible');
-                        }, index * 50); // Reduced delay to prevent flickering
+                        }, index * 50);
                     }
                 });
             }
         });
     }, observerOptions);
 
-    // Observe all fade-in elements that are not already visible
     const fadeElements = document.querySelectorAll('.fade-in:not(.visible)');
     fadeElements.forEach(element => {
         observer.observe(element);
     });
 
-    // Counter animation for statistics
     const stats = document.querySelectorAll('.stat-number');
     const statsObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
@@ -306,7 +108,6 @@ function initScrollAnimations() {
     });
 }
 
-// Counter animation for statistics
 function animateCounter(element) {
     const target = parseInt(element.textContent.replace(/\D/g, ''));
     const duration = 2000;
@@ -336,7 +137,7 @@ function initSmoothScrolling() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                const offsetTop = targetSection.offsetTop - 80;
                 
                 window.scrollTo({
                     top: offsetTop,
@@ -352,16 +153,13 @@ function initImageLoading() {
     const images = document.querySelectorAll('img');
     
     images.forEach(img => {
-        // Add loading placeholder
         img.style.backgroundColor = '#f0f0f0';
         
-        // Handle image load
         img.addEventListener('load', function() {
             this.style.opacity = '1';
             this.style.backgroundColor = 'transparent';
         });
         
-        // Handle image error
         img.addEventListener('error', function() {
             this.style.opacity = '0.5';
             this.alt = 'Image non disponible';
@@ -382,23 +180,7 @@ function initParallax() {
     }
 }
 
-// Initialize parallax effect
 window.addEventListener('load', initParallax);
-
-// Model card hover effects
-document.addEventListener('DOMContentLoaded', function() {
-    const modelCards = document.querySelectorAll('.model-card');
-    
-    modelCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-});
 
 // Scroll progress indicator
 function initScrollProgress() {
@@ -424,19 +206,16 @@ function initScrollProgress() {
     });
 }
 
-// Initialize scroll progress
 initScrollProgress();
 
 // Page transition effects
 function initPageTransitions() {
-    // Fade in page content on load
     document.body.style.opacity = '0';
     window.addEventListener('load', function() {
         document.body.style.transition = 'opacity 0.5s ease';
         document.body.style.opacity = '1';
     });
     
-    // Fade out when navigating to another page
     const internalLinks = document.querySelectorAll('a[href$=".html"]');
     internalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -455,212 +234,75 @@ function initPageTransitions() {
     });
 }
 
-// Initialize page transitions
 initPageTransitions();
 
-// Function to load models data from JSON
+// Load models data from JSON
 async function loadModelsData() {
+    if (modelsDataLoaded && window.modelsData) {
+        return window.modelsData;
+    }
+    
     try {
-        console.log('Tentative de chargement des données des mannequins...');
+        const response = await fetch('data/models.json');
         
-        // Try to fetch from JSON file first
-        let data;
-        try {
-            const response = await fetch('data/models.json');
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            data = await response.json();
-            console.log('✅ Données chargées depuis le fichier JSON');
-            
-            console.log('✅ Données chargées depuis le fichier JSON avec', data.models.length, 'mannequins');
-            
-        } catch (fetchError) {
-            console.error('❌ Erreur lors du chargement du fichier JSON:', fetchError);
-            console.log('🔄 Tentative de chargement des données intégrées...');
-            
-            // Fallback: Use embedded data if fetch fails (for file:// protocol)
-            data = getEmbeddedModelsData();
-            console.log('✅ Données chargées depuis les données intégrées avec', data.models.length, 'mannequins');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+        
+        const data = await response.json();
         
         if (!data.models || !Array.isArray(data.models)) {
             throw new Error('Structure de données invalide');
         }
         
-        // Store data globally for gallery access
         window.modelsData = data.models;
+        modelsDataLoaded = true;
         
-        console.log('Mannequins chargés:', data.models.length);
-        console.log('Premier mannequin:', data.models[0]);
-        console.log('Structure des données:', JSON.stringify(data.models[0], null, 2));
-        
-        // Vérifier que Lucia est bien en première position
-        const luciaIndex = data.models.findIndex(m => m.name.includes('Lucia') || m.name.includes('Padanou'));
-        if (luciaIndex > 0) {
-            console.log('🔄 Réorganisation: Lucia Padanou placée en première position');
-            const lucia = data.models.splice(luciaIndex, 1)[0];
-            data.models.unshift(lucia);
+        const modelsGrid = document.getElementById('models-grid');
+        if (modelsGrid) {
+            renderModels(data.models);
         }
         
-        renderModels(data.models);
-        return data.models; // Return the data for promise chain
+        return data.models;
     } catch (error) {
-        console.error('Erreur détaillée lors du chargement des données des mannequins:', error);
-        // Show error message
+        console.error('Erreur lors du chargement des données:', error);
         const modelsGrid = document.getElementById('models-grid');
         if (modelsGrid) {
             modelsGrid.innerHTML = `
                 <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
                     <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement des mannequins</h3>
-                    <p style="margin-bottom: 10px;">Impossible de charger les données depuis le serveur.</p>
-                    <p>Veuillez réessayer plus tard ou contacter l'administrateur.</p>
+                    <p style="margin-bottom: 10px;">Impossible de charger les données.</p>
                     <button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #1e3a8a; color: white; border: none; border-radius: 5px; cursor: pointer;">Réessayer</button>
                 </div>
             `;
         }
-        throw error; // Re-throw to reject the promise
+        throw error;
     }
 }
 
-
-// Function to render models from JSON data
+// Render models - Version simplifiée sans bouton mensurations
 function renderModels(models) {
-    console.log('renderModels appelée avec', models.length, 'mannequins');
     const modelsGrid = document.getElementById('models-grid');
     if (!modelsGrid) {
-        console.error('models-grid non trouvé');
         return;
     }
     
     modelsGrid.innerHTML = '';
     
-    models.forEach((model, index) => {
-        console.log(`Rendu mannequin ${index + 1}:`, model.name, 'ID:', model.id);
+    models.forEach((model) => {
         const modelCard = document.createElement('div');
-        modelCard.className = 'model-card fade-in visible'; // Add visible class immediately
+        modelCard.className = 'model-card fade-in visible';
         
-        // Build improved measurements HTML based on gender
-        const bodyMeasurements = model.gender === 'Femme' 
-            ? `<div class="measurement-row">
-                 <div class="measurement-item">
-                   <i class='bx bx-female-sign'></i>
-                   <span class="label">Buste:</span>
-                   <span class="value">${model.bust}</span>
-                 </div>
-                 <div class="measurement-item">
-                   <i class='bx bx-diamond'></i>
-                   <span class="label">Taille:</span>
-                   <span class="value">${model.waist}</span>
-                 </div>
-               </div>
-               <div class="measurement-row">
-                 <div class="measurement-item">
-                   <i class='bx bx-body'></i>
-                   <span class="label">Hanche:</span>
-                   <span class="value">${model.hips}</span>
-                 </div>
-                 <div class="measurement-item">
-                   <i class='bx bx-closet'></i>
-                   <span class="label">Chaussure:</span>
-                   <span class="value">${model.shoeSize}</span>
-                 </div>
-               </div>`
-            : `<div class="measurement-row">
-                 <div class="measurement-item">
-                   <i class='bx bx-male-sign'></i>
-                   <span class="label">Poitrine:</span>
-                   <span class="value">${model.chest}</span>
-                 </div>
-                 <div class="measurement-item">
-                   <i class='bx bx-diamond'></i>
-                   <span class="label">Taille:</span>
-                   <span class="value">${model.waist}</span>
-                 </div>
-               </div>
-               <div class="measurement-row">
-                 <div class="measurement-item">
-                   <i class='bx bx-closet'></i>
-                   <span class="label">Chaussure:</span>
-                   <span class="value">${model.shoeSize}</span>
-                 </div>
-               </div>`;
+        const imageUrl = model.image && model.image.trim() !== '' ? model.image : 'images/gallery/models academy.jpg';
         
         modelCard.innerHTML = `
             <div class="model-image">
-                <img src="${model.image}" alt="${model.name} - Mannequin" loading="lazy" onerror="this.src='images/model-1.svg'">
+                <img src="${imageUrl}" alt="${model.name} - Mannequin" loading="lazy" onerror="this.src='images/gallery/models academy.jpg'">
             </div>
             
             <div class="model-basic-info">
                 <h3 class="model-name">${model.name}</h3>
-                <p class="model-specialty">Fashion & Haute Couture</p>
-                
-                <button class="btn btn-mensurations" onclick="toggleMeasurements(${model.id})">
-                    <i class='bx bx-ruler'></i>
-                    MENSURATIONS
-                </button>
-            </div>
-            
-            <div class="model-measurements" id="measurements-${model.id}">
-                <div class="measurements-container">
-                    <div class="measurement-section">
-                        <h4 class="measurement-title">
-                            <i class='bx bx-ruler'></i>
-                            Mensurations
-                        </h4>
-                        <div class="measurement-row">
-                            <div class="measurement-item">
-                                <i class='bx bx-ruler'></i>
-                                <span class="label">Taille:</span>
-                                <span class="value">${model.height}</span>
-                            </div>
-                        </div>
-                        ${bodyMeasurements}
-                    </div>
-                    
-                    <div class="characteristics-section">
-                        <h4 class="measurement-title">
-                            <i class='bx bx-user'></i>
-                            Caractéristiques
-                        </h4>
-                        <div class="measurement-row">
-                            <div class="measurement-item">
-                                <i class='bx bx-palette'></i>
-                                <span class="label">Cheveux:</span>
-                                <span class="value">${model.hairColor}</span>
-                            </div>
-                            <div class="measurement-item">
-                                <i class='bx bx-show'></i>
-                                <span class="label">Yeux:</span>
-                                <span class="value">${model.eyeColor}</span>
-                            </div>
-                        </div>
-                        <div class="measurement-row">
-                            <div class="measurement-item">
-                                <i class='bx bx-time'></i>
-                                <span class="label">Expérience:</span>
-                                <span class="value">${model.experience}</span>
-                            </div>
-                            <div class="measurement-item">
-                                <i class='bx bx-map'></i>
-                                <span class="label">Ville:</span>
-                                <span class="value">${model.city}</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="languages-section">
-                        <h4 class="measurement-title">
-                            <i class='bx bx-world'></i>
-                            Langues
-                        </h4>
-                        <div class="languages-list">
-                            ${model.languages.map(lang => `<span class="language-badge">${lang}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
+                <p class="model-specialty">${model.specialty}</p>
             </div>
             
             <div class="model-actions">
@@ -673,375 +315,265 @@ function renderModels(models) {
         
         modelsGrid.appendChild(modelCard);
     });
-    
-    // Re-initialize animations for new elements (only if not already visible)
-    setTimeout(() => {
-        initScrollAnimations();
-    }, 100);
 }
 
-// Function to open model gallery
-function openGallery(modelId) {
-    // Find the model data
-    const model = window.modelsData.find(m => m.id === modelId);
-    if (!model) return;
+// Navigate to model page
+function navigateToModelPage(modelId) {
+    sessionStorage.setItem('selectedModelId', modelId);
+    window.location.href = `model-profile.html?id=${modelId}`;
+}
+
+// Create model profile page
+function createModelProfilePage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const modelId = parseInt(urlParams.get('id')) || parseInt(sessionStorage.getItem('selectedModelId'));
     
-    // Create gallery modal
-    const modal = document.createElement('div');
-    modal.className = 'gallery-modal';
-    modal.innerHTML = `
-        <div class="gallery-overlay">
-            <div class="gallery-container">
-                <div class="gallery-header">
-                    <h2>${model.name} - Galerie</h2>
-                    <button class="close-gallery" onclick="closeGallery()">×</button>
+    if (!modelId || !window.modelsData) {
+        showProfileError();
+        return;
+    }
+    
+    const model = window.modelsData.find(m => m.id === modelId);
+    if (!model) {
+        showProfileError();
+        return;
+    }
+    
+    document.title = `${model.name} - MODELS ACADEMY MANAGEMENT`;
+    
+    const profileContainer = document.getElementById('model-profile-content');
+    if (!profileContainer) return;
+    
+    const bodyMeasurements = model.gender === 'Femme' 
+        ? `<div class="measurement-item"><span>Buste:</span><strong>${model.bust}</strong></div>
+           <div class="measurement-item"><span>Taille:</span><strong>${model.waist}</strong></div>
+           <div class="measurement-item"><span>Hanches:</span><strong>${model.hips}</strong></div>`
+        : `<div class="measurement-item"><span>Poitrine:</span><strong>${model.chest}</strong></div>
+           <div class="measurement-item"><span>Taille:</span><strong>${model.waist}</strong></div>`;
+    
+    const profileImageUrl = model.image && model.image.trim() !== '' ? model.image : 'images/gallery/models academy.jpg';
+    
+    profileContainer.innerHTML = `
+        <div class="profile-header">
+            <button class="btn-back" onclick="window.location.href='mannequins.html'">
+                <i class='bx bx-arrow-back'></i> Retour
+            </button>
+            <h1>${model.name}</h1>
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-main-image">
+                <img src="${profileImageUrl}" alt="${model.name}" onerror="this.src='images/gallery/models academy.jpg'">
+            </div>
+            
+            <div class="profile-info">
+                <h2>À propos</h2>
+                <p class="profile-description">${model.description}</p>
+                
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <i class='bx bx-ruler'></i>
+                        <span>Taille:</span>
+                        <strong>${model.height}</strong>
+                    </div>
+                    <div class="detail-item">
+                        <i class='bx bx-palette'></i>
+                        <span>Cheveux:</span>
+                        <strong>${model.hairColor}</strong>
+                    </div>
+                    <div class="detail-item">
+                        <i class='bx bx-show'></i>
+                        <span>Yeux:</span>
+                        <strong>${model.eyeColor}</strong>
+                    </div>
+                    <div class="detail-item">
+                        <i class='bx bx-map'></i>
+                        <span>Ville:</span>
+                        <strong>${model.city}</strong>
+                    </div>
+                    <div class="detail-item">
+                        <i class='bx bx-time'></i>
+                        <span>Expérience:</span>
+                        <strong>${model.experience}</strong>
+                    </div>
                 </div>
+                
+                <div class="measurements-section">
+                    <h3>Mensurations</h3>
+                    <div class="measurements-grid">
+                        ${bodyMeasurements}
+                        <div class="measurement-item"><span>Pointure:</span><strong>${model.shoeSize}</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        ${renderGalleries(model)}
+    `;
+}
+
+function renderGalleries(model) {
+    let galleriesHTML = '<div class="galleries-section"><h2>Galeries</h2>';
+    
+    if (model.gallery.shooting && model.gallery.shooting.length > 0) {
+        galleriesHTML += `
+            <div class="gallery-category">
+                <h3><i class='bx bx-camera'></i> Shooting</h3>
                 <div class="gallery-grid">
-                    ${model.gallery.slice(0, 18).map((image, index) => `
-                        <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Photo ${index + 1}')">
-                            <img src="${image}" alt="${model.name} - Photo ${index + 1}" loading="lazy" onerror="this.style.display='none'">
+                    ${model.gallery.shooting.map(img => `
+                        <div class="gallery-item">
+                            <img src="${img}" alt="${model.name} - Shooting" loading="lazy" onerror="this.parentElement.style.display='none'">
                         </div>
                     `).join('')}
                 </div>
-                <div class="gallery-info">
-                    <p><strong>${model.name}</strong> - ${model.specialty}</p>
-                    <p>${model.description}</p>
+            </div>
+        `;
+    }
+    
+    if (model.gallery.fashionShow && model.gallery.fashionShow.length > 0) {
+        galleriesHTML += `
+            <div class="gallery-category">
+                <h3><i class='bx bx-walk'></i> Défilé</h3>
+                <div class="gallery-grid">
+                    ${model.gallery.fashionShow.map(img => `
+                        <div class="gallery-item">
+                            <img src="${img}" alt="${model.name} - Défilé" loading="lazy" onerror="this.parentElement.style.display='none'">
+                        </div>
+                    `).join('')}
                 </div>
             </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    document.body.style.overflow = 'hidden';
-    
-    // Add click outside to close
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeGallery();
-        }
-    });
-}
-
-// Function to close gallery
-function closeGallery() {
-    const modal = document.querySelector('.gallery-modal');
-    if (modal) {
-        modal.remove();
-        document.body.style.overflow = 'auto';
+        `;
     }
-}
-
-// Function to open fullscreen image
-function openFullscreenImage(imageSrc, imageAlt) {
-    const fullscreenModal = document.createElement('div');
-    fullscreenModal.className = 'fullscreen-modal';
-    fullscreenModal.innerHTML = `
-        <div class="fullscreen-overlay">
-            <div class="fullscreen-container">
-                <button class="close-fullscreen" onclick="closeFullscreenImage()">×</button>
-                <img src="${imageSrc}" alt="${imageAlt}" class="fullscreen-image">
-                <div class="fullscreen-caption">${imageAlt}</div>
+    
+    if (model.gallery.portfolio && model.gallery.portfolio.length > 0) {
+        galleriesHTML += `
+            <div class="gallery-category">
+                <h3><i class='bx bx-image'></i> Portfolio</h3>
+                <div class="gallery-grid">
+                    ${model.gallery.portfolio.map(img => `
+                        <div class="gallery-item">
+                            <img src="${img}" alt="${model.name} - Portfolio" loading="lazy" onerror="this.parentElement.style.display='none'">
+                        </div>
+                    `).join('')}
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    }
     
-    document.body.appendChild(fullscreenModal);
-    document.body.style.overflow = 'hidden';
-    
-    // Add click outside to close
-    fullscreenModal.addEventListener('click', function(e) {
-        if (e.target === fullscreenModal) {
-            closeFullscreenImage();
-        }
-    });
-    
-    // Add keyboard support (ESC key)
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeFullscreenImage();
-        }
-    });
+    galleriesHTML += '</div>';
+    return galleriesHTML;
 }
 
-// Function to close fullscreen image
-function closeFullscreenImage() {
-    const fullscreenModal = document.querySelector('.fullscreen-modal');
-    if (fullscreenModal) {
-        fullscreenModal.remove();
-        document.body.style.overflow = 'auto';
+function showProfileError() {
+    const profileContainer = document.getElementById('model-profile-content');
+    if (profileContainer) {
+        profileContainer.innerHTML = `
+            <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
+                <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement du profil</h3>
+                <p style="margin-bottom: 10px;">Impossible de charger les informations.</p>
+                <p><a href="mannequins.html" style="color: #1e3a8a;">Retourner à la liste</a></p>
+            </div>
+        `;
     }
 }
 
-// Form handling (for future contact forms)
-function initFormHandling() {
-    const forms = document.querySelectorAll('form');
-    
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Add form validation and submission logic here
-            const formData = new FormData(this);
-            
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Envoi en cours...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                submitBtn.textContent = 'Message envoyé !';
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1000);
-        });
-    });
-}
+// Multi-step form
+let currentStep = 1;
+const totalSteps = 3;
 
-// Multi-Step Form handling
 function initMultiStepForm() {
-    const form = document.getElementById('multiStepForm');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const submitBtn = document.getElementById('submitBtn');
-    const progressSteps = document.querySelectorAll('.progress-step');
-    const formSteps = document.querySelectorAll('.form-step');
-    
-    let currentStep = 1;
-    const totalSteps = 4;
-    
+    const form = document.getElementById('candidature-form');
     if (!form) return;
     
-    // Initialize file upload handlers
-    initFileUploads();
+    updateFormDisplay();
     
-    // Next button handler
-    nextBtn.addEventListener('click', function() {
-        if (validateCurrentStep()) {
-            if (currentStep < totalSteps) {
+    const nextBtns = document.querySelectorAll('.btn-next');
+    const prevBtns = document.querySelectorAll('.btn-prev');
+    
+    nextBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (validateCurrentStep()) {
                 currentStep++;
                 updateFormDisplay();
             }
-        }
+        });
     });
     
-    // Previous button handler
-    prevBtn.addEventListener('click', function() {
-        if (currentStep > 1) {
+    prevBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
             currentStep--;
             updateFormDisplay();
-        }
-    });
-    
-    // Submit button handler
-    submitBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (validateCurrentStep()) {
-            submitForm();
-        }
-    });
-    
-    // Form submit handler
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        if (validateCurrentStep()) {
-            submitForm();
-        }
-    });
-    
-    function updateFormDisplay() {
-        // Update progress steps
-        progressSteps.forEach((step, index) => {
-            if (index + 1 <= currentStep) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
         });
-        
-        // Update form steps
-        formSteps.forEach((step, index) => {
-            if (index + 1 === currentStep) {
-                step.classList.add('active');
-            } else {
-                step.classList.remove('active');
-            }
-        });
-        
-        // Update navigation buttons
-        if (currentStep === 1) {
-            prevBtn.style.display = 'none';
-            nextBtn.style.display = 'inline-block';
-            submitBtn.style.display = 'none';
-        } else if (currentStep === totalSteps) {
-            prevBtn.style.display = 'inline-block';
-            nextBtn.style.display = 'none';
-            submitBtn.style.display = 'inline-block';
+    });
+}
+
+function updateFormDisplay() {
+    document.querySelectorAll('.form-step').forEach((step, index) => {
+        step.classList.toggle('active', index + 1 === currentStep);
+    });
+    
+    document.querySelectorAll('.step-indicator').forEach((indicator, index) => {
+        indicator.classList.toggle('active', index + 1 <= currentStep);
+    });
+}
+
+function validateCurrentStep() {
+    const currentStepElement = document.querySelector(`.form-step:nth-child(${currentStep})`);
+    const requiredInputs = currentStepElement.querySelectorAll('[required]');
+    
+    let isValid = true;
+    requiredInputs.forEach(input => {
+        if (!input.value.trim()) {
+            isValid = false;
+            input.style.borderColor = '#dc3545';
         } else {
-            prevBtn.style.display = 'inline-block';
-            nextBtn.style.display = 'inline-block';
-            submitBtn.style.display = 'none';
+            input.style.borderColor = '';
         }
-    }
+    });
     
-    function validateCurrentStep() {
-        const currentStepElement = document.querySelector(`.form-step[data-step="${currentStep}"]`);
-        const requiredFields = currentStepElement.querySelectorAll('[required]');
-        let isValid = true;
+    return isValid;
+}
+
+function initFormHandling() {
+    const form = document.getElementById('candidature-form');
+    if (!form) return;
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.style.borderColor = '#dc3545';
-                field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
-                
-                // Show error message
-                showFieldError(field, 'Ce champ est obligatoire');
-            } else {
-                field.style.borderColor = '#e9ecef';
-                field.style.boxShadow = 'none';
-                clearFieldError(field);
-            }
-        });
-        
-        // Additional validation for specific steps
-        if (currentStep === 1) {
-            // Age validation
-            const birthDate = document.getElementById('birthDate');
-            if (birthDate.value) {
-                const age = calculateAge(birthDate.value);
-                if (age < 16 || age > 25) {
-                    isValid = false;
-                    showFieldError(birthDate, 'L\'âge doit être entre 16 et 25 ans');
-                }
-            }
+        if (!validateCurrentStep()) {
+            return;
         }
         
-        if (!isValid) {
-            alert('Veuillez corriger les erreurs avant de continuer.');
-        }
-        
-        return isValid;
-    }
-    
-    function calculateAge(birthDate) {
-        const today = new Date();
-        const birth = new Date(birthDate);
-        let age = today.getFullYear() - birth.getFullYear();
-        const monthDiff = today.getMonth() - birth.getMonth();
-        
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-            age--;
-        }
-        
-        return age;
-    }
-    
-    function showFieldError(field, message) {
-        clearFieldError(field);
-        
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'field-error';
-        errorDiv.textContent = message;
-        errorDiv.style.color = '#dc3545';
-        errorDiv.style.fontSize = '0.8rem';
-        errorDiv.style.marginTop = '0.25rem';
-        
-        field.parentNode.appendChild(errorDiv);
-    }
-    
-    function clearFieldError(field) {
-        const existingError = field.parentNode.querySelector('.field-error');
-        if (existingError) {
-            existingError.remove();
-        }
-    }
-    
-    function submitForm() {
-        const submitBtn = document.getElementById('submitBtn');
+        const submitBtn = form.querySelector('.btn-submit');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = 'Envoi en cours...';
         submitBtn.disabled = true;
         
-        // Add hidden fields for better email formatting
-        const formData = new FormData(form);
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Add a subject field for Formspree
-        const subjectField = document.createElement('input');
-        subjectField.type = 'hidden';
-        subjectField.name = '_subject';
-        subjectField.value = `Nouvelle candidature - ${formData.get('firstName')} ${formData.get('lastName')}`;
-        form.appendChild(subjectField);
-        
-        // Add recipient email
-        const recipientField = document.createElement('input');
-        recipientField.type = 'hidden';
-        recipientField.name = '_replyto';
-        recipientField.value = formData.get('email');
-        form.appendChild(recipientField);
-        
-        // Submit the form to Formspree
-        form.submit();
-        
-        // Show success message (Formspree will redirect to a success page)
         submitBtn.textContent = 'Candidature envoyée !';
         submitBtn.style.background = '#28a745';
-        
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message';
-        successMessage.innerHTML = `
-            <div class="success-content">
-                <h3>🎉 Candidature envoyée avec succès !</h3>
-                <p>Nous avons bien reçu votre candidature. Notre équipe vous contactera dans les plus brefs délais.</p>
-            </div>
-        `;
-        
-        form.parentNode.insertBefore(successMessage, form);
         
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
             submitBtn.style.background = '';
             form.reset();
-            successMessage.remove();
-            // Reset to first step
             currentStep = 1;
             updateFormDisplay();
         }, 3000);
-    }
-}
-
-// File upload handling
-function initFileUploads() {
-    const fileInputs = document.querySelectorAll('input[type="file"]');
-    
-    fileInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            const fileName = this.files[0] ? this.files[0].name : 'Aucun fichier sélectionné';
-            const label = this.parentNode.querySelector('.file-name');
-            if (label) {
-                label.textContent = fileName;
-            }
-        });
     });
 }
 
-// Inscription form handling (legacy - keeping for compatibility)
 function initInscriptionForm() {
-    // Initialize multi-step form instead
     initMultiStepForm();
 }
 
-// Initialize form handling
 initFormHandling();
 
-// Keyboard navigation accessibility
+// Keyboard navigation
 document.addEventListener('keydown', function(e) {
-    // ESC key closes mobile menu
     if (e.key === 'Escape') {
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
@@ -1053,7 +585,7 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Performance optimization: Lazy loading for images
+// Lazy loading
 function initLazyLoading() {
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -1074,14 +606,12 @@ function initLazyLoading() {
     }
 }
 
-// Initialize lazy loading
 initLazyLoading();
 
-// Formation carousel functionality
+// Formation carousel
 function initFormationCarousels() {
     const carousels = document.querySelectorAll('.formation-carousel');
 
-    // Map dataset keys to filename bases with actual existing images
     const formationImages = {
         defile: [
             'defile1.jpg', 'defile2.jpg', 'defile4.jpg', 'defile5.jpg', 'defile6.jpg', 
@@ -1107,10 +637,8 @@ function initFormationCarousels() {
         
         if (images.length === 0) return;
 
-        // Clear existing images
         carousel.innerHTML = '';
 
-        // Add only existing images
         images.forEach((imageName, index) => {
             const img = document.createElement('img');
             img.src = `images/gallery/${imageName}`;
@@ -1118,21 +646,17 @@ function initFormationCarousels() {
             img.className = 'carousel-image';
             img.loading = 'lazy';
             
-            // Set first image as active
             if (index === 0) {
                 img.classList.add('active');
             }
             
-            // Handle image errors gracefully
             img.onerror = function() {
-                console.warn(`Image non trouvée: ${imageName}`);
                 img.style.display = 'none';
             };
             
             carousel.appendChild(img);
         });
 
-        // Start carousel if we have multiple images
         if (images.length > 1) {
             let currentIndex = 0;
             
@@ -1148,185 +672,4 @@ function initFormationCarousels() {
             setInterval(nextImage, 5000);
         }
     });
-}
-
-
-
-// Formation carousels are initialized on DOMContentLoaded
-
-// Function to toggle measurements display
-function toggleMeasurements(modelId) {
-    const measurementsElement = document.getElementById(`measurements-${modelId}`);
-    if (measurementsElement) {
-        measurementsElement.classList.toggle('show');
-    }
-}
-
-// Function to navigate to individual model page
-function navigateToModelPage(modelId) {
-    // Store the model ID in sessionStorage for the individual page
-    sessionStorage.setItem('selectedModelId', modelId);
-    
-    // Navigate to the individual model page
-    window.location.href = `model-profile.html?id=${modelId}`;
-}
-
-// Function to create individual model page
-function createModelProfilePage() {
-    // Get model ID from URL parameters or sessionStorage
-    const urlParams = new URLSearchParams(window.location.search);
-    const modelId = parseInt(urlParams.get('id')) || parseInt(sessionStorage.getItem('selectedModelId'));
-    
-    console.log('createModelProfilePage appelée avec modelId:', modelId);
-    console.log('modelsData disponible:', !!window.modelsData);
-    console.log('Nombre de mannequins:', window.modelsData ? window.modelsData.length : 0);
-    
-    if (!modelId || !window.modelsData) {
-        console.error('Model ID not found or data not loaded');
-        console.error('modelId:', modelId);
-        console.error('modelsData:', window.modelsData);
-        
-        // Show error message to user
-        const profileContainer = document.getElementById('model-profile-content');
-        if (profileContainer) {
-            profileContainer.innerHTML = `
-                <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
-                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement du profil</h3>
-                    <p style="margin-bottom: 10px;">Impossible de charger les informations du mannequin.</p>
-                    <p>Veuillez retourner à la <a href="mannequins.html" style="color: #1e3a8a;">liste des mannequins</a> et réessayer.</p>
-                </div>
-            `;
-        }
-        return;
-    }
-    
-    const model = window.modelsData.find(m => m.id === modelId);
-    if (!model) {
-        console.error('Model not found for ID:', modelId);
-        console.error('Available models:', window.modelsData.map(m => ({ id: m.id, name: m.name })));
-        
-        // Show error message to user
-        const profileContainer = document.getElementById('model-profile-content');
-        if (profileContainer) {
-            profileContainer.innerHTML = `
-                <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
-                    <h3 style="color: #1e3a8a; margin-bottom: 20px;">Mannequin non trouvé</h3>
-                    <p style="margin-bottom: 10px;">Le mannequin demandé n'existe pas dans notre base de données.</p>
-                    <p>Veuillez retourner à la <a href="mannequins.html" style="color: #1e3a8a;">liste des mannequins</a> et réessayer.</p>
-                </div>
-            `;
-        }
-        return;
-    }
-    
-    // Update page title
-    document.title = `${model.name} - MODELS ACADEMY MANAGEMENT`;
-    
-    // Handle both old (array) and new (categorized) gallery formats
-    let shootingImages, fashionShowImages, portfolioImages;
-    
-    if (model.gallery && typeof model.gallery === 'object' && !Array.isArray(model.gallery)) {
-        // New categorized format
-        shootingImages = model.gallery.shooting || [];
-        fashionShowImages = model.gallery.fashionShow || [];
-        portfolioImages = model.gallery.portfolio || [];
-    } else {
-        // Fallback: old array format - distribute evenly
-        const gallery = model.gallery || [];
-        shootingImages = gallery.slice(0, Math.ceil(gallery.length / 3));
-        fashionShowImages = gallery.slice(Math.ceil(gallery.length / 3), Math.ceil(2 * gallery.length / 3));
-        portfolioImages = gallery.slice(Math.ceil(2 * gallery.length / 3));
-    }
-    
-    // Create the page content
-    const profileContainer = document.getElementById('model-profile-content');
-    console.log('profileContainer trouvé:', !!profileContainer);
-    console.log('Données du mannequin:', model);
-    
-    if (profileContainer) {
-        profileContainer.innerHTML = `
-            <div class="model-profile-header">
-                <div class="model-profile-image">
-                    <img src="${model.image}" alt="${model.name}" />
-                </div>
-                <div class="model-profile-info">
-                    <h1>${model.name}</h1>
-                    <div class="model-profile-specialty">${model.specialty}</div>
-                    <div class="model-profile-location">📍 ${model.city}</div>
-                    <div class="model-profile-experience">✨ ${model.experience} d'expérience</div>
-                    <div class="model-profile-description">${model.description}</div>
-                </div>
-            </div>
-            
-            <div class="model-profile-sections">
-                <div class="section-tabs">
-                    <button class="tab-btn active" onclick="showSection('shooting')">SHOOTING</button>
-                    <button class="tab-btn" onclick="showSection('fashion-show')">FASHION SHOW</button>
-                    <button class="tab-btn" onclick="showSection('portfolio')">PORTFOLIO</button>
-                </div>
-                
-                <div class="section-content">
-                    <div id="shooting-section" class="section active">
-                        <h2>📸 Photos de Shooting</h2>
-                        <div class="gallery-grid">
-                            ${shootingImages.map((image, index) => `
-                                <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Shooting ${index + 1}')">
-                                    <img src="${image}" alt="${model.name} - Shooting ${index + 1}" loading="lazy" onerror="this.style.display='none'">
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    
-                    <div id="fashion-show-section" class="section">
-                        <h2>👗 Photos de Défilé</h2>
-                        <div class="gallery-grid">
-                            ${fashionShowImages.map((image, index) => `
-                                <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Défilé ${index + 1}')">
-                                    <img src="${image}" alt="${model.name} - Défilé ${index + 1}" loading="lazy" onerror="this.style.display='none'">
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    
-                    <div id="portfolio-section" class="section">
-                        <h2>💼 Photos Professionnelles</h2>
-                        <div class="gallery-grid">
-                            ${portfolioImages.map((image, index) => `
-                                <div class="gallery-item" onclick="openFullscreenImage('${image}', '${model.name} - Portfolio ${index + 1}')">
-                                    <img src="${image}" alt="${model.name} - Portfolio ${index + 1}" loading="lazy" onerror="this.style.display='none'">
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-    }
-}
-
-// Function to show specific section in model profile
-function showSection(sectionName) {
-    // Remove active class from all tabs and sections
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-    
-    // Add active class to clicked tab and corresponding section
-    event.target.classList.add('active');
-    document.getElementById(`${sectionName}-section`).classList.add('active');
-}
-
-// Helper function to get total gallery count for both old and new formats
-function getGalleryCount(model) {
-    if (!model.gallery) return 0;
-    
-    if (typeof model.gallery === 'object' && !Array.isArray(model.gallery)) {
-        // New categorized format
-        const shooting = (model.gallery.shooting || []).length;
-        const fashionShow = (model.gallery.fashionShow || []).length;
-        const portfolio = (model.gallery.portfolio || []).length;
-        return Math.min(shooting + fashionShow + portfolio, 18);
-    } else {
-        // Old array format
-        return Math.min((model.gallery || []).length, 18);
-    }
 }
