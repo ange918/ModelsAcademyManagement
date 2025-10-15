@@ -1,0 +1,67 @@
+Je veux appliquer les modifications suivantes sur mon projet MODELSACADEMYMYMANAGEMENT :
+
+1. Sur la page mannequins.html :
+
+Supprime complètement le bouton “Mensurations” des cards.
+
+Garde uniquement le bouton “En savoir plus” qui redirige vers model-profile.html.
+
+Charge les informations des mannequins (nom, description, image, etc.) depuis le fichier data/models.json.
+
+L’image principale utilisée pour chaque mannequin doit provenir de son sous-dossier images/<nom>/porfolio/.
+
+
+
+2. Sur la page model-profile.html :
+
+Charge dynamiquement les informations du mannequin sélectionné (nom, description, images, mensurations) depuis data/models.json.
+
+En bas de la description du mannequin, affiche les mensurations dans un design élégant et clair (je vais fournir une image du style à suivre).
+
+En dessous, affiche les galeries du mannequin :
+
+Section “Shooting” → images du dossier images/<nom>/shooting/
+
+Section “Fashion Show” → images du dossier images/<nom>/defile/
+
+Section “Portfolio” → images du dossier images/<nom>/porfolio/
+
+
+
+
+3. Corrige le clignotement visible sur la page mannequins.html (bug visuel).
+
+Le chargement JS ne doit pas se répéter en boucle.
+
+Utiliser un seul appel de chargement avec DOMContentLoaded.
+
+
+
+4. Dans style.css :
+
+Applique une police d’écriture fine et élégante (ex : Poppins Light ou Montserrat Thin).
+
+Mets un font-weight entre 200 et 300 pour tout le texte.
+
+
+
+5. Dans le dossier images/ :
+
+Pour chaque mannequin défini dans data/models.json, vérifier qu’un dossier existe dans images/.
+
+Si un mannequin n’a pas encore de dossier, le créer automatiquement.
+
+Si un dossier ne contient pas les sous-dossiers defile, porfolio, et shooting, les créer vides.
+
+
+
+6. Enfin :
+
+Supprime tout code obsolète qui servait à charger les images ou mensurations manuellement dans le HTML.
+
+Assure-toi que tout soit maintenant piloté par le fichier data/models.json.
+
+
+
+
+🧩 But final : Tout le contenu (images, infos, mensurations, galeries) doit être chargé dynamiquement à partir de data/models.json, et les sous-dossiers d’images doivent être bien structurés.
