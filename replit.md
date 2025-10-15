@@ -4,6 +4,33 @@
 
 MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcases fashion models and their portfolios. The platform serves as a digital presence for a prestigious modeling agency, featuring model profiles, agency information, and training programs. The website is designed to attract both potential models and clients looking to work with professional talent in the fashion industry.
 
+## Recent Updates (October 2025)
+
+### Folder Structure
+- ✅ All model folders now include three required subdirectories: `portfolio/`, `defile/`, and `shooting/`
+- ✅ Empty folders contain `.gitkeep` files to ensure proper version control tracking
+
+### New Models Added
+- ✅ **VODOUNON Jédiel** (1.76m) - 36 shooting images
+- ✅ **TOSSOU Rafiou Honel** (1.87m) - 6 portfolio images
+- ✅ Total models in database: 19
+
+### Model Profile Page Improvements
+- ✅ Removed black "← Retour" button from profile pages
+- ✅ Implemented gallery tabs system (Portfolio / Fashion Show / Shooting)
+- ✅ Tab-based navigation prevents page flickering and provides smooth category switching
+- ✅ Updated Boxicons for characteristics:
+  - `bx-ruler` for height
+  - `bx-brush` for hair color
+  - `bx-show` for eye color
+  - `bx-map` for location
+  - `bx-time` for experience
+
+### Design & Typography Updates
+- ✅ Enhanced font weights: 300 for headings (thin, elegant), 200 for paragraphs (light, readable)
+- ✅ Added modern tab styling with rounded borders, hover effects, and active states
+- ✅ Improved visual hierarchy and user experience across all pages
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
