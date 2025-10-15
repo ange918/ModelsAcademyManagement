@@ -21,7 +21,7 @@ The application follows a traditional multi-page website architecture built with
 ### Design System
 The website implements a sophisticated design system featuring:
 
-- **Typography**: Georgia serif font family for elegant, professional appearance
+- **Typography**: Poppins font family (weight 200-300) for a thin, elegant, and professional appearance
 - **Color Palette**: Elegant color scheme with primary black (#1a1a1a), accent gold (#d4af37), and navy blue (#1e3a8a)
 - **Animation Framework**: Fade-in animations and smooth transitions for enhanced user experience
 - **Visual Hierarchy**: Strategic use of typography scales and spacing for content organization
@@ -34,17 +34,21 @@ The website implements a sophisticated design system featuring:
 
 ### Content Structure
 - **Hero Section**: Prominent branding and call-to-action placement
-- **Model Gallery**: Grid-based layout for showcasing model portfolios
+- **Model Gallery**: Grid-based layout for showcasing model portfolios with organized image folders (portfolio/shooting/defile)
+- **Model Profile Pages**: Dynamic profile pages with complete galleries loaded from JSON data
 - **Progressive Enhancement**: JavaScript-enhanced interactions with graceful degradation
+- **Optimized Performance**: Removed embedded data duplications (~500 lines), improved page load times
 
 ## External Dependencies
 
 ### Font Services
-- **System Fonts**: Georgia serif font family for elegant typography and excellent readability
+- **Google Fonts**: Poppins font family (weight 200-300) for elegant, thin typography and excellent readability
 
 ### Media Assets
 - **Image Dependencies**: Local image storage for model portfolios and hero backgrounds
-- **Static Asset Management**: Direct file serving for images (models, backgrounds, logos)
+- **Organized Structure**: Images organized in model-specific folders (images/{model-name}/{portfolio|shooting|defile})
+- **Static Asset Management**: Direct file serving for images with proper fallback handling
+- **Gallery Data**: Model galleries populated from organized folders via JSON configuration (data/models.json)
 
 ### Browser APIs
 - **DOM Manipulation**: Native JavaScript for interactive features
