@@ -160,6 +160,18 @@ p {
     gap: 1.5rem;
 }
 
+@media (min-width: 1200px) {
+    .nav-menu {
+        gap: 2.5rem;
+    }
+    .navbar.scrolled .nav-menu {
+        gap: 2rem;
+    }
+    .nav-link {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         gap: 1rem;

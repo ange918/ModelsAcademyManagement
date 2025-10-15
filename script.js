@@ -424,9 +424,9 @@ function renderGalleries(model) {
         <div class="galleries-section">
             <h2>Galeries</h2>
             <div class="gallery-tabs">
-                ${hasPortfolio ? `<button class="tab ${defaultCategory === 'portfolio' ? 'active' : ''}" data-category="portfolio"><i class='bx bx-image'></i> Portfolio</button>` : ''}
-                ${hasFashionShow ? `<button class="tab ${defaultCategory === 'fashionShow' ? 'active' : ''}" data-category="fashionShow"><i class='bx bx-walk'></i> Fashion Show</button>` : ''}
-                ${hasShooting ? `<button class="tab ${defaultCategory === 'shooting' ? 'active' : ''}" data-category="shooting"><i class='bx bx-camera'></i> Shooting</button>` : ''}
+                <button class="tab ${defaultCategory === 'portfolio' ? 'active' : ''}" data-category="portfolio"><i class='bx bx-image'></i> Portfolio</button>
+                <button class="tab ${defaultCategory === 'fashionShow' ? 'active' : ''}" data-category="fashionShow"><i class='bx bx-walk'></i> Fashion Show</button>
+                <button class="tab ${defaultCategory === 'shooting' ? 'active' : ''}" data-category="shooting"><i class='bx bx-camera'></i> Shooting</button>
             </div>
             <div id="gallery-content" class="gallery-grid"></div>
         </div>
