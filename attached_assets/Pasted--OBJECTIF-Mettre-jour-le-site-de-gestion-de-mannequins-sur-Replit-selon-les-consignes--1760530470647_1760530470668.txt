@@ -1,0 +1,152 @@
+# 🔧 OBJECTIF :
+# Mettre à jour le site de gestion de mannequins sur Replit
+# selon les consignes suivantes :
+
+##############################################################
+# 🗂️ STRUCTURE DES DOSSIERS
+##############################################################
+
+# 1️⃣ Vérifie le dossier images/
+#    Chaque mannequin doit avoir son propre dossier :
+#    images/Nom_du_mannequin/
+#    Et à l’intérieur, trois sous-dossiers :
+#       - portfolio/
+#       - defile/
+#       - shooting/
+#    Si un sous-dossier n’existe pas, le créer vide.
+
+# 2️⃣ Ajouter les mannequins manquants :
+#    - VODOUNON Jédiel → Taille 1.76
+#    - Tossou Rafiou honel → Taille 1.87
+#    leurs dossier Sont déjà existants 
+
+##############################################################
+# 📄 FICHIER data/models.json
+##############################################################
+
+# 3️⃣ S’assurer que chaque mannequin est présent dans models.json :
+#    - avec nom, taille, description, caractéristiques, mensurations,
+#      et chemins vers les trois catégories d’images :
+#      portfolio, defile, shooting.
+#    Exemple :
+#    {
+#      "name": "Lucia Padanou",
+#      "height": "1.80m",
+#      "city": "Cotonou",
+#      "experience": "3 ans",
+#      "images": {
+#        "portfolio": ["images/Lucia Padanou/portfolio/1.jpg", ...],
+#        "defile": ["images/Lucia Padanou/defile/1.jpg", ...],
+#        "shooting": ["images/Lucia Padanou/shooting/1.jpg", ...]
+#      }
+#    }
+
+##############################################################
+# 🧱 PAGE mannequin.html
+##############################################################
+
+# 4️⃣ Supprimer le bouton noir “← Retour”.
+#    Garder uniquement le lien texte “← Retour aux Mannequins”.
+
+# 5️⃣ Ajouter au-dessus de la galerie trois onglets :
+#    - Portfolio
+#    - Fashion Show
+#    - Shooting
+#    Ces onglets permettent d’afficher uniquement les photos du dossier correspondant.
+
+# Exemple de structure HTML :
+# <div class="tabs flex justify-center gap-4 mt-8">
+#   <button class="tab active" data-category="portfolio">Portfolio</button>
+#   <button class="tab" data-category="defile">Fashion Show</button>
+#   <button class="tab" data-category="shooting">Shooting</button>
+# </div>
+
+# <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6"></div>
+
+# Le JS écoute les clics sur les boutons et charge les bonnes images
+# depuis models.json selon la catégorie choisie.
+
+##############################################################
+# 🪞 STYLE ET POLICES
+##############################################################
+
+# 6️⃣ Charger les polices depuis assets/fonts/
+#    et les appliquer globalement :
+#    - Titres : police fine (font-weight: 300)
+#    - Paragraphes : police légère (font-weight: 200)
+#    Ajouter au fichier CSS principal :
+#
+# @font-face {
+#   font-family: 'CustomFont';
+#   src: url('assets/fonts/CustomFont.woff2') format('woff2');
+#   font-weight: 200;
+#   font-style: normal;
+# }
+#
+# body {
+#   font-family: 'CustomFont', sans-serif;
+#   font-weight: 200;
+# }
+
+##############################################################
+# 🧩 ICONES BOXICONS
+##############################################################
+
+# 7️⃣ Ajouter dans le <head> :
+# <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+#
+# Utiliser les icônes pour les caractéristiques :
+#   Taille → <i class='bx bx-ruler'></i>
+#   Cheveux → <i class='bx bx-brush'></i>
+#   Yeux → <i class='bx bx-show'></i>
+#   Ville → <i class='bx bx-map'></i>
+#   Expérience → <i class='bx bx-time'></i>
+
+##############################################################
+# 🧠 JAVASCRIPT (mannequin.js)
+##############################################################
+
+# 8️⃣ Charger les données de data/models.json une seule fois pour éviter le clignotement.
+#    Exécuter le script dans un bloc :
+#
+# document.addEventListener("DOMContentLoaded", async () => {
+#   const res = await fetch("data/models.json");
+#   const data = await res.json();
+#   // afficher les infos du mannequin et sa galerie ici
+# });
+#
+# 9️⃣ Ajouter une fonction qui change la galerie selon l’onglet sélectionné :
+#
+# function showCategory(category) {
+#   const images = model.images[category];
+#   gallery.innerHTML = images.map(src => `<img src="${src}" class="rounded-lg shadow-md" />`).join("");
+# }
+#
+# document.querySelectorAll(".tab").forEach(btn => {
+#   btn.addEventListener("click", e => {
+#     document.querySelector(".tab.active").classList.remove("active");
+#     e.target.classList.add("active");
+#     showCategory(e.target.dataset.category);
+#   });
+# });
+
+##############################################################
+# 🚀 OPTIMISATION
+##############################################################
+
+# 10️⃣ Corriger le clignotement :
+#     - Supprimer tout rechargement automatique.
+#     - Charger les données et insérer le HTML dynamiquement une seule fois.
+#     - Utiliser transition ou fade-in CSS si nécessaire.
+
+##############################################################
+# ✅ FIN DU PROMPT
+##############################################################
+
+# Une fois exécuté, ton site affichera :
+# - Des galeries triées par catégorie (Portfolio / Fashion Show / Shooting)
+# - Des polices fines et harmonieuses
+# - Des icônes Boxicons pour chaque information
+# - Aucune page clignotante
+# - Tous les dossiers mannequins bien structurés
+# - Les nouveaux mannequins ajoutés automatiquement
