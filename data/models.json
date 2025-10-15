@@ -628,6 +628,99 @@
           "images/michelle/portfolio/IMG-20250820-WA0606.jpg"
         ]
       }
+    },
+    {
+      "id": 18,
+      "name": "VODOUNON Jédiel",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.76m",
+      "chest": "95cm",
+      "waist": "75cm",
+      "shoeSize": "42 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": [
+        "Francais"
+      ],
+      "image": "images/jediel/shooting/IMG-20251013-WA0008.jpg",
+      "description": "Modèle fitness et commercial, physique athlétique",
+      "gallery": {
+        "shooting": [
+          "images/jediel/shooting/IMG-20251013-WA0008.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0009.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0010.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0011.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0012.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0013.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0014.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0015.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0016.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0017.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0018.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0019.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0020.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0021.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0022.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0023.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0024.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0025.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0026.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0027.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0028.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0029.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0030.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0031.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0032.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0033.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0034.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0035.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0036.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0037.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0038.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0039.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0040.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0041.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0042.jpg",
+          "images/jediel/shooting/IMG-20251013-WA0043.jpg"
+        ],
+        "fashionShow": [],
+        "portfolio": []
+      }
+    },
+    {
+      "id": 19,
+      "name": "TOSSOU Rafiou Honel",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.87m",
+      "chest": "102cm",
+      "waist": "80cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": [
+        "Francais",
+        "Anglais"
+      ],
+      "image": "images/honel/portfolio/IMG-20251013-WA0002.jpg",
+      "description": "Modèle de luxe, charisme et élégance",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": [
+          "images/honel/portfolio/IMG-20251013-WA0002.jpg",
+          "images/honel/portfolio/IMG-20251013-WA0003.jpg",
+          "images/honel/portfolio/IMG-20251013-WA0004.jpg",
+          "images/honel/portfolio/IMG-20251013-WA0005.jpg",
+          "images/honel/portfolio/IMG-20251013-WA0006.jpg",
+          "images/honel/portfolio/IMG-20251013-WA0007.jpg"
+        ]
+      }
     }
   ]
 }
