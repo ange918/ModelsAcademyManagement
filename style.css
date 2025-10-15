@@ -53,6 +53,7 @@ h3 {
 p {
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    font-weight: 200;
 }
 
 /* Container and Layout */
@@ -2472,6 +2473,46 @@ img[src=""] {
     font-weight: 300;
     margin-bottom: 40px;
     text-align: center;
+}
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.gallery-tabs .tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: transparent;
+    border: 2px solid var(--text-light);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gallery-tabs .tab i {
+    font-size: 1.2rem;
+}
+
+.gallery-tabs .tab:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.gallery-tabs .tab.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
 }
 
 .gallery-category {
