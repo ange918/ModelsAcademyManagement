@@ -19,6 +19,7 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 - ✅ Removed black "← Retour" button from profile pages
 - ✅ Implemented gallery tabs system (Portfolio / Fashion Show / Shooting)
 - ✅ Tab-based navigation prevents page flickering and provides smooth category switching
+- ✅ **All 3 gallery buttons (Portfolio, Fashion Show, Shooting) now always visible**, even when no photos in category
 - ✅ Updated Boxicons for characteristics:
   - `bx-ruler` for height
   - `bx-brush` for hair color
@@ -30,6 +31,20 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 - ✅ Enhanced font weights: 300 for headings (thin, elegant), 200 for paragraphs (light, readable)
 - ✅ Added modern tab styling with rounded borders, hover effects, and active states
 - ✅ Improved visual hierarchy and user experience across all pages
+
+### Formation Pages Updates (October 15, 2025)
+- ✅ **Header uniformization**: All formation pages now use "MAM" logo matching main site header
+- ✅ **Color palette redesign**: Changed from blue/gold to **black and white** color scheme
+  - Headings: #000000 (black)
+  - Feature icons: solid black background
+  - CTA section: solid black background
+  - Buttons: white background with black text
+- ✅ **Boxicons integration**: Replaced all emojis with professional Boxicons icons
+  - Défilé page: `bx-walk`, `bx-face`, `bx-closet`, `bx-spa`
+  - Photo page: `bx-camera`, `bx-palette`, `bx-bulb`, `bx-group`
+  - Développement page: `bx-happy-heart-eyes`, `bx-microphone`, `bx-network-chart`, `bx-spa`
+  - Footer: `bx-envelope`, `bx-phone`, `bx-map`
+- ✅ **Desktop header optimization**: Added media query for screens >1200px with improved spacing (gap: 2.5rem)
 
 ## User Preferences
 
