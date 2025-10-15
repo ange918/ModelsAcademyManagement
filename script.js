@@ -355,9 +355,6 @@ function createModelProfilePage() {
     
     profileContainer.innerHTML = `
         <div class="profile-header">
-            <button class="btn-back" onclick="window.location.href='mannequins.html'">
-                <i class='bx bx-arrow-back'></i> Retour
-            </button>
             <h1>${model.name}</h1>
         </div>
         
@@ -377,7 +374,7 @@ function createModelProfilePage() {
                         <strong>${model.height}</strong>
                     </div>
                     <div class="detail-item">
-                        <i class='bx bx-palette'></i>
+                        <i class='bx bx-brush'></i>
                         <span>Cheveux:</span>
                         <strong>${model.hairColor}</strong>
                     </div>
@@ -410,58 +407,67 @@ function createModelProfilePage() {
         
         ${renderGalleries(model)}
     `;
+    
+    initGalleryTabs(model);
 }
 
 function renderGalleries(model) {
-    let galleriesHTML = '<div class="galleries-section"><h2>Galeries</h2>';
+    const hasPortfolio = model.gallery.portfolio && model.gallery.portfolio.length > 0;
+    const hasFashionShow = model.gallery.fashionShow && model.gallery.fashionShow.length > 0;
+    const hasShooting = model.gallery.shooting && model.gallery.shooting.length > 0;
     
-    if (model.gallery.shooting && model.gallery.shooting.length > 0) {
-        galleriesHTML += `
-            <div class="gallery-category">
-                <h3><i class='bx bx-camera'></i> Shooting</h3>
-                <div class="gallery-grid">
-                    ${model.gallery.shooting.map(img => `
-                        <div class="gallery-item">
-                            <img src="${img}" alt="${model.name} - Shooting" loading="lazy" onerror="this.parentElement.style.display='none'">
-                        </div>
-                    `).join('')}
-                </div>
+    let defaultCategory = 'portfolio';
+    if (!hasPortfolio && hasFashionShow) defaultCategory = 'fashionShow';
+    if (!hasPortfolio && !hasFashionShow && hasShooting) defaultCategory = 'shooting';
+    
+    let galleriesHTML = `
+        <div class="galleries-section">
+            <h2>Galeries</h2>
+            <div class="gallery-tabs">
+                ${hasPortfolio ? `<button class="tab ${defaultCategory === 'portfolio' ? 'active' : ''}" data-category="portfolio"><i class='bx bx-image'></i> Portfolio</button>` : ''}
+                ${hasFashionShow ? `<button class="tab ${defaultCategory === 'fashionShow' ? 'active' : ''}" data-category="fashionShow"><i class='bx bx-walk'></i> Fashion Show</button>` : ''}
+                ${hasShooting ? `<button class="tab ${defaultCategory === 'shooting' ? 'active' : ''}" data-category="shooting"><i class='bx bx-camera'></i> Shooting</button>` : ''}
             </div>
-        `;
-    }
+            <div id="gallery-content" class="gallery-grid"></div>
+        </div>
+    `;
     
-    if (model.gallery.fashionShow && model.gallery.fashionShow.length > 0) {
-        galleriesHTML += `
-            <div class="gallery-category">
-                <h3><i class='bx bx-walk'></i> Défilé</h3>
-                <div class="gallery-grid">
-                    ${model.gallery.fashionShow.map(img => `
-                        <div class="gallery-item">
-                            <img src="${img}" alt="${model.name} - Défilé" loading="lazy" onerror="this.parentElement.style.display='none'">
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    if (model.gallery.portfolio && model.gallery.portfolio.length > 0) {
-        galleriesHTML += `
-            <div class="gallery-category">
-                <h3><i class='bx bx-image'></i> Portfolio</h3>
-                <div class="gallery-grid">
-                    ${model.gallery.portfolio.map(img => `
-                        <div class="gallery-item">
-                            <img src="${img}" alt="${model.name} - Portfolio" loading="lazy" onerror="this.parentElement.style.display='none'">
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    galleriesHTML += '</div>';
     return galleriesHTML;
+}
+
+function initGalleryTabs(model) {
+    const tabs = document.querySelectorAll('.gallery-tabs .tab');
+    const galleryContent = document.getElementById('gallery-content');
+    
+    if (!tabs.length || !galleryContent) return;
+    
+    function showCategory(category) {
+        const images = model.gallery[category] || [];
+        
+        if (images.length === 0) {
+            galleryContent.innerHTML = '<p style="text-align: center; padding: 40px; color: #666;">Aucune image disponible dans cette catégorie</p>';
+            return;
+        }
+        
+        galleryContent.innerHTML = images.map(img => `
+            <div class="gallery-item">
+                <img src="${img}" alt="${model.name}" loading="lazy" onerror="this.parentElement.style.display='none'">
+            </div>
+        `).join('');
+    }
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            showCategory(this.dataset.category);
+        });
+    });
+    
+    const activeTab = document.querySelector('.gallery-tabs .tab.active');
+    if (activeTab) {
+        showCategory(activeTab.dataset.category);
+    }
 }
 
 function showProfileError() {
