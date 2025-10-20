@@ -4,16 +4,41 @@
 
 MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcases fashion models and their portfolios. The platform serves as a digital presence for a prestigious modeling agency, featuring model profiles, agency information, and training programs. The website is designed to attract both potential models and clients looking to work with professional talent in the fashion industry.
 
-## Recent Updates (October 2025)
+## Recent Updates (October 20, 2025)
+
+### Major Website Expansion
+- ✅ **New Pages Created:**
+  - `blog.html` - Blog avec 7 articles de démonstration
+  - `about.html` - Page À Propos avec histoire de l'agence et présentation du staff
+  - `login.html` - Page de connexion administrateur
+  - `dashboard.html` - Tableau de bord administrateur avec gestion du mot de passe
+
+- ✅ **5 Nouveaux Mannequins Ajoutés** (Total: 24 mannequins)
+  - **AKPO Mathieu** (1.88m) - ID 20
+  - **AGBOGNON Joana** (1.60m) - ID 21
+  - **SENOU Paula** (1.70m) - ID 22
+  - **ADANTOLANKPE Pascal** (1.89m) - ID 23
+  - **GBAGUIDI Danielle** (1.76m) - ID 24
+
+- ✅ **Améliorations Navigation:**
+  - Logo du header maintenant cliquable sur toutes les pages (redirige vers index.html)
+  - Liens vers blog et about ajoutés dans les menus de navigation
+
+- ✅ **Pages de Formation Améliorées:**
+  - Espacement ajouté entre le bouton "Retour à l'accueil" et le header (top: 90px au lieu de 20px)
+  - Images de fond différentes pour chaque page de formation confirmées:
+    - defile-runway.html: `defile.jpg`
+    - photo-shooting.html: `shoot.jpg`
+    - developpement-personnel.html: `about.jpg`
+
+- ✅ **Système d'Administration:**
+  - Authentification avec identifiants: ROYALFASHIONEVENT / 91RERDMODEL
+  - Fonction de changement de mot de passe dans le dashboard
+  - Utilisation de sessionStorage pour la session et localStorage pour le mot de passe (environnement de test)
 
 ### Folder Structure
 - ✅ All model folders now include three required subdirectories: `portfolio/`, `defile/`, and `shooting/`
 - ✅ Empty folders contain `.gitkeep` files to ensure proper version control tracking
-
-### New Models Added
-- ✅ **VODOUNON Jédiel** (1.76m) - 36 shooting images
-- ✅ **TOSSOU Rafiou Honel** (1.87m) - 6 portfolio images
-- ✅ Total models in database: 19
 
 ### Model Profile Page Improvements
 - ✅ Removed black "← Retour" button from profile pages
@@ -78,6 +103,9 @@ The website implements a sophisticated design system featuring:
 - **Hero Section**: Prominent branding and call-to-action placement
 - **Model Gallery**: Grid-based layout for showcasing model portfolios with organized image folders (portfolio/shooting/defile)
 - **Model Profile Pages**: Dynamic profile pages with complete galleries loaded from JSON data
+- **Blog System**: 7 demo articles with images, dates, excerpts, and "read more" links
+- **About Page**: Complete agency history, mission, values, and team presentation
+- **Admin Dashboard**: Secure admin area with statistics, password management, and quick actions
 - **Progressive Enhancement**: JavaScript-enhanced interactions with graceful degradation
 - **Optimized Performance**: Removed embedded data duplications (~500 lines), improved page load times
 
@@ -96,5 +124,8 @@ The website implements a sophisticated design system featuring:
 - **DOM Manipulation**: Native JavaScript for interactive features
 - **Scroll Events**: Window scroll listeners for navigation effects
 - **Intersection Observer**: Potential implementation for scroll-triggered animations
+- **Storage APIs**: 
+  - sessionStorage for admin authentication state
+  - localStorage for password storage (test environment only - NOT for production)
 
 The architecture prioritizes performance, visual appeal, and user experience while maintaining simplicity in implementation. The design focuses on showcasing visual content effectively while providing intuitive navigation and professional presentation suitable for a high-end modeling agency.
