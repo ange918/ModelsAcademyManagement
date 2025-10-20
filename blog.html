@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - MODELS ACADEMY MANAGEMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques au blog */
+        .blog-header {
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('images/gallery/bacc.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px 60px;
+            text-align: center;
+            color: white;
+        }
+        
+        .blog-header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            font-weight: 200;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .blog-card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .blog-card-content {
+            padding: 25px;
+        }
+        
+        .blog-card-date {
+            color: #d4af37;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .blog-card-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .blog-card-excerpt {
+            font-size: 1rem;
+            font-weight: 200;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .blog-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1e3a8a;
+            font-weight: 400;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+        
+        .blog-card-link:hover {
+            gap: 12px;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo cliquable - redirige vers l'accueil -->
+            <a href="index.html" class="nav-logo">
+                <img src="images/gallery/models academy.jpg" alt="Logo MAM" class="logo-icon">
+                <h2>MAM</h2>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À Propos</a>
+                <a href="index.html#formations" class="nav-link">Formations</a>
+                <a href="mannequins.html" class="nav-link nav-cta">Nos Mannequins</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html#inscription" class="nav-link btn-inscription">S'inscrire</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <h1>Notre Blog</h1>
+        <p>Découvrez les dernières tendances de la mode, nos conseils pour mannequins et les coulisses de notre agence</p>
+    </section>
+
+    <!-- Blog Articles Container -->
+    <div class="blog-container">
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/defile1.jpg" alt="Tendances Mode 2025" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        15 Octobre 2025
+                    </div>
+                    <h3 class="blog-card-title">Les Tendances Mode qui Marqueront 2025</h3>
+                    <p class="blog-card-excerpt">
+                        Découvrez les principales tendances qui domineront les podiums en 2025. Des coupes audacieuses aux matières innovantes, voici ce qu'il faut savoir pour rester à la pointe de la mode.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/shoot.jpg" alt="Conseils Shooting Photo" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        10 Octobre 2025
+                    </div>
+                    <h3 class="blog-card-title">10 Conseils pour Réussir Votre Shooting Photo</h3>
+                    <p class="blog-card-excerpt">
+                        Préparez-vous comme un professionnel avec nos conseils exclusifs pour briller lors de vos séances photo. De la préparation physique à l'expression faciale, maîtrisez tous les aspects.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/defile4.jpg" alt="Préparation Défilé" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        5 Octobre 2025
+                    </div>
+                    <h3 class="blog-card-title">Comment se Préparer pour un Défilé de Mode</h3>
+                    <p class="blog-card-excerpt">
+                        Le défilé approche ? Découvrez notre guide complet pour vous préparer mentalement et physiquement. Techniques de marche, gestion du stress et conseils de nos experts.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/creativie.jpg" alt="Nutrition Mannequin" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        28 Septembre 2025
+                    </div>
+                    <h3 class="blog-card-title">Nutrition et Bien-être : Le Secret des Top Models</h3>
+                    <p class="blog-card-excerpt">
+                        Une alimentation équilibrée est essentielle pour maintenir votre énergie et votre éclat. Nos nutritionnistes partagent leurs meilleurs conseils pour rester en forme naturellement.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/defile7.jpg" alt="Industrie Mode Africaine" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        20 Septembre 2025
+                    </div>
+                    <h3 class="blog-card-title">L'Essor de la Mode Africaine sur la Scène Internationale</h3>
+                    <p class="blog-card-excerpt">
+                        L'industrie de la mode africaine connaît une croissance exceptionnelle. Découvrez comment nos mannequins participent à cette révolution culturelle et artistique mondiale.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/shoot6.jpg" alt="Réseaux Sociaux Mannequin" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        12 Septembre 2025
+                    </div>
+                    <h3 class="blog-card-title">Construire sa Marque Personnelle sur les Réseaux Sociaux</h3>
+                    <p class="blog-card-excerpt">
+                        Dans l'ère du digital, votre présence en ligne est aussi importante que votre book. Apprenez à développer une stratégie social media efficace pour booster votre carrière.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="blog-card fade-in">
+                <img src="images/gallery/profe.jpg" alt="Carrière Mannequinat" class="blog-card-image">
+                <div class="blog-card-content">
+                    <div class="blog-card-date">
+                        <i class='bx bx-calendar'></i>
+                        1 Septembre 2025
+                    </div>
+                    <h3 class="blog-card-title">Débuter sa Carrière de Mannequin : Guide Complet</h3>
+                    <p class="blog-card-excerpt">
+                        Vous rêvez de devenir mannequin professionnel ? Ce guide vous accompagne pas à pas : de la création de votre book aux premiers castings, découvrez tous nos secrets.
+                    </p>
+                    <a href="#" class="blog-card-link">
+                        Lire plus <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Prêt à Lancer Votre Carrière ?</h2>
+                <p>Rejoignez Models Academy Management et bénéficiez de l'accompagnement d'experts pour réussir dans l'industrie de la mode.</p>
+                <a href="index.html#inscription" class="btn btn-primary btn-large">S'inscrire Maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODELS ACADEMY MANAGEMENT</h3>
+                    <p>L'excellence au service de votre talent depuis 2008.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#formations">Formations</a></li>
+                        <li><a href="mannequins.html">Nos Mannequins</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class='bx bx-envelope'></i> contact@modelsacademymgnt.com</li>
+                        <li><i class='bx bx-phone'></i> +229 69 89 69 50</li>
+                        <li><i class='bx bx-map'></i> Bénin Calavi Bidossessi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Models Academy Management. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - MODELS ACADEMY MANAGEMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        
+        .dashboard-header p {
+            font-size: 1.1rem;
+            font-weight: 200;
+            opacity: 0.9;
+        }
+        
+        .logout-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 24px;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logout-btn:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .stat-card h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .stat-number {
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .settings-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .settings-section h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .settings-section p {
+            font-size: 1rem;
+            font-weight: 200;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1a1a1a 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+        }
+        
+        .success-message {
+            background: #d4f4dd;
+            color: #2d6a3e;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .error-message {
+            background: #fee;
+            color: #c33;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .warning-box p {
+            color: #856404;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .dashboard-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo cliquable - redirige vers l'accueil -->
+            <a href="index.html" class="nav-logo">
+                <img src="images/gallery/models academy.jpg" alt="Logo MAM" class="logo-icon">
+                <h2>MAM</h2>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À Propos</a>
+                <a href="mannequins.html" class="nav-link nav-cta">Nos Mannequins</a>
+                <a href="#" class="nav-link" id="logoutLink">Déconnexion</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div>
+                <h1>Tableau de Bord</h1>
+                <p>Bienvenue, <span id="adminName">Administrateur</span></p>
+            </div>
+            <button class="logout-btn" id="logoutBtn">
+                <i class='bx bx-log-out'></i> Déconnexion
+            </button>
+        </div>
+
+        <!-- Statistics Grid -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <i class='bx bx-group'></i>
+                <h3>Total Mannequins</h3>
+                <div class="stat-number">24</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class='bx bx-world'></i>
+                <h3>Pays Partenaires</h3>
+                <div class="stat-number">50+</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class='bx bx-trending-up'></i>
+                <h3>Nouveaux Inscrits</h3>
+                <div class="stat-number">12</div>
+            </div>
+            
+            <div class="stat-card">
+                <i class='bx bx-calendar'></i>
+                <h3>Événements à Venir</h3>
+                <div class="stat-number">8</div>
+            </div>
+        </div>
+
+        <!-- Paramètres de Sécurité -->
+        <div class="settings-section">
+            <h2>Paramètres de Sécurité</h2>
+            <p>Modifiez votre mot de passe pour sécuriser votre compte administrateur</p>
+            
+            <!-- Avertissement de sécurité -->
+            <div class="warning-box">
+                <p><strong>⚠️ Note de Sécurité :</strong> Dans un environnement de test, le mot de passe est stocké localement dans votre navigateur. Pour une application en production, utilisez toujours un système d'authentification sécurisé côté serveur avec chiffrement.</p>
+            </div>
+            
+            <!-- Messages de succès/erreur -->
+            <div class="success-message" id="successMessage">
+                Mot de passe modifié avec succès !
+            </div>
+            
+            <div class="error-message" id="errorMessage">
+                Erreur : Veuillez vérifier vos informations
+            </div>
+            
+            <!-- Formulaire de changement de mot de passe -->
+            <form id="changePasswordForm">
+                <div class="form-group">
+                    <label for="currentPassword">Mot de passe actuel</label>
+                    <input type="password" id="currentPassword" required autocomplete="current-password">
+                </div>
+                
+                <div class="form-group">
+                    <label for="newPassword">Nouveau mot de passe</label>
+                    <input type="password" id="newPassword" required autocomplete="new-password" minlength="6">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmer le nouveau mot de passe</label>
+                    <input type="password" id="confirmPassword" required autocomplete="new-password" minlength="6">
+                </div>
+                
+                <button type="submit" class="btn-primary">Changer le mot de passe</button>
+            </form>
+        </div>
+        
+        <!-- Section de gestion rapide -->
+        <div class="settings-section">
+            <h2>Actions Rapides</h2>
+            <p>Accédez rapidement aux fonctionnalités principales</p>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="mannequins.html" class="btn btn-secondary">Voir les Mannequins</a>
+                <a href="index.html#inscription" class="btn btn-secondary">Nouvelles Inscriptions</a>
+                <a href="blog.html" class="btn btn-secondary">Gérer le Blog</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODELS ACADEMY MANAGEMENT</h3>
+                    <p>L'excellence au service de votre talent depuis 2008.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Models Academy Management. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Vérification de l'authentification au chargement de la page
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('adminLoggedIn');
+            const username = sessionStorage.getItem('adminUsername');
+            
+            // Redirection si non connecté
+            if (!isLoggedIn || isLoggedIn !== 'true') {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Affichage du nom d'utilisateur
+            if (username) {
+                document.getElementById('adminName').textContent = username;
+            }
+        });
+        
+        // Fonction de déconnexion
+        function logout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            sessionStorage.removeItem('adminUsername');
+            window.location.href = 'login.html';
+        }
+        
+        // Écouteurs d'événements pour la déconnexion
+        document.getElementById('logoutBtn').addEventListener('click', logout);
+        document.getElementById('logoutLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            logout();
+        });
+        
+        // Gestion du formulaire de changement de mot de passe
+        document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Masquage des messages précédents
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+            
+            // Récupération du mot de passe stocké (ou valeur par défaut)
+            const storedPassword = localStorage.getItem('adminPassword') || '91RERDMODEL';
+            
+            // Vérification du mot de passe actuel
+            if (currentPassword !== storedPassword) {
+                errorMessage.textContent = 'Le mot de passe actuel est incorrect';
+                errorMessage.classList.add('show');
+                return;
+            }
+            
+            // Vérification de la correspondance des nouveaux mots de passe
+            if (newPassword !== confirmPassword) {
+                errorMessage.textContent = 'Les nouveaux mots de passe ne correspondent pas';
+                errorMessage.classList.add('show');
+                return;
+            }
+            
+            // Vérification de la longueur minimale
+            if (newPassword.length < 6) {
+                errorMessage.textContent = 'Le mot de passe doit contenir au moins 6 caractères';
+                errorMessage.classList.add('show');
+                return;
+            }
+            
+            // Sauvegarde du nouveau mot de passe dans localStorage (pour tests uniquement)
+            // NOTE: En production, utiliser un système d'authentification sécurisé côté serveur
+            localStorage.setItem('adminPassword', newPassword);
+            
+            // Affichage du message de succès
+            successMessage.classList.add('show');
+            
+            // Réinitialisation du formulaire
+            this.reset();
+            
+            // Masquage automatique du message après 5 secondes
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

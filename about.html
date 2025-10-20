@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - MODELS ACADEMY MANAGEMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page À propos */
+        .about-hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('images/gallery/about.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .about-hero p {
+            font-size: 1.3rem;
+            font-weight: 200;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .about-section {
+            margin-bottom: 80px;
+        }
+        
+        .about-section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .about-section p {
+            font-size: 1.1rem;
+            font-weight: 200;
+            line-height: 1.8;
+            color: #666;
+            max-width: 900px;
+            margin: 0 auto 20px;
+        }
+        
+        .timeline {
+            max-width: 900px;
+            margin: 60px auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timeline-year {
+            font-size: 2rem;
+            font-weight: 500;
+            color: #d4af37;
+            min-width: 100px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content p {
+            font-size: 1rem;
+            font-weight: 200;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .value-card i {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            font-size: 1rem;
+            font-weight: 200;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .team-section {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .team-card-content {
+            padding: 20px;
+        }
+        
+        .team-card h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .team-card p {
+            font-size: 0.95rem;
+            font-weight: 200;
+            color: #666;
+        }
+        
+        .team-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #1e3a8a;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .team-card a:hover {
+            color: #d4af37;
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .timeline-year {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo cliquable - redirige vers l'accueil -->
+            <a href="index.html" class="nav-logo">
+                <img src="images/gallery/models academy.jpg" alt="Logo MAM" class="logo-icon">
+                <h2>MAM</h2>
+            </a>
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Accueil</a>
+                <a href="about.html" class="nav-link">À Propos</a>
+                <a href="index.html#formations" class="nav-link">Formations</a>
+                <a href="mannequins.html" class="nav-link nav-cta">Nos Mannequins</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="index.html#inscription" class="nav-link btn-inscription">S'inscrire</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>À Propos de Nous</h1>
+        <p>Découvrez l'histoire, la mission et les valeurs qui font de Models Academy Management une référence dans l'industrie du mannequinat</p>
+    </section>
+
+    <!-- About Content -->
+    <div class="about-content">
+        <!-- Mission Section -->
+        <section class="about-section fade-in">
+            <h2>Notre Mission</h2>
+            <p>
+                Models Academy Management a pour mission de révéler et d'accompagner les talents les plus prometteurs vers l'excellence dans l'industrie de la mode. Nous croyons que chaque mannequin possède un potentiel unique qui mérite d'être développé avec professionnalisme et passion.
+            </p>
+            <p>
+                Notre approche combine formation de haut niveau, accompagnement personnalisé et opportunités exceptionnelles sur les scènes nationales et internationales. Nous sommes dédiés à transformer les rêves en carrières durables et épanouissantes.
+            </p>
+        </section>
+
+        <!-- History Timeline -->
+        <section class="about-section fade-in">
+            <h2>Notre Histoire</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2008</div>
+                    <div class="timeline-content">
+                        <h3>La Création</h3>
+                        <p>Fondation de Models Academy Management à Cotonou avec une vision claire : créer une agence de mannequinat d'excellence qui valorise les talents africains.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2012</div>
+                    <div class="timeline-content">
+                        <h3>Expansion Régionale</h3>
+                        <p>Ouverture de notre centre de formation professionnelle et premiers partenariats avec des agences internationales en Europe et en Amérique.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2016</div>
+                    <div class="timeline-content">
+                        <h3>Reconnaissance Internationale</h3>
+                        <p>Nos mannequins brillent sur les podiums de Paris, Milan et New York. MAM devient une référence incontournable dans l'industrie.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3>Innovation et Digitalisation</h3>
+                        <p>Lancement de nos programmes de formation en ligne et développement d'une plateforme digitale pour connecter talents et marques de luxe.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3>Aujourd'hui</h3>
+                        <p>Plus de 500 mannequins représentés, présence dans 50 pays et une équipe d'experts passionnés au service de l'excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="about-section fade-in">
+            <h2>Nos Valeurs</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class='bx bx-trophy'></i>
+                    <h3>Excellence</h3>
+                    <p>Nous visons les plus hauts standards de qualité dans tous les aspects de notre travail et de nos formations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class='bx bx-heart'></i>
+                    <h3>Passion</h3>
+                    <p>Notre amour pour la mode et le mannequinat guide chacune de nos actions et inspire nos talents.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class='bx bx-user-check'></i>
+                    <h3>Professionnalisme</h3>
+                    <p>Nous garantissons un accompagnement professionnel de A à Z pour assurer le succès de nos mannequins.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class='bx bx-world'></i>
+                    <h3>Diversité</h3>
+                    <p>Nous célébrons la beauté sous toutes ses formes et promouvons l'inclusion dans l'industrie de la mode.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 300; text-align: center; margin-bottom: 20px;">Nos Talents</h2>
+            <p style="text-align: center; font-size: 1.1rem; font-weight: 200; color: #666; max-width: 700px; margin: 0 auto 50px;">
+                Découvrez quelques-uns des mannequins exceptionnels qui font la fierté de Models Academy Management
+            </p>
+            
+            <div class="team-grid">
+                <!-- Exemples de mannequins vedettes -->
+                <div class="team-card fade-in">
+                    <img src="images/lucia/portfolio/lucia.jpg" alt="Lucia Padonou">
+                    <div class="team-card-content">
+                        <h3>Lucia Padonou</h3>
+                        <p>Fashion & Haute Couture</p>
+                        <a href="model-profile.html?id=1">Voir le profil →</a>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="images/edjo/portfolio/IMG-20250820-WA0530.jpg" alt="EDJO Aurelle">
+                    <div class="team-card-content">
+                        <h3>EDJO Aurelle</h3>
+                        <p>Star des Podiums</p>
+                        <a href="model-profile.html?id=4">Voir le profil →</a>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="images/barnard/portfolio/barnard.jpg" alt="YEHOUN Barnard">
+                    <div class="team-card-content">
+                        <h3>YEHOUN Barnard</h3>
+                        <p>Mode Masculine de Luxe</p>
+                        <a href="model-profile.html?id=5">Voir le profil →</a>
+                    </div>
+                </div>
+                
+                <div class="team-card fade-in">
+                    <img src="images/prisca/portfolio/IMG-20250820-WA0519.jpg" alt="AGBEWANOU Prisca">
+                    <div class="team-card-content">
+                        <h3>AGBEWANOU Prisca</h3>
+                        <p>Ambassadrice Beauté</p>
+                        <a href="model-profile.html?id=6">Voir le profil →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="mannequins.html" class="btn btn-primary btn-large">Voir Tous Nos Mannequins</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Rejoignez Notre Famille</h2>
+                <p>Vous avez le talent, nous avons l'expertise. Ensemble, construisons votre carrière de rêve.</p>
+                <a href="index.html#inscription" class="btn btn-primary btn-large">S'inscrire Maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODELS ACADEMY MANAGEMENT</h3>
+                    <p>L'excellence au service de votre talent depuis 2008.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#formations">Formations</a></li>
+                        <li><a href="mannequins.html">Nos Mannequins</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class='bx bx-envelope'></i> contact@modelsacademymgnt.com</li>
+                        <li><i class='bx bx-phone'></i> +229 69 89 69 50</li>
+                        <li><i class='bx bx-map'></i> Bénin Calavi Bidossessi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Models Academy Management. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
