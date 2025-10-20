@@ -6,6 +6,21 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 
 ## Recent Updates (October 20, 2025)
 
+### Latest Enhancements (October 20, 2025 - Afternoon)
+- ✅ **Dropdown Navigation Menu:**
+  - Added "Détails" dropdown menu in navigation across all pages
+  - Dropdown contains links to "À Propos" (about.html) and "Blog" (blog.html)
+  - Desktop: Hover effect with smooth animation and chevron rotation
+  - Mobile: Responsive styles with tap-friendly layout
+  - Implemented on all pages: index, mannequins, model-profile, blog, about, dashboard, and all 3 formation pages
+
+- ✅ **Profile Images Migration:**
+  - All model profile images now use their dedicated folders instead of shared gallery
+  - Example: Rita's image changed from `images/gallery/rita.jpg` to `images/rita/portfolio/WhatsApp Image 2025-10-16 at 15.36.19 (1).jpeg`
+  - Mathieu's image uses `images/mathieu/portfolio/IMG-20240802-WA0021.jpg`
+  - New models (Joana, Paula, Pascal, Danielle) configured with their folder paths
+  - Fallback to default logo handled via `onerror` attribute in case images are missing
+
 ### Major Website Expansion
 - ✅ **New Pages Created:**
   - `blog.html` - Blog avec 7 articles de démonstration
