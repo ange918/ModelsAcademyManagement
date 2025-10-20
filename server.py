@@ -18,6 +18,41 @@ IMAGES_DIR = 'images'
 REQUIRED_SUBDIRS = ['portfolio', 'shooting', 'defile']
 ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.JPG', '.JPEG', '.PNG'}
 
+# Ordre exact des mannequins (priorité d'affichage)
+MODEL_ORDER = [
+    'lucia',           # 1. Lucia Padonou
+    'rita',            # 2. Azonwanou Rita
+    'olerie',          # 3. Toundoh Olérie
+    'aurelle',         # 4. Edjo Aurelle
+    'barnard',         # 5. Yehoun Barnard
+    'prisca',          # 6. Agbewanou Méyèvi Prisca
+    'khady',           # 7. Traoré Khady
+    'roderic',         # 8. Amah Roderic
+    'cyr-god',         # 9. Hessou Cyr-God
+    'dalil',           # 10. Famiwa Dalil
+    'rose',            # 11. Houdjregbo Rose
+    'amen',            # 12. Sagbo Amen
+    'gildas',          # 13. Midjindou Gildas
+    'abou-bacar',      # 14. Houngbedji Abou-bacar
+    'geordys',         # 15. Gbedegla Geordys
+    'merveille',       # 16. Missihoun Merveille
+    'marie-michelle',  # 17. Dato Marie-Michèlle
+    'jediel',          # 18. Vodounon Jédiel
+    'honel',           # 19. Tossou Rafiou Honel
+    'mathieu',         # 20. Akpo Mathieu
+    'joana',           # 21. Agbognon Joana
+    'paula',           # 22. Senou Paula
+    'pascal',          # 23. Adantolankpe Pascal
+    'danielle'         # 24. Gbaguidi Danielle
+]
+
+# Types de mannequins (exceptions au type par défaut)
+MODEL_TYPES = {
+    'joana': 'Model Photo',
+    'jediel': 'Model Photo',
+    # Tous les autres sont 'Fashion & Haute Couture' par défaut
+}
+
 def create_missing_subdirectories(model_dir):
     """
     Crée automatiquement les sous-dossiers manquants pour un mannequin.
@@ -46,10 +81,39 @@ def get_images_in_directory(directory):
             images.append(filename)
     return sorted(images)
 
+def get_profile_image(item, portfolio_images, shooting_images, defile_images):
+    """
+    Détermine l'image de profil à utiliser.
+    Si portfolio est vide, utilise automatiquement une image de shooting ou defile.
+    """
+    # Si portfolio a des images, utiliser la première
+    if portfolio_images:
+        return f'images/{item}/portfolio/{portfolio_images[0]}'
+    
+    # Sinon, fallback sur shooting
+    if shooting_images:
+        return f'images/{item}/shooting/{shooting_images[0]}'
+    
+    # Sinon, fallback sur defile
+    if defile_images:
+        return f'images/{item}/defile/{defile_images[0]}'
+    
+    # Aucune image disponible
+    return None
+
+def get_model_type(folder_name):
+    """
+    Retourne le type de mannequin.
+    Par défaut: Fashion & Haute Couture
+    Exceptions: Joana et Jédiel = Model Photo
+    """
+    return MODEL_TYPES.get(folder_name.lower(), 'Fashion & Haute Couture')
+
 def scan_models_directory():
     """
     Scanne le dossier /images/ et retourne la liste de tous les mannequins
     avec leurs images organisées par catégorie.
+    Les mannequins sont retournés dans l'ordre défini par MODEL_ORDER.
     """
     models = []
     
@@ -72,9 +136,14 @@ def scan_models_directory():
         shooting_images = get_images_in_directory(os.path.join(item_path, 'shooting'))
         defile_images = get_images_in_directory(os.path.join(item_path, 'defile'))
         
+        # Déterminer l'image de profil (avec fallback automatique)
+        profile_image = get_profile_image(item, portfolio_images, shooting_images, defile_images)
+        
         # Construire l'objet mannequin
         model = {
             'folder_name': item,
+            'profile_image': profile_image,
+            'model_type': get_model_type(item),
             'portfolio': [f'images/{item}/portfolio/{img}' for img in portfolio_images],
             'shooting': [f'images/{item}/shooting/{img}' for img in shooting_images],
             'defile': [f'images/{item}/defile/{img}' for img in defile_images],
@@ -83,7 +152,16 @@ def scan_models_directory():
         
         models.append(model)
     
-    return sorted(models, key=lambda x: x['folder_name'])
+    # Trier selon l'ordre défini dans MODEL_ORDER
+    def get_order_index(model):
+        folder_name = model['folder_name'].lower()
+        try:
+            return MODEL_ORDER.index(folder_name)
+        except ValueError:
+            # Si le mannequin n'est pas dans MODEL_ORDER, le mettre à la fin
+            return len(MODEL_ORDER) + 1000
+    
+    return sorted(models, key=get_order_index)
 
 @app.route('/api/models')
 def get_models():

@@ -1,0 +1,97 @@
+Je veux mettre à jour mon site HTML / CSS / JavaScript selon les consignes suivantes :
+
+---
+
+## 🔹 1. Ordre des mannequins
+
+L’ordre d’affichage des mannequins doit être exactement celui-ci :
+
+1. Lucia Padonou  
+2. Azonwanou Rita  
+3. Toundoh Olérie  
+4. Edjo Aurelle  
+5. Yehoun Barnard  
+6. Agbewanou Méyèvi Prisca  
+7. Traoré Khady  
+8. Amah Roderic  
+9. Hessou Cyr-God  
+10. Famiwa Dalil  
+11. Houdjregbo Rose  
+12. Sagbo Amen  
+13. Midjindou Gildas  
+14. Houngbedji Abou-bacar  
+15. Gbedegla Geordys  
+16. Missihoun Merveille  
+17. Dato Marie-Michèlle  
+18. Vodounon Jédiel  
+19. Tossou Rafiou Honel  
+20. Akpo Mathieu  
+21. Agbognon Joana  
+22. Senou Paula  
+23. Adantolankpe Pascal  
+24. Gbaguidi Danielle  
+
+Le site doit respecter cet ordre d’affichage sur :
+- la page principale des mannequins
+- les galeries
+- toute autre page où ils apparaissent.
+
+---
+
+## 🔹 2. Gestion des dossiers et images
+
+Chaque mannequin possède un dossier dans `/images/[NomMannequin]/` contenant 3 sous-dossiers :
+- `/portfolio/`
+- `/shooting/`
+- `/defile/`
+
+Le code doit :
+
+1. Vérifier pour chaque mannequin que ces 3 sous-dossiers existent (et les créer si besoin).  
+2. Charger automatiquement les images dans les sections correspondantes :
+   - `/portfolio/` → “Portfolio”
+   - `/shooting/` → “Shooting”
+   - `/defile/` → “Défilé”
+3. Si le dossier `/portfolio/` est vide :
+   - Utiliser automatiquement une image de `/shooting/` ou `/defile/` à la place.
+4. Le chargement et l’affichage doivent suivre le modèle du mannequin **TOUDOH Olérie**.
+
+---
+
+## 🔹 3. Type de mannequin
+
+- Tous les mannequins sont de type **Fashion / Haute Couture**
+- Sauf :
+  - **Agbognon Joana** → catégorie : *Model Photo*  
+  - **Vodounon Jédiel** → catégorie : *Model Photo*
+
+Le type de mannequin doit apparaître sur chaque fiche individuelle.
+
+---
+
+## 🔹 4. Affichage visuel des images
+
+- Sur toutes les pages (accueil, blog, fiches mannequins, galeries, etc.), les images doivent être affichées de manière à bien cadrer le **visage** du mannequin.
+- Utiliser du CSS du type :object-fit: cover; object-position: center top;
+
+ou une autre méthode pour s’assurer que les visages sont visibles.
+- Vérifier le rendu sur mobile et desktop.
+
+---
+
+## 🔹 5. Détails techniques
+
+- Ne pas recréer le site : uniquement appliquer ces modifications.  
+- Respecter le design existant.
+- Ajouter du code JavaScript propre, bien commenté et clair.
+- Tout le système doit fonctionner automatiquement à partir du contenu du dossier `/images/`.
+
+---
+
+## 🔹 Résultat attendu
+
+- Tous les mannequins s’affichent dans le bon ordre.
+- Leurs images sont automatiquement chargées depuis leurs dossiers.
+- Si un mannequin n’a pas d’image dans `portfolio`, une image de `shooting` ou `defile` est utilisée.
+- Le type de mannequin (Fashion ou Model Photo) s’affiche correctement.
+- Toutes les images sont cadrées sur le visage.
