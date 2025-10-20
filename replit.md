@@ -6,7 +6,29 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 
 ## Recent Updates (October 20, 2025)
 
-### 🚀 Automatic Model Detection System (October 20, 2025 - Latest)
+### 🎯 Custom Model Ordering & Image Optimization (October 20, 2025 - Latest)
+- ✅ **Fixed Display Order:**
+  - Implemented custom ordering system for all 23 models
+  - Models now display in specific order: Lucia → Rita → Olérie → Edjo... → Meshac
+  - Order maintained across all pages (mannequins.html, model-profile.html, galleries)
+  
+- ✅ **Smart Image Fallback:**
+  - Automatic fallback: if portfolio folder is empty, uses shooting or defile images
+  - Example: Joana has no portfolio images → automatically uses shooting images
+  - Priority order: portfolio → shooting → defile
+  
+- ✅ **Model Type Classification:**
+  - Default type: "Fashion & Haute Couture" for all models
+  - Special exceptions: Joana and Jédiel classified as "Model Photo"
+  - Type displayed on each model card and profile page
+  
+- ✅ **Face-Focused Image Cropping:**
+  - All images now use `object-fit: cover` with `object-position: center top`
+  - Ensures faces are always visible and properly framed
+  - Applied to: model cards, profile images, gallery images
+  - Responsive on both desktop and mobile
+
+### 🚀 Automatic Model Detection System (October 20, 2025)
 - ✅ **Flask API Backend:**
   - Automatic scanning of `/images/` directory to detect all models
   - Real-time detection of 23+ models without manual configuration
