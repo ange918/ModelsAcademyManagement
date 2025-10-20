@@ -1,0 +1,76 @@
+Je veux modifier mon site web HTML / CSS / JavaScript selon les instructions suivantes :
+
+---
+
+## 🔹 AJOUT DES MANNEQUINS
+
+Ajouter ou mettre à jour les mannequins suivants dans la section “Mannequins” du site :
+
+1. **AKPO Mathieu** — taille : 1,88 m  
+2. **AGBOGNON Joana** — taille : 1,60 m  
+3. **SENOU Paula** — taille : 1,70 m  
+4. **ADANTOLANKPE Pascal** — taille : 1,89 m  
+5. **GBAGUIDI Danielle** — taille : 1,76 m  
+
+Pour chaque mannequin :
+
+- Vérifier qu’un dossier existe dans `/images/` portant son nom (ex : `/images/AKPO_Mathieu/`).
+- À l’intérieur de ce dossier, il doit y avoir **3 sous-dossiers :**
+  - `/portfolio/`
+  - `/shooting/`
+  - `/defile/`
+- Si ces sous-dossiers **n’existent pas**, les créer automatiquement.
+- Si les sous-dossiers **existent et contiennent des images**, le site doit **afficher automatiquement** ces images dans la bonne catégorie sur la page du mannequin :
+  - Section “Portfolio” → afficher les images du dossier `/portfolio/`
+  - Section “Shooting” → afficher les images du dossier `/shooting/`
+  - Section “Défilé” → afficher les images du dossier `/defile/`
+
+---
+
+## 🔹 CRÉATION DE PAGES
+
+1. **Page Blog**
+   - Créer une page `blog.html` avec **7 articles de démonstration** (titre, image, résumé, lien “Lire plus”).
+
+2. **Page À propos**
+   - Créer une page `about.html` présentant :
+     - L’histoire et la mission de l’agence.
+     - Le staff (mannequins et équipe).
+     - Liens vers les profils individuels.
+
+3. **Page Dashboard (admin uniquement)**
+   - Créer `dashboard.html` accessible uniquement après connexion.
+   - Page de connexion avec :
+     - **Nom d’utilisateur :** ROYALFASHIONEVENT  
+     - **Mot de passe :** 91RERDMODEL  
+   - Ajouter une fonction JavaScript pour permettre à l’admin de **changer le mot de passe**.
+   - Sauvegarde du mot de passe dans le `localStorage` pour les tests (aucune base de données nécessaire).
+
+---
+
+## 🔹 MODIFICATIONS DES PAGES DE FORMATION
+
+1. Ajouter un **espace** entre le bouton “Retour à l’accueil” et le **header**.
+2. Mettre une **image en arrière-plan (background)** différente pour chaque page ou section de formation (par CSS).
+
+---
+
+## 🔹 HEADER ET NAVIGATION
+
+- Le **logo du header** doit être **cliquable** et rediriger vers la **page d’accueil (index.html)**.
+- Vérifier que la **navigation est responsive** sur mobile (menu burger ou équivalent).
+
+---
+
+## 🔹 DÉTAILS TECHNIQUES
+
+- Conserver le design actuel, ne pas recréer le site.
+- Ajouter uniquement les nouvelles pages et sections.
+- Générer du code HTML bien structuré, du CSS propre et du JS clair.
+- Les chemins d’images doivent correspondre à la structure du dossier `/images/`.
+- Utiliser un script JavaScript pour automatiser la vérification et l’affichage des images selon les catégories.
+- Ajouter des commentaires dans le code pour que je puisse facilement repérer les nouvelles parties.
+
+---
+
+Merci de générer le code HTML, CSS et JS correspondant à ces instructions, tout en gardant la cohérence du design existant.

@@ -675,6 +675,119 @@
           "images/honel/portfolio/IMG-20251013-WA0007.jpg"
         ]
       }
+    },
+    {
+      "id": 20,
+      "name": "AKPO Mathieu",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.88m",
+      "chest": "102cm",
+      "waist": "82cm",
+      "shoeSize": "45 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/defile1.jpg",
+      "description": "Modèle professionnel avec une grande expérience sur les podiums internationaux",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
+      }
+    },
+    {
+      "id": 21,
+      "name": "AGBOGNON Joana",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.60m",
+      "bust": "82cm",
+      "waist": "62cm",
+      "hips": "90cm",
+      "shoeSize": "37 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "1 an",
+      "languages": ["Francais"],
+      "image": "images/gallery/shoot.jpg",
+      "description": "Jeune talent prometteuse avec une élégance naturelle",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
+      }
+    },
+    {
+      "id": 22,
+      "name": "SENOU Paula",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.70m",
+      "bust": "85cm",
+      "waist": "64cm",
+      "hips": "92cm",
+      "shoeSize": "39 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais", "Anglais"],
+      "image": "images/gallery/shoot2.jpg",
+      "description": "Mannequin polyvalente spécialisée dans la mode commerciale et la haute couture",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
+      }
+    },
+    {
+      "id": 23,
+      "name": "ADANTOLANKPE Pascal",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.89m",
+      "chest": "104cm",
+      "waist": "80cm",
+      "shoeSize": "45 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "3 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/defile2.jpg",
+      "description": "Expert en défilés de mode avec une présence scénique exceptionnelle",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
+      }
+    },
+    {
+      "id": 24,
+      "name": "GBAGUIDI Danielle",
+      "gender": "Femme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.76m",
+      "bust": "84cm",
+      "waist": "62cm",
+      "hips": "91cm",
+      "shoeSize": "40 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais"],
+      "image": "images/gallery/shoot3.jpg",
+      "description": "Mannequin expérimentée spécialisée dans les campagnes publicitaires et la haute couture",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": []
+      }
     }
   ]
 }
