@@ -2322,6 +2322,45 @@ section {
         background: rgba(0, 0, 0, 0.05);
         border-radius: 8px;
     }
+    
+    /* Styles pour le menu déroulant sur mobile */
+    .nav-dropdown {
+        width: 100%;
+    }
+    
+    .nav-dropdown-toggle {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        justify-content: center;
+    }
+    
+    .nav-dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.02);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+    }
+    
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown.active .nav-dropdown-content {
+        display: block;
+    }
+    
+    .nav-dropdown-content a {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-dropdown-content a:hover {
+        background: rgba(0, 0, 0, 0.05);
+        padding-left: 2rem;
+    }
 
     .about-content {
         grid-template-columns: 1fr;
