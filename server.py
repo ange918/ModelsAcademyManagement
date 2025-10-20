@@ -19,31 +19,31 @@ REQUIRED_SUBDIRS = ['portfolio', 'shooting', 'defile']
 ALLOWED_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.JPG', '.JPEG', '.PNG'}
 
 # Ordre exact des mannequins (priorité d'affichage)
+# Basé sur les vrais noms de dossiers dans /images/
 MODEL_ORDER = [
     'lucia',           # 1. Lucia Padonou
     'rita',            # 2. Azonwanou Rita
     'olerie',          # 3. Toundoh Olérie
-    'aurelle',         # 4. Edjo Aurelle
+    'edjo',            # 4. Edjo Aurelle
     'barnard',         # 5. Yehoun Barnard
     'prisca',          # 6. Agbewanou Méyèvi Prisca
-    'khady',           # 7. Traoré Khady
-    'roderic',         # 8. Amah Roderic
-    'cyr-god',         # 9. Hessou Cyr-God
-    'dalil',           # 10. Famiwa Dalil
-    'rose',            # 11. Houdjregbo Rose
-    'amen',            # 12. Sagbo Amen
-    'gildas',          # 13. Midjindou Gildas
-    'abou-bacar',      # 14. Houngbedji Abou-bacar
-    'geordys',         # 15. Gbedegla Geordys
-    'merveille',       # 16. Missihoun Merveille
-    'marie-michelle',  # 17. Dato Marie-Michèlle
-    'jediel',          # 18. Vodounon Jédiel
-    'honel',           # 19. Tossou Rafiou Honel
-    'mathieu',         # 20. Akpo Mathieu
-    'joana',           # 21. Agbognon Joana
-    'paula',           # 22. Senou Paula
-    'pascal',          # 23. Adantolankpe Pascal
-    'danielle'         # 24. Gbaguidi Danielle
+    'roderic',         # 7. Amah Roderic (Khady pas encore de dossier)
+    'cyr',             # 8. Hessou Cyr-God
+    'rose',            # 9. Houdjregbo Rose (Dalil pas encore de dossier)
+    'amen',            # 10. Sagbo Amen
+    'gildas',          # 11. Midjindou Gildas
+    'aboubacar',       # 12. Houngbedji Abou-bacar
+    'geordys',         # 13. Gbedegla Geordys
+    'merveille',       # 14. Missihoun Merveille
+    'michelle',        # 15. Dato Marie-Michèlle
+    'jediel',          # 16. Vodounon Jédiel
+    'honel',           # 17. Tossou Rafiou Honel
+    'mathieu',         # 18. Akpo Mathieu
+    'joana',           # 19. Agbognon Joana
+    'paula',           # 20. Senou Paula
+    'pascal',          # 21. Adantolankpe Pascal
+    'danielle',        # 22. Gbaguidi Danielle
+    'meshac'           # 23. Meshac (détecté automatiquement)
 ]
 
 # Types de mannequins (exceptions au type par défaut)
