@@ -15,3 +15,12 @@
 [x] 12. Modifier les 3 pages de formation pour ajouter un espace entre le bouton Retour et le header
 [x] 13. Vérifier les images de fond différentes pour chaque page de formation
 [x] 14. Mettre à jour le fichier replit.md avec toutes les modifications
+
+## Système de Détection Automatique - 20 Octobre 2025 (Après-midi)
+
+[x] 15. Créer l'API Flask pour scanner automatiquement le dossier /images/
+[x] 16. Implémenter la détection automatique de tous les mannequins (23 détectés)
+[x] 17. Créer automatiquement les sous-dossiers manquants (portfolio, shooting, defile)
+[x] 18. Modifier le JavaScript pour utiliser l'API au lieu du JSON statique
+[x] 19. Fusionner intelligemment les données API avec le JSON existant
+[x] 20. Tester le système - Tous les mannequins s'affichent correctement

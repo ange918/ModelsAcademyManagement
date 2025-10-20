@@ -236,34 +236,44 @@ function initPageTransitions() {
 
 initPageTransitions();
 
-// Load models data from JSON
+// Load models data from API and JSON
 async function loadModelsData() {
     if (modelsDataLoaded && window.modelsData) {
         return window.modelsData;
     }
     
     try {
-        const response = await fetch('data/models.json');
+        // 1. Charger les données de l'API (détection automatique des dossiers)
+        const apiResponse = await fetch('/api/models');
+        if (!apiResponse.ok) {
+            throw new Error(`API error! status: ${apiResponse.status}`);
+        }
+        const apiData = await apiResponse.json();
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // 2. Charger les données détaillées du JSON (si disponible)
+        let jsonModels = [];
+        try {
+            const jsonResponse = await fetch('data/models.json');
+            if (jsonResponse.ok) {
+                const jsonData = await jsonResponse.json();
+                jsonModels = jsonData.models || [];
+            }
+        } catch (error) {
+            console.log('Fichier JSON non disponible, utilisation des données API uniquement');
         }
         
-        const data = await response.json();
+        // 3. Fusionner les données API et JSON
+        const mergedModels = mergeModelsData(apiData.models, jsonModels);
         
-        if (!data.models || !Array.isArray(data.models)) {
-            throw new Error('Structure de données invalide');
-        }
-        
-        window.modelsData = data.models;
+        window.modelsData = mergedModels;
         modelsDataLoaded = true;
         
         const modelsGrid = document.getElementById('models-grid');
         if (modelsGrid) {
-            renderModels(data.models);
+            renderModels(mergedModels);
         }
         
-        return data.models;
+        return mergedModels;
     } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
         const modelsGrid = document.getElementById('models-grid');
@@ -278,6 +288,83 @@ async function loadModelsData() {
         }
         throw error;
     }
+}
+
+// Fusionner les données de l'API avec les données JSON
+function mergeModelsData(apiModels, jsonModels) {
+    const mergedModels = [];
+    let nextId = jsonModels.length > 0 ? Math.max(...jsonModels.map(m => m.id)) + 1 : 1;
+    
+    // Créer un mapping des noms de dossiers vers les données JSON
+    const jsonModelsByFolder = {};
+    jsonModels.forEach(model => {
+        // Extraire le nom du dossier depuis l'image path
+        const folderMatch = model.image.match(/images\/([^\/]+)\//);
+        if (folderMatch) {
+            jsonModelsByFolder[folderMatch[1].toLowerCase()] = model;
+        }
+    });
+    
+    // Pour chaque mannequin détecté par l'API
+    apiModels.forEach(apiModel => {
+        const folderName = apiModel.folder_name.toLowerCase();
+        const jsonModel = jsonModelsByFolder[folderName];
+        
+        if (jsonModel) {
+            // Mannequin existant dans le JSON - fusionner les données
+            // Utiliser les images de l'API qui sont à jour
+            mergedModels.push({
+                ...jsonModel,
+                folder_name: apiModel.folder_name,
+                gallery: {
+                    portfolio: apiModel.portfolio,
+                    fashionShow: apiModel.defile,
+                    shooting: apiModel.shooting
+                }
+            });
+        } else {
+            // Nouveau mannequin détecté - créer un profil basique
+            const modelName = formatModelName(apiModel.folder_name);
+            const firstImage = apiModel.portfolio[0] || apiModel.shooting[0] || apiModel.defile[0] || 'images/gallery/models academy.jpg';
+            
+            mergedModels.push({
+                id: nextId++,
+                name: modelName,
+                gender: 'Non spécifié',
+                specialty: 'Mode & Mannequinat',
+                height: 'Non spécifié',
+                bust: 'Non spécifié',
+                waist: 'Non spécifié',
+                hips: 'Non spécifié',
+                shoeSize: 'Non spécifié',
+                hairColor: 'Non spécifié',
+                eyeColor: 'Non spécifié',
+                city: 'Cotonou',
+                experience: 'Non spécifié',
+                languages: ['Français'],
+                image: firstImage,
+                description: `Mannequin professionnel de Models Academy Management`,
+                folder_name: apiModel.folder_name,
+                gallery: {
+                    portfolio: apiModel.portfolio,
+                    fashionShow: apiModel.defile,
+                    shooting: apiModel.shooting
+                }
+            });
+        }
+    });
+    
+    return mergedModels;
+}
+
+// Formater le nom du dossier en nom de mannequin
+function formatModelName(folderName) {
+    // Convertir le nom du dossier en nom propre
+    // Ex: "lucia" -> "Lucia", "jean-paul" -> "Jean-Paul"
+    return folderName
+        .split('-')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(' ');
 }
 
 // Render models - Version simplifiée sans bouton mensurations

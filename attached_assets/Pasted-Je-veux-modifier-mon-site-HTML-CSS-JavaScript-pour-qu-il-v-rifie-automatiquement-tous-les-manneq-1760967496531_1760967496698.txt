@@ -1,0 +1,55 @@
+Je veux modifier mon site HTML / CSS / JavaScript pour qu’il vérifie automatiquement tous les mannequins déjà disponibles sur le site.
+
+---
+
+## 🔹 Objectif
+
+Le site doit automatiquement détecter et afficher les mannequins présents dans le dossier `/images/`, sans avoir à les ajouter manuellement dans le code.
+
+---
+
+## 🔹 Fonctionnement attendu
+
+1. Parcourir le dossier `/images/`.
+2. Identifier automatiquement tous les dossiers présents (chaque dossier correspond à un mannequin).
+3. Pour chaque mannequin détecté :
+   - Vérifier l’existence des sous-dossiers :
+     - `/portfolio/`
+     - `/shooting/`
+     - `/defile/`
+   - Si un sous-dossier n’existe pas, le **créer automatiquement**.
+4. Charger dynamiquement les images présentes dans chacun des sous-dossiers :
+   - Les images du dossier `/portfolio/` → section “Portfolio”
+   - Les images du dossier `/shooting/` → section “Shooting”
+   - Les images du dossier `/defile/` → section “Défilé”
+5. Si un mannequin n’a pas encore d’images, afficher un message du type :
+   > “Aucune image disponible pour cette catégorie.”
+
+---
+
+## 🔹 Interface et affichage
+
+- Chaque mannequin doit avoir une **fiche ou page individuelle** suivant la même structure que celle du mannequin **TOUDOH Olérie** (modèle de référence).  
+- Le design et la présentation restent identiques à la version actuelle.  
+- Le chargement des images se fait automatiquement via JavaScript, sans avoir à modifier le HTML à chaque ajout d’images.
+
+---
+
+## 🔹 Détails techniques
+
+- Le code doit être propre, bien commenté et compatible avec le site existant.
+- Ne pas recréer le site, uniquement ajouter cette logique d’automatisation.
+- Utiliser du JavaScript pour :
+  - Parcourir les dossiers et sous-dossiers d’images.
+  - Créer dynamiquement les éléments HTML pour afficher les images.
+- Le tout doit fonctionner localement sur Replit.
+- Si un mannequin est ajouté dans `/images/`, il doit automatiquement apparaître sur le site sans intervention manuelle.
+
+---
+
+## 🔹 Résultat attendu
+
+- Le site reconnaît automatiquement tous les mannequins disponibles dans `/images/`.
+- Les sous-dossiers manquants (`portfolio`, `shooting`, `defile`) sont créés automatiquement.
+- Les images s’affichent dans les bonnes catégories pour chaque mannequin.
+- Le tout reprend le style et la présentation du mannequin **TOUDOH Olérie**.
