@@ -316,6 +316,9 @@ function mergeModelsData(apiModels, jsonModels) {
             mergedModels.push({
                 ...jsonModel,
                 folder_name: apiModel.folder_name,
+                profile_image: apiModel.profile_image || jsonModel.image,
+                image: apiModel.profile_image || jsonModel.image,
+                specialty: apiModel.model_type || jsonModel.specialty,
                 gallery: {
                     portfolio: apiModel.portfolio,
                     fashionShow: apiModel.defile,
@@ -325,13 +328,13 @@ function mergeModelsData(apiModels, jsonModels) {
         } else {
             // Nouveau mannequin détecté - créer un profil basique
             const modelName = formatModelName(apiModel.folder_name);
-            const firstImage = apiModel.portfolio[0] || apiModel.shooting[0] || apiModel.defile[0] || 'images/gallery/models academy.jpg';
+            const profileImage = apiModel.profile_image || 'images/gallery/models academy.jpg';
             
             mergedModels.push({
                 id: nextId++,
                 name: modelName,
                 gender: 'Non spécifié',
-                specialty: 'Mode & Mannequinat',
+                specialty: apiModel.model_type || 'Fashion & Haute Couture',
                 height: 'Non spécifié',
                 bust: 'Non spécifié',
                 waist: 'Non spécifié',
@@ -342,7 +345,8 @@ function mergeModelsData(apiModels, jsonModels) {
                 city: 'Cotonou',
                 experience: 'Non spécifié',
                 languages: ['Français'],
-                image: firstImage,
+                image: profileImage,
+                profile_image: profileImage,
                 description: `Mannequin professionnel de Models Academy Management`,
                 folder_name: apiModel.folder_name,
                 gallery: {
