@@ -6,6 +6,25 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 
 ## Recent Updates (October 20, 2025)
 
+### 🚀 Automatic Model Detection System (October 20, 2025 - Latest)
+- ✅ **Flask API Backend:**
+  - Automatic scanning of `/images/` directory to detect all models
+  - Real-time detection of 23+ models without manual configuration
+  - REST API endpoint: `/api/models` returns complete model data with images
+  - Auto-creation of missing subdirectories (portfolio, shooting, defile) with `.gitkeep` files
+  
+- ✅ **Intelligent Data Fusion:**
+  - JavaScript merges API-detected folders with existing JSON metadata
+  - Models with detailed info in `data/models.json` retain all their data
+  - New models automatically get basic profiles with detected images
+  - Gallery images loaded dynamically from actual folder contents
+  
+- ✅ **Zero-Configuration Workflow:**
+  - Add new model folder to `/images/{model-name}/` → automatically appears on site
+  - Add images to portfolio/shooting/defile folders → instantly visible
+  - No need to edit JSON files or update code manually
+  - System handles missing images gracefully with fallback messages
+
 ### Latest Enhancements (October 20, 2025 - Afternoon)
 - ✅ **Dropdown Navigation Menu:**
   - Added "Détails" dropdown menu in navigation across all pages
