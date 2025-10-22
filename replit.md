@@ -4,7 +4,29 @@
 
 MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcases fashion models and their portfolios. The platform serves as a digital presence for a prestigious modeling agency, featuring model profiles, agency information, and training programs. The website is designed to attract both potential models and clients looking to work with professional talent in the fashion industry.
 
-## Recent Updates (October 20, 2025)
+## Recent Updates
+
+### 📦 Architecture Simplification (October 22, 2025 - Latest)
+- ✅ **Simplified Server Architecture:**
+  - Replaced Flask server with lightweight `simple_server.py` (pure Python HTTP server)
+  - Removed API dependency - all data now loads directly from `data/models.json`
+  - Added cache-busting headers to prevent iframe caching issues
+  - Implemented query parameter support for model profile pages
+  - Port reuse enabled to prevent binding conflicts
+
+- ✅ **Data Loading Optimization:**
+  - Removed `/api/models` endpoint - no longer needed
+  - All 24 mannequins load directly from JSON file
+  - Faster page loads without API overhead
+  - Simplified codebase maintenance
+
+- ✅ **Gallery Display Verification:**
+  - Confirmed all gallery categories (Portfolio, Fashion Show, Shooting) display correctly
+  - Models show only their available photo categories
+  - Empty categories display user-friendly messages
+  - Tab system works smoothly across all model profiles
+
+## Previous Updates (October 20, 2025)
 
 ### 🎯 Custom Model Ordering & Image Optimization (October 20, 2025 - Latest)
 - ✅ **Fixed Display Order:**
