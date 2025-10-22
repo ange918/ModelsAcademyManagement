@@ -11,6 +11,7 @@
 [x] 29. Recréer simple_server.py (serveur Python standard sans packages)
 [x] 30. Réactiver le workflow Web Server
 [x] 31. Vérifier que le site fonctionne correctement
+[x] 32. Supprimer simple_server.py et le workflow selon la demande de l'utilisateur
 
 ## Modifications du 20 Octobre 2025
 
