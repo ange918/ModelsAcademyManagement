@@ -52,7 +52,7 @@
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/rita/portfolio/WhatsApp Image 2025-10-16 at 15.36.19 (1).jpeg",
+      "image": "images/rita/portfolio/1.jpeg",
       "description": "Spécialisée dans la haute couture avec une élégance naturelle",
       "gallery": {
         "shooting": [
@@ -85,7 +85,14 @@
           "images/rita/defile/IMG-20250920-WA0096.jpg",
           "images/rita/defile/IMG-20250920-WA0097.jpg"
         ],
-        "portfolio": []
+        "portfolio": [
+          "images/rita/portfolio/1.jpeg",
+          "images/rita/portfolio/2.jpeg",
+          "images/rita/portfolio/3.jpeg",
+          "images/rita/portfolio/4.jpeg",
+          "images/rita/portfolio/5.jpeg",
+          "images/rita/portfolio/6.jpeg"
+        ]
       }
     },
     {
@@ -106,8 +113,50 @@
       "image": "images/olerie/portfolio/olerie.jpg",
       "description": "Experte en beauté et mode commerciale, visage photogénique",
       "gallery": {
-        "shooting": [],
-        "fashionShow": [],
+        "shooting": [
+          "images/olerie/shooting/001.jpg",
+          "images/olerie/shooting/002.jpg",
+          "images/olerie/shooting/003.jpg",
+          "images/olerie/shooting/004.jpg",
+          "images/olerie/shooting/005.jpg",
+          "images/olerie/shooting/0.jpeg",
+          "images/olerie/shooting/1.jpeg",
+          "images/olerie/shooting/2.jpeg",
+          "images/olerie/shooting/3.jpeg",
+          "images/olerie/shooting/4.jpeg",
+          "images/olerie/shooting/5.jpeg",
+          "images/olerie/shooting/6.jpeg",
+          "images/olerie/shooting/7.jpeg",
+          "images/olerie/shooting/8.jpeg",
+          "images/olerie/shooting/9.jpeg",
+          "images/olerie/shooting/10.jpeg",
+          "images/olerie/shooting/11.jpeg"
+        ],
+        "fashionShow": [
+          "images/olerie/defile/0.jpeg",
+          "images/olerie/defile/1.jpeg",
+          "images/olerie/defile/2.jpeg",
+          "images/olerie/defile/3.jpeg",
+          "images/olerie/defile/4.jpeg",
+          "images/olerie/defile/5.jpeg",
+          "images/olerie/defile/6.jpeg",
+          "images/olerie/defile/7.jpeg",
+          "images/olerie/defile/8.jpeg",
+          "images/olerie/defile/9.jpeg",
+          "images/olerie/defile/10.jpeg",
+          "images/olerie/defile/11.jpeg",
+          "images/olerie/defile/12.jpeg",
+          "images/olerie/defile/13.jpeg",
+          "images/olerie/defile/14.jpeg",
+          "images/olerie/defile/15.jpeg",
+          "images/olerie/defile/16.jpeg",
+          "images/olerie/defile/17.jpeg",
+          "images/olerie/defile/18.jpeg",
+          "images/olerie/defile/19.jpeg",
+          "images/olerie/defile/20.jpeg",
+          "images/olerie/defile/21.jpeg",
+          "images/olerie/defile/22.jpeg"
+        ],
         "portfolio": [
           "images/olerie/portfolio/olerie.jpg",
           "images/olerie/portfolio/olerie1.jpg",
@@ -306,7 +355,7 @@
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/gallery/defile5.jpg",
+      "image": "images/roderic/shooting/IMG-20250826-WA0072.jpg",
       "description": "Modèle de luxe parisien, charisme et élégance française",
       "gallery": {
         "shooting": [
@@ -417,10 +466,19 @@
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/gallery/shoot11.jpg",
+      "image": "images/amen/1.jpeg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
-        "shooting": [],
+        "shooting": [
+          "images/amen/1.jpeg",
+          "images/amen/2.jpeg",
+          "images/amen/3.jpeg",
+          "images/amen/4.jpeg",
+          "images/amen/5.jpeg",
+          "images/amen/6.jpeg",
+          "images/amen/7.jpeg",
+          "images/amen/8.jpeg"
+        ],
         "fashionShow": [],
         "portfolio": []
       }
@@ -439,7 +497,7 @@
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/gallery/shoot11.jpg",
+      "image": "images/gildas/shooting/IMG-20250917-WA0071.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [
@@ -592,7 +650,7 @@
       "id": 18,
       "name": "VODOUNON Jédiel",
       "gender": "Homme",
-      "specialty": "Fashion & Haute Couture",
+      "specialty": "Model Photo",
       "height": "1.76m",
       "chest": "95cm",
       "waist": "75cm",
@@ -602,7 +660,7 @@
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Francais"],
-      "image": "images/jediel/shooting/IMG-20251013-WA0008.jpg",
+      "image": "images/jediel/portfolio/1.jpeg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [
@@ -644,7 +702,13 @@
           "images/jediel/shooting/IMG-20251013-WA0043.jpg"
         ],
         "fashionShow": [],
-        "portfolio": []
+        "portfolio": [
+          "images/jediel/portfolio/1.jpeg",
+          "images/jediel/portfolio/2.jpeg",
+          "images/jediel/portfolio/3.jpeg",
+          "images/jediel/portfolio/4.jpeg",
+          "images/jediel/portfolio/5.jpeg"
+        ]
       }
     },
     {
@@ -690,33 +754,126 @@
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/mathieu/portfolio/IMG-20240802-WA0021.jpg",
+      "image": "images/mathieu/portfolio/1.jpg",
       "description": "Modèle professionnel avec une grande expérience sur les podiums internationaux",
       "gallery": {
-        "shooting": [],
-        "fashionShow": [],
-        "portfolio": []
+        "shooting": [
+          "images/mathieu/shooting/0.jpg",
+          "images/mathieu/shooting/1.jpg",
+          "images/mathieu/shooting/2.jpg",
+          "images/mathieu/shooting/3.jpg",
+          "images/mathieu/shooting/4.jpg",
+          "images/mathieu/shooting/5.jpg",
+          "images/mathieu/shooting/6.jpg",
+          "images/mathieu/shooting/7.jpg",
+          "images/mathieu/shooting/8.jpg",
+          "images/mathieu/shooting/9.jpg",
+          "images/mathieu/shooting/10.jpg",
+          "images/mathieu/shooting/11.jpg",
+          "images/mathieu/shooting/12.jpg",
+          "images/mathieu/shooting/13.jpg",
+          "images/mathieu/shooting/14.jpg",
+          "images/mathieu/shooting/15.jpg",
+          "images/mathieu/shooting/16.jpg",
+          "images/mathieu/shooting/17.jpg",
+          "images/mathieu/shooting/18.jpg",
+          "images/mathieu/shooting/19.jpg",
+          "images/mathieu/shooting/20.jpg",
+          "images/mathieu/shooting/21.jpg",
+          "images/mathieu/shooting/22.jpg",
+          "images/mathieu/shooting/23.jpg",
+          "images/mathieu/shooting/24.jpg",
+          "images/mathieu/shooting/25.jpg"
+        ],
+        "fashionShow": [
+          "images/mathieu/defile/0.jpg",
+          "images/mathieu/defile/1.jpg",
+          "images/mathieu/defile/2.jpg",
+          "images/mathieu/defile/3.jpg",
+          "images/mathieu/defile/4.jpg",
+          "images/mathieu/defile/5.jpg",
+          "images/mathieu/defile/6.jpg",
+          "images/mathieu/defile/7.jpg",
+          "images/mathieu/defile/8.jpg",
+          "images/mathieu/defile/9.jpg",
+          "images/mathieu/defile/10.jpg",
+          "images/mathieu/defile/11.jpg",
+          "images/mathieu/defile/12.jpg",
+          "images/mathieu/defile/13.jpg",
+          "images/mathieu/defile/14.jpg",
+          "images/mathieu/defile/15.jpg",
+          "images/mathieu/defile/16.jpg",
+          "images/mathieu/defile/17.jpg",
+          "images/mathieu/defile/18.jpg",
+          "images/mathieu/defile/19.jpg",
+          "images/mathieu/defile/20.jpg",
+          "images/mathieu/defile/21.jpg",
+          "images/mathieu/defile/22.jpg"
+        ],
+        "portfolio": [
+          "images/mathieu/portfolio/0.jpg",
+          "images/mathieu/portfolio/1.jpg",
+          "images/mathieu/portfolio/2.jpg",
+          "images/mathieu/portfolio/3.jpg",
+          "images/mathieu/portfolio/4.jpg",
+          "images/mathieu/portfolio/5.jpg",
+          "images/mathieu/portfolio/6.jpg",
+          "images/mathieu/portfolio/7.jpg"
+        ]
       }
     },
     {
       "id": 21,
       "name": "AGBOGNON Joana",
       "gender": "Femme",
-      "specialty": "Fashion & Haute Couture",
+      "specialty": "Model Photo",
       "height": "1.60m",
       "bust": "82cm",
-      "waist": "62cm",
-      "hips": "90cm",
+      "waist": "27cm",
+      "hips": "34cm",
       "shoeSize": "37 EU",
       "hairColor": "Noir",
       "eyeColor": "Marron",
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Francais"],
-      "image": "images/Joana/portfolio/joana.jpg",
+      "image": "images/Joana/shooting/0.jpg",
       "description": "Jeune talent prometteuse avec une élégance naturelle",
       "gallery": {
-        "shooting": [],
+        "shooting": [
+          "images/Joana/shooting/0.jpg",
+          "images/Joana/shooting/1.jpg",
+          "images/Joana/shooting/2.jpg",
+          "images/Joana/shooting/3.jpg",
+          "images/Joana/shooting/4.jpg",
+          "images/Joana/shooting/5.jpg",
+          "images/Joana/shooting/6.jpg",
+          "images/Joana/shooting/7.jpg",
+          "images/Joana/shooting/8.jpg",
+          "images/Joana/shooting/9.jpg",
+          "images/Joana/shooting/10.jpg",
+          "images/Joana/shooting/11.jpg",
+          "images/Joana/shooting/12.jpg",
+          "images/Joana/shooting/13.jpg",
+          "images/Joana/shooting/14.jpg",
+          "images/Joana/shooting/15.jpg",
+          "images/Joana/shooting/16.jpg",
+          "images/Joana/shooting/17.jpg",
+          "images/Joana/shooting/18.jpg",
+          "images/Joana/shooting/19.jpg",
+          "images/Joana/shooting/20.jpg",
+          "images/Joana/shooting/21.jpg",
+          "images/Joana/shooting/22.jpg",
+          "images/Joana/shooting/23.jpg",
+          "images/Joana/shooting/24.jpg",
+          "images/Joana/shooting/25.jpg",
+          "images/Joana/shooting/26.jpg",
+          "images/Joana/shooting/27.jpg",
+          "images/Joana/shooting/28.jpg",
+          "images/Joana/shooting/29.jpg",
+          "images/Joana/shooting/30.jpg",
+          "images/Joana/shooting/31.jpg"
+        ],
         "fashionShow": [],
         "portfolio": []
       }
