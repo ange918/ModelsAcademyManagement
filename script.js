@@ -236,25 +236,24 @@ function initPageTransitions() {
 
 initPageTransitions();
 
-// Load models data from models.json only
+// Load models data from embedded JavaScript data
 async function loadModelsData() {
     if (modelsDataLoaded && window.modelsData) {
         return window.modelsData;
     }
     
     try {
-        // Charger les données depuis models.json
-        const jsonResponse = await fetch('data/models.json');
-        if (!jsonResponse.ok) {
-            throw new Error(`Erreur lors du chargement de models.json: ${jsonResponse.status}`);
+        // Charger les données depuis la variable JavaScript MODELS_DATA
+        if (typeof MODELS_DATA === 'undefined') {
+            throw new Error('MODELS_DATA non défini. Assurez-vous que models-data.js est chargé avant script.js');
         }
-        const jsonData = await jsonResponse.json();
-        const models = jsonData.models || [];
+        
+        const models = MODELS_DATA.models || [];
         
         window.modelsData = models;
         modelsDataLoaded = true;
         
-        console.log(`✅ ${models.length} mannequins chargés depuis models.json`);
+        console.log(`✅ ${models.length} mannequins chargés depuis les données embarquées`);
         console.log('Premiers mannequins:', models.slice(0, 3).map(m => ({ id: m.id, name: m.name })));
         
         const modelsGrid = document.getElementById('models-grid');
@@ -270,7 +269,7 @@ async function loadModelsData() {
             modelsGrid.innerHTML = `
                 <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
                     <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement des mannequins</h3>
-                    <p style="margin-bottom: 10px;">Impossible de charger les données depuis models.json</p>
+                    <p style="margin-bottom: 10px;">Impossible de charger les données</p>
                     <button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #1e3a8a; color: white; border: none; border-radius: 5px; cursor: pointer;">Réessayer</button>
                 </div>
             `;

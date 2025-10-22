@@ -3,6 +3,15 @@
 [x] 3. Verify the project is working using the screenshot tool
 [x] 4. Inform user the import is completed and they can start building, mark the import as completed using the complete_project_import tool
 
+## Configuration Sans Serveur - 22 Octobre 2025
+
+[x] 26. Créer le fichier models-data.js avec les données JSON embarquées
+[x] 27. Modifier script.js pour utiliser MODELS_DATA au lieu de fetch()
+[x] 28. Ajouter models-data.js dans index.html, mannequins.html et model-profile.html
+[x] 29. Recréer simple_server.py (serveur Python standard sans packages)
+[x] 30. Réactiver le workflow Web Server
+[x] 31. Vérifier que le site fonctionne correctement
+
 ## Modifications du 20 Octobre 2025
 
 [x] 5. Créer les dossiers et sous-dossiers pour les 5 nouveaux mannequins
