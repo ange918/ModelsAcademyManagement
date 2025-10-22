@@ -20,6 +20,12 @@ class NoCacheHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
     
+    def translate_path(self, path):
+        # Remove query parameters from path
+        from urllib.parse import urlparse
+        parsed_path = urlparse(path)
+        return super().translate_path(parsed_path.path)
+    
     def end_headers(self):
         # Add no-cache headers
         self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
@@ -38,6 +44,9 @@ if __name__ == "__main__":
     print(f"📂 Répertoire: {os.path.abspath(DIRECTORY)}")
     print(f"🌐 Serveur démarré sur http://0.0.0.0:{PORT}/")
     print("=" * 60)
+    
+    # Allow port reuse
+    socketserver.TCPServer.allow_reuse_address = True
     
     with socketserver.TCPServer(("0.0.0.0", PORT), NoCacheHTTPRequestHandler) as httpd:
         try:
