@@ -279,40 +279,6 @@ async function loadModelsData() {
     }
 }
 
-// Mettre à jour les données JSON avec les images détectées par l'API
-function updateModelsWithApiData(jsonModels, apiModels) {
-    // Créer un mapping des mannequins de l'API par nom de dossier
-    const apiModelsByFolder = {};
-    apiModels.forEach(apiModel => {
-        apiModelsByFolder[apiModel.folder_name.toLowerCase()] = apiModel;
-    });
-    
-    // Mettre à jour chaque mannequin JSON avec les images de l'API si disponibles
-    return jsonModels.map(model => {
-        // Extraire le nom du dossier depuis l'image path
-        const folderMatch = model.image.match(/images\/([^\/]+)\//);
-        if (!folderMatch) {
-            return model;
-        }
-        
-        const folderName = folderMatch[1].toLowerCase();
-        const apiModel = apiModelsByFolder[folderName];
-        
-        if (apiModel) {
-            // Mettre à jour les galeries avec les images détectées par l'API
-            return {
-                ...model,
-                gallery: {
-                    portfolio: apiModel.portfolio.length > 0 ? apiModel.portfolio : (model.gallery?.portfolio || []),
-                    fashionShow: apiModel.defile.length > 0 ? apiModel.defile : (model.gallery?.fashionShow || []),
-                    shooting: apiModel.shooting.length > 0 ? apiModel.shooting : (model.gallery?.shooting || [])
-                }
-            };
-        }
-        
-        return model;
-    });
-}
 
 // Formater le nom du dossier en nom de mannequin
 function formatModelName(folderName) {
