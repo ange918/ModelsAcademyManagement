@@ -13,6 +13,13 @@
 [x] 31. Vérifier que le site fonctionne correctement
 [x] 32. Supprimer simple_server.py et le workflow selon la demande de l'utilisateur
 
+## Préparation pour Vercel - 22 Octobre 2025
+
+[x] 33. Inspecter le code avec l'architecte pour vérifier la compatibilité Vercel
+[x] 34. Créer vercel.json avec optimisation du cache pour les images et CSS
+[x] 35. Créer .vercelignore pour exclure les fichiers inutiles du déploiement
+[x] 36. Confirmer que le projet est 100% statique et prêt pour Vercel
+
 ## Modifications du 20 Octobre 2025
 
 [x] 5. Créer les dossiers et sous-dossiers pour les 5 nouveaux mannequins

@@ -1,0 +1,7 @@
+.git
+.cache
+.local
+.replit
+pyproject.toml
+uv.lock
+FORMSPREE_SETUP.md
