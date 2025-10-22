@@ -182,10 +182,18 @@ def generate_article_page(article):
             margin-top: 40px;
             margin-bottom: 20px;
             color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }}
         
         .article-content h2:first-child {{
             margin-top: 0;
+        }}
+        
+        .article-content h2 i {{
+            font-size: 2.2rem;
+            color: #2563eb;
         }}
         
         .article-content h3 {{
@@ -194,6 +202,13 @@ def generate_article_page(article):
             margin-top: 30px;
             margin-bottom: 15px;
             color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }}
+        
+        .article-content h3 i {{
+            font-size: 1.6rem;
         }}
         
         .article-content h4 {{
@@ -202,6 +217,58 @@ def generate_article_page(article):
             margin-top: 25px;
             margin-bottom: 12px;
             color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }}
+        
+        .article-content h4 i {{
+            font-size: 1.3rem;
+            color: #d4af37;
+        }}
+        
+        .article-image {{
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }}
+        
+        .article-image img {{
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }}
+        
+        .article-image-caption {{
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }}
+        
+        .icon-list {{
+            list-style: none;
+            padding-left: 0;
+        }}
+        
+        .icon-list li {{
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }}
+        
+        .icon-list li i {{
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-top: 3px;
+            flex-shrink: 0;
         }}
         
         .article-content p {{
@@ -255,6 +322,12 @@ def generate_article_page(article):
             
             .article-content h3 {{
                 font-size: 1.3rem;
+            }}
+            
+            .article-content h2,
+            .article-content h3,
+            .article-content h4 {{
+                flex-wrap: wrap;
             }}
             
             .article-back {{

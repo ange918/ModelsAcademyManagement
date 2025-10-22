@@ -6,7 +6,7 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 
 ## Recent Updates
 
-### ✍️ Système de Blog Complet avec Pages Dédiées (October 22, 2025 - Latest)
+### ✍️ Système de Blog Complet avec Pages Dédiées et Illustrations (October 22, 2025 - Latest)
 - ✅ **Nouveau Système de Blog Dynamique:**
   - Créé `data/articles.js` avec 15 articles complets et professionnels
   - Système de génération dynamique des cards d'articles depuis JavaScript
@@ -15,6 +15,14 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
   - Design cohérent avec le reste du site (couleurs, polices, style)
   - Responsive sur mobile et desktop
   - Images des cards optimisées avec `object-position: center top` pour meilleure visibilité des visages
+  
+- ✅ **Icônes Boxicons et Images d'Illustration:**
+  - **Icônes dans les titres** : Chaque section d'article (h2, h3, h4) affiche une icône Boxicons contextuelle
+  - **Images d'illustration** : Photos du dossier `images/gallery/` insérées dans le contenu avec légendes
+  - **Listes avec icônes** : Listes à puces transformées en listes stylisées avec icônes
+  - Icônes utilisées : `bxs-star`, `bx-target-lock`, `bx-book-open`, `bx-camera`, `bx-walk`, `bxl-instagram-alt`, etc.
+  - Images utilisées : defile1.jpg, profe.jpg, about.jpg, defile2.jpg, defile7.jpg pour illustrer les concepts
+  - Style visuel moderne et professionnel avec icônes bleues (#2563eb) et dorées (#d4af37)
 
 - ✅ **15 Articles de Blog Professionnels:**
   1. Comment devenir mannequin professionnel (France, USA, Espagne, Afrique)

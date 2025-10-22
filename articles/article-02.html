@@ -97,10 +97,18 @@
             margin-top: 40px;
             margin-bottom: 20px;
             color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         
         .article-content h2:first-child {
             margin-top: 0;
+        }
+        
+        .article-content h2 i {
+            font-size: 2.2rem;
+            color: #2563eb;
         }
         
         .article-content h3 {
@@ -109,6 +117,13 @@
             margin-top: 30px;
             margin-bottom: 15px;
             color: #2563eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .article-content h3 i {
+            font-size: 1.6rem;
         }
         
         .article-content h4 {
@@ -117,6 +132,58 @@
             margin-top: 25px;
             margin-bottom: 12px;
             color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .article-content h4 i {
+            font-size: 1.3rem;
+            color: #d4af37;
+        }
+        
+        .article-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .article-image-caption {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .icon-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .icon-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .icon-list li i {
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-top: 3px;
+            flex-shrink: 0;
         }
         
         .article-content p {
@@ -170,6 +237,12 @@
             
             .article-content h3 {
                 font-size: 1.3rem;
+            }
+            
+            .article-content h2,
+            .article-content h3,
+            .article-content h4 {
+                flex-wrap: wrap;
             }
             
             .article-back {
@@ -228,37 +301,48 @@
     <!-- Article Content -->
     <div class="article-container">
         <article class="article-content fade-in">
-            <h2>🌟 Introduction</h2>
+            <h2><i class='bx bxs-graduation'></i> Introduction</h2>
 <p>Devenir mannequin professionnel ne dépend pas uniquement de la beauté ou de la taille. C'est une discipline, un métier à part entière qui exige technique, rigueur et charisme.</p>
+
+<div class="article-image">
+<img src="../images/gallery/about.jpg" alt="Formation mannequins">
+<div class="article-image-caption">Une formation professionnelle est la clé du succès dans le mannequinat</div>
+</div>
+
 <p>Pour celles et ceux qui rêvent de défiler à Paris, New York, Madrid ou Dakar, la clé réside dans une formation solide et encadrée par des experts. Chez MODELS ACADEMY MANAGEMENT, nous croyons que chaque talent mérite les outils nécessaires pour exceller sur les podiums du monde entier.</p>
 
-<h3>1️⃣ Pourquoi une formation est indispensable</h3>
+<h3><i class='bx bx-question-mark'></i> 1️⃣ Pourquoi une formation est indispensable</h3>
 <p>Autrefois, certains mannequins étaient repérés par hasard dans la rue ou dans un centre commercial. Aujourd'hui, le marché est beaucoup plus compétitif. Les agences recherchent des profils formés, capables de comprendre immédiatement les exigences d'un shooting ou d'un défilé.</p>
 <p>Une bonne formation permet de :</p>
-<ul>
-<li>Maîtriser les bases techniques (démarche, posture, expression du visage)</li>
-<li>Renforcer la confiance en soi</li>
-<li>Apprendre à travailler avec des photographes et stylistes</li>
-<li>Comprendre les codes professionnels du mannequinat</li>
+<ul class="icon-list">
+<li><i class='bx bx-walk'></i><span>Maîtriser les bases techniques (démarche, posture, expression du visage)</span></li>
+<li><i class='bx bx-shield-alt-2'></i><span>Renforcer la confiance en soi</span></li>
+<li><i class='bx bx-group'></i><span>Apprendre à travailler avec des photographes et stylistes</span></li>
+<li><i class='bx bx-brain'></i><span>Comprendre les codes professionnels du mannequinat</span></li>
 </ul>
 <p><strong>🎯 En somme :</strong> une formation transforme un visage prometteur en mannequin complet et professionnel.</p>
 
-<h3>2️⃣ Les différents types de formations en mannequinat</h3>
+<h3><i class='bx bx-list-ul'></i> 2️⃣ Les différents types de formations en mannequinat</h3>
 <p>Le monde du mannequinat est vaste et varié. Voici les principaux types de formations proposées par les agences sérieuses :</p>
 
-<h4>🩰 Formation "Défilé et démarche"</h4>
+<h4><i class='bx bx-walk'></i> Formation "Défilé et démarche"</h4>
 <p>Apprentissage de la marche professionnelle, gestion du rythme, port de tête, regard et attitude scénique. Une formation essentielle pour défiler sur des podiums prestigieux.</p>
 
-<h4>📸 Formation "Photo et expression faciale"</h4>
+<h4><i class='bx bx-camera'></i> Formation "Photo et expression faciale"</h4>
 <p>Techniques pour poser avec assurance, comprendre les angles, travailler la lumière et exprimer une émotion à travers l'objectif.</p>
 
-<h4>💬 Formation "Communication et image personnelle"</h4>
+<h4><i class='bx bx-message-rounded-dots'></i> Formation "Communication et image personnelle"</h4>
 <p>Comment parler en public, se présenter à un casting, gérer son image sur les réseaux sociaux et adopter une attitude professionnelle.</p>
 
-<h4>🌍 Formation "Carrière internationale"</h4>
+<h4><i class='bx bx-world'></i> Formation "Carrière internationale"</h4>
 <p>Préparation aux standards du mannequinat mondial : anglais de la mode, multiculturalité, respect des codes des grandes capitales (Paris, New York, Madrid, Johannesburg…).</p>
 
-<h3>3️⃣ Les avantages d'une formation chez MODELS ACADEMY MANAGEMENT</h3>
+<div class="article-image">
+<img src="../images/gallery/defile2.jpg" alt="Mannequin en formation">
+<div class="article-image-caption">MODELS ACADEMY MANAGEMENT offre une formation complète et personnalisée</div>
+</div>
+
+<h3><i class='bx bxs-medal'></i> 3️⃣ Les avantages d'une formation chez MODELS ACADEMY MANAGEMENT</h3>
 <p>Ce qui distingue MODELS ACADEMY MANAGEMENT, c'est notre approche globale et humaine du mannequinat. Nous ne formons pas seulement des mannequins, mais de véritables ambassadeurs de confiance et d'élégance.</p>
 <p>Notre méthode repose sur quatre piliers :</p>
 <ol>

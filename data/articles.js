@@ -7,50 +7,67 @@ const BLOG_ARTICLES = [
     image: "images/gallery/defile1.jpg",
     excerpt: "Le mannequinat est aujourd'hui une industrie mondiale où les opportunités dépassent largement les frontières. Découvrez les étapes essentielles pour bâtir une carrière internationale.",
     content: `
-      <h2>🌟 Introduction</h2>
+      <h2><i class='bx bxs-star'></i> Introduction</h2>
       <p>Le mannequinat est aujourd'hui une industrie mondiale où les opportunités dépassent largement les frontières. Que vous viviez en France, aux États-Unis, en Espagne ou en Afrique, il existe désormais de véritables passerelles pour bâtir une carrière solide et reconnue.</p>
+      
+      <div class="article-image">
+        <img src="../images/gallery/defile1.jpg" alt="Mannequins professionnels en défilé">
+        <div class="article-image-caption">Le mannequinat international offre d'immenses opportunités dans le monde entier</div>
+      </div>
+
       <p>Chez MODELS ACADEMY MANAGEMENT, nous croyons que chaque talent mérite d'être formé, encadré et révélé au monde. Mais comment concrètement devenir mannequin professionnel à l'international ? Voici les étapes essentielles.</p>
 
-      <h3>1️⃣ Définir son profil et son objectif</h3>
+      <h3><i class='bx bx-target-lock'></i> 1️⃣ Définir son profil et son objectif</h3>
       <p>Le mannequinat ne se résume plus à une seule image. Aujourd'hui, on distingue plusieurs catégories : mannequin de défilé, photo, commercial, e-commerce, grande taille, ou encore digitaux (avatars). La première étape consiste à comprendre votre profil physique, votre charme personnel et le type de carrière qui correspond le mieux à votre style.</p>
       <p><strong>👉 Exemple :</strong></p>
-      <ul>
-        <li>En France, les critères artistiques et la mode de luxe dominent.</li>
-        <li>Aux USA, la diversité et la personnalité sont très valorisées.</li>
-        <li>En Espagne, les agences misent sur le charisme et l'énergie méditerranéenne.</li>
-        <li>En Afrique, les agences recherchent des visages authentiques, expressifs et confiants.</li>
+      <ul class="icon-list">
+        <li><i class='bx bxs-flag-alt'></i><span>En France, les critères artistiques et la mode de luxe dominent.</span></li>
+        <li><i class='bx bxs-flag-alt'></i><span>Aux USA, la diversité et la personnalité sont très valorisées.</span></li>
+        <li><i class='bx bxs-flag-alt'></i><span>En Espagne, les agences misent sur le charisme et l'énergie méditerranéenne.</span></li>
+        <li><i class='bx bxs-flag-alt'></i><span>En Afrique, les agences recherchent des visages authentiques, expressifs et confiants.</span></li>
       </ul>
 
-      <h3>2️⃣ Suivre une formation professionnelle adaptée</h3>
+      <h3><i class='bx bx-book-open'></i> 2️⃣ Suivre une formation professionnelle adaptée</h3>
       <p>Le mannequinat, c'est un métier qui demande rigueur et technique. Pour réussir, une formation encadrée est indispensable :</p>
-      <ul>
-        <li>Maîtrise de la démarche et des postures</li>
-        <li>Gestion du regard et de la confiance</li>
-        <li>Connaissance du monde de la mode et du casting</li>
-        <li>Discipline physique et mentale</li>
+      
+      <div class="article-image">
+        <img src="../images/gallery/profe.jpg" alt="Formation professionnelle mannequins">
+        <div class="article-image-caption">La formation est la clé pour maîtriser les techniques du mannequinat professionnel</div>
+      </div>
+
+      <ul class="icon-list">
+        <li><i class='bx bx-walk'></i><span>Maîtrise de la démarche et des postures</span></li>
+        <li><i class='bx bx-show-alt'></i><span>Gestion du regard et de la confiance</span></li>
+        <li><i class='bx bx-briefcase'></i><span>Connaissance du monde de la mode et du casting</span></li>
+        <li><i class='bx bx-dumbbell'></i><span>Discipline physique et mentale</span></li>
       </ul>
       <p>Chez MODELS ACADEMY MANAGEMENT, nos formations préparent les mannequins à ces exigences internationales. Nos coachs accompagnent chaque élève à développer sa présence scénique, sa discipline et sa signature personnelle, tout en s'adaptant aux standards des grandes capitales de la mode.</p>
 
-      <h3>3️⃣ Créer un book professionnel</h3>
+      <h3><i class='bx bx-camera'></i> 3️⃣ Créer un book professionnel</h3>
       <p>Le book est la carte d'identité visuelle du mannequin. Il doit présenter votre polyvalence, votre naturel et votre capacité à incarner différents styles.</p>
       <p>Un bon book contient :</p>
-      <ul>
-        <li>Des portraits (lumière naturelle)</li>
-        <li>Des photos plein pied</li>
-        <li>Des clichés mode</li>
-        <li>Une photo « sourire » simple et sincère</li>
+      <ul class="icon-list">
+        <li><i class='bx bx-user-circle'></i><span>Des portraits (lumière naturelle)</span></li>
+        <li><i class='bx bx-body'></i><span>Des photos plein pied</span></li>
+        <li><i class='bx bx-closet'></i><span>Des clichés mode</span></li>
+        <li><i class='bx bx-smile'></i><span>Une photo « sourire » simple et sincère</span></li>
       </ul>
       <p><strong>💡 Astuce :</strong> Un photographe professionnel habitué au mannequinat saura capter votre meilleur angle et sublimer votre potentiel.</p>
 
-      <h3>4️⃣ Participer à des castings et se faire repérer</h3>
+      <h3><i class='bx bx-star'></i> 4️⃣ Participer à des castings et se faire repérer</h3>
       <p>Une fois formé(e), il faut oser se présenter. Les castings sont l'occasion de montrer vos progrès, votre énergie et votre confiance. Même si tous ne débouchent pas sur un contrat, chaque expérience vous fait grandir.</p>
       <p>MODELS ACADEMY MANAGEMENT accompagne ses élèves lors de sessions de casting professionnel organisées en France, aux États-Unis, en Espagne et en Afrique, en collaboration avec des marques et agences partenaires.</p>
 
-      <h3>5️⃣ Développer son image sur les réseaux sociaux</h3>
+      <h3><i class='bx bxl-instagram-alt'></i> 5️⃣ Développer son image sur les réseaux sociaux</h3>
       <p>Les réseaux sociaux sont aujourd'hui un tremplin incontournable pour les mannequins. Une présence maîtrisée sur Instagram, TikTok ou LinkedIn peut attirer l'attention de recruteurs internationaux.</p>
       <p>📱 Chez MODELS ACADEMY MANAGEMENT, nous formons aussi nos élèves à la gestion d'image digitale : comment bâtir une communauté, collaborer avec des marques, et rester fidèle à ses valeurs.</p>
 
-      <h3>✨ Conclusion : votre parcours commence ici</h3>
+      <div class="article-image">
+        <img src="../images/gallery/defile7.jpg" alt="Mannequin sur podium international">
+        <div class="article-image-caption">Votre carrière internationale commence par une formation solide et une préparation rigoureuse</div>
+      </div>
+
+      <h3><i class='bx bxs-trophy'></i> ✨ Conclusion : votre parcours commence ici</h3>
       <p>Devenir mannequin professionnel n'est pas une question de chance, mais de préparation et de persévérance. Grâce à une formation solide, une présentation soignée et une attitude positive, votre rêve peut devenir réalité — peu importe votre origine ou votre âge.</p>
       <blockquote>🌍 MODELS ACADEMY MANAGEMENT vous ouvre les portes du mannequinat international. Rejoignez notre prochaine session de formation et commencez à construire votre carrière de mannequin professionnel.</blockquote>
     `
@@ -63,37 +80,48 @@ const BLOG_ARTICLES = [
     image: "images/gallery/profe.jpg",
     excerpt: "Devenir mannequin professionnel ne dépend pas uniquement de la beauté ou de la taille. C'est une discipline, un métier à part entière qui exige technique, rigueur et charisme.",
     content: `
-      <h2>🌟 Introduction</h2>
+      <h2><i class='bx bxs-graduation'></i> Introduction</h2>
       <p>Devenir mannequin professionnel ne dépend pas uniquement de la beauté ou de la taille. C'est une discipline, un métier à part entière qui exige technique, rigueur et charisme.</p>
+      
+      <div class="article-image">
+        <img src="../images/gallery/about.jpg" alt="Formation mannequins">
+        <div class="article-image-caption">Une formation professionnelle est la clé du succès dans le mannequinat</div>
+      </div>
+
       <p>Pour celles et ceux qui rêvent de défiler à Paris, New York, Madrid ou Dakar, la clé réside dans une formation solide et encadrée par des experts. Chez MODELS ACADEMY MANAGEMENT, nous croyons que chaque talent mérite les outils nécessaires pour exceller sur les podiums du monde entier.</p>
 
-      <h3>1️⃣ Pourquoi une formation est indispensable</h3>
+      <h3><i class='bx bx-question-mark'></i> 1️⃣ Pourquoi une formation est indispensable</h3>
       <p>Autrefois, certains mannequins étaient repérés par hasard dans la rue ou dans un centre commercial. Aujourd'hui, le marché est beaucoup plus compétitif. Les agences recherchent des profils formés, capables de comprendre immédiatement les exigences d'un shooting ou d'un défilé.</p>
       <p>Une bonne formation permet de :</p>
-      <ul>
-        <li>Maîtriser les bases techniques (démarche, posture, expression du visage)</li>
-        <li>Renforcer la confiance en soi</li>
-        <li>Apprendre à travailler avec des photographes et stylistes</li>
-        <li>Comprendre les codes professionnels du mannequinat</li>
+      <ul class="icon-list">
+        <li><i class='bx bx-walk'></i><span>Maîtriser les bases techniques (démarche, posture, expression du visage)</span></li>
+        <li><i class='bx bx-shield-alt-2'></i><span>Renforcer la confiance en soi</span></li>
+        <li><i class='bx bx-group'></i><span>Apprendre à travailler avec des photographes et stylistes</span></li>
+        <li><i class='bx bx-brain'></i><span>Comprendre les codes professionnels du mannequinat</span></li>
       </ul>
       <p><strong>🎯 En somme :</strong> une formation transforme un visage prometteur en mannequin complet et professionnel.</p>
 
-      <h3>2️⃣ Les différents types de formations en mannequinat</h3>
+      <h3><i class='bx bx-list-ul'></i> 2️⃣ Les différents types de formations en mannequinat</h3>
       <p>Le monde du mannequinat est vaste et varié. Voici les principaux types de formations proposées par les agences sérieuses :</p>
       
-      <h4>🩰 Formation "Défilé et démarche"</h4>
+      <h4><i class='bx bx-walk'></i> Formation "Défilé et démarche"</h4>
       <p>Apprentissage de la marche professionnelle, gestion du rythme, port de tête, regard et attitude scénique. Une formation essentielle pour défiler sur des podiums prestigieux.</p>
 
-      <h4>📸 Formation "Photo et expression faciale"</h4>
+      <h4><i class='bx bx-camera'></i> Formation "Photo et expression faciale"</h4>
       <p>Techniques pour poser avec assurance, comprendre les angles, travailler la lumière et exprimer une émotion à travers l'objectif.</p>
 
-      <h4>💬 Formation "Communication et image personnelle"</h4>
+      <h4><i class='bx bx-message-rounded-dots'></i> Formation "Communication et image personnelle"</h4>
       <p>Comment parler en public, se présenter à un casting, gérer son image sur les réseaux sociaux et adopter une attitude professionnelle.</p>
 
-      <h4>🌍 Formation "Carrière internationale"</h4>
+      <h4><i class='bx bx-world'></i> Formation "Carrière internationale"</h4>
       <p>Préparation aux standards du mannequinat mondial : anglais de la mode, multiculturalité, respect des codes des grandes capitales (Paris, New York, Madrid, Johannesburg…).</p>
 
-      <h3>3️⃣ Les avantages d'une formation chez MODELS ACADEMY MANAGEMENT</h3>
+      <div class="article-image">
+        <img src="../images/gallery/defile2.jpg" alt="Mannequin en formation">
+        <div class="article-image-caption">MODELS ACADEMY MANAGEMENT offre une formation complète et personnalisée</div>
+      </div>
+
+      <h3><i class='bx bxs-medal'></i> 3️⃣ Les avantages d'une formation chez MODELS ACADEMY MANAGEMENT</h3>
       <p>Ce qui distingue MODELS ACADEMY MANAGEMENT, c'est notre approche globale et humaine du mannequinat. Nous ne formons pas seulement des mannequins, mais de véritables ambassadeurs de confiance et d'élégance.</p>
       <p>Notre méthode repose sur quatre piliers :</p>
       <ol>
