@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment MODELS ACADEMY MANAGEMENT prépare les mannequins aux standards mondiaux - MODELS ACADEMY MANAGEMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Article page styles */
+        .article-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 140px 20px 60px;
+            text-align: center;
+        }
+        
+        .article-back {
+            position: absolute;
+            top: 90px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 300;
+            transition: gap 0.3s ease;
+            z-index: 100;
+        }
+        
+        .article-back:hover {
+            gap: 12px;
+        }
+        
+        .article-back i {
+            font-size: 1.5rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .article-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .article-content h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .article-content p {
+            margin-bottom: 18px;
+            color: #444;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+        
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .article-content li {
+            margin-bottom: 12px;
+            color: #444;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+        
+        .article-content blockquote {
+            background: #f0f7ff;
+            border-left: 4px solid #2563eb;
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #1a1a1a;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        
+        .article-content strong {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 120px 20px 40px;
+            }
+            
+            .article-content {
+                padding: 30px 20px;
+            }
+            
+            .article-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .article-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .article-back {
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/gallery/models academy.jpg" alt="Logo MAM" class="logo-icon">
+                <h2>MAM</h2>
+            </a>
+            <div class="nav-menu">
+                <a href="../index.html#home" class="nav-link">Accueil</a>
+                <div class="nav-dropdown">
+                    <span class="nav-dropdown-toggle">
+                        Détails <i class='bx bx-chevron-down'></i>
+                    </span>
+                    <div class="nav-dropdown-content">
+                        <a href="../about.html">À Propos</a>
+                        <a href="../blog.html">Blog</a>
+                    </div>
+                </div>
+                <a href="../index.html#formations" class="nav-link">Formations</a>
+                <a href="../mannequins.html" class="nav-link nav-cta">Nos Mannequins</a>
+                <a href="../index.html#inscription" class="nav-link btn-inscription">S'inscrire</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <a href="../blog.html" class="article-back">
+            <i class='bx bx-left-arrow-alt'></i>
+            Retour au blog
+        </a>
+        <span class="article-category">Formation</span>
+        <h1 class="article-title">Comment MODELS ACADEMY MANAGEMENT prépare les mannequins aux standards mondiaux</h1>
+        <div class="article-meta">
+            <span class="article-date">
+                <i class='bx bx-calendar'></i>
+                12 Octobre 2025
+            </span>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <div class="article-container">
+        <article class="article-content fade-in">
+            <h2>🌟 Introduction</h2>
+<p>Le mannequinat n'a jamais été aussi compétitif et exigeant. Pour réussir sur les podiums de Paris, New York, Madrid ou dans les campagnes publicitaires à travers l'Afrique, il ne suffit pas d'avoir un joli visage ou une silhouette élégante. Il faut être préparé, discipliné et formé selon des standards professionnels internationaux.</p>
+<p>Chez MODELS ACADEMY MANAGEMENT, notre mission est claire : préparer chaque talent à exceller sur la scène mondiale, en combinant formation technique, coaching personnalisé et immersion dans le monde de la mode internationale.</p>
+
+<h3>1️⃣ Une formation complète et adaptée aux standards internationaux</h3>
+<p>Nous proposons une formation multidimensionnelle qui couvre tous les aspects du mannequinat professionnel :</p>
+<ul>
+<li><strong>Défilé et posture scénique :</strong> apprendre à marcher avec confiance et élégance sur tous types de podiums.</li>
+<li><strong>Photo et expression :</strong> maîtriser la gestuelle, le regard et l'attitude devant l'objectif.</li>
+<li><strong>Communication et image professionnelle :</strong> savoir se présenter à un casting, gérer son book et ses réseaux sociaux.</li>
+<li><strong>Culture internationale de la mode :</strong> comprendre les codes, tendances et attentes des agences et marques dans différents pays.</li>
+</ul>
+
+<h3>2️⃣ Coaching personnalisé pour chaque élève</h3>
+<p>Chaque mannequin a un profil unique : morphologie, charisme, style, personnalité. Chez MODELS ACADEMY MANAGEMENT, nous offrons un suivi individuel pour :</p>
+<ul>
+<li>Identifier les forces et axes de progression</li>
+<li>Corriger la démarche, les postures et les expressions</li>
+<li>Préparer les castings et shootings spécifiques à chaque marché</li>
+</ul>
+
+<h3>3️⃣ Mise en situation réelle et immersion professionnelle</h3>
+<p>Rien ne remplace l'expérience pratique. Nos élèves participent à :</p>
+<ul>
+<li>Shooting professionnels en studio et extérieur</li>
+<li>Défilés simulés et réels</li>
+<li>Sessions de casting avec des partenaires internationaux</li>
+</ul>
+<p>Ces mises en situation permettent d'acquérir confiance, rigueur et fluidité — qualités indispensables pour être performant dès le premier contact avec une agence ou une marque.</p>
+
+<h3>4️⃣ Préparation à la carrière internationale</h3>
+<p>Un mannequin formé chez MODELS ACADEMY MANAGEMENT est capable de :</p>
+<ul>
+<li>S'adapter aux standards culturels et professionnels des différents pays</li>
+<li>Communiquer efficacement en français et en anglais</li>
+<li>Se présenter avec assurance face aux recruteurs internationaux</li>
+<li>Gérer son image digitale et sa présence sur les réseaux sociaux de manière professionnelle</li>
+</ul>
+
+<h3>5️⃣ Une passerelle vers le réseau professionnel mondial</h3>
+<p>Le mannequinat international repose autant sur le talent que sur le réseau. Grâce à nos partenariats avec agences, photographes et marques internationales, nous offrons à nos élèves un accès privilégié aux opportunités réelles.</p>
+
+<h3>✨ Conclusion : votre avenir commence ici</h3>
+<p>Réussir dans le mannequinat mondial demande préparation, rigueur et vision stratégique. Chez MODELS ACADEMY MANAGEMENT, nous transformons chaque talent en mannequin complet et confiant, prêt à briller sur les podiums internationaux et dans les campagnes les plus exigeantes.</p>
+<blockquote>🌍 Rejoignez nos formations dès aujourd'hui et commencez votre parcours vers une carrière de mannequin professionnel reconnue dans le monde entier.</blockquote>
+        </article>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Prêt à Lancer Votre Carrière ?</h2>
+                <p>Rejoignez Models Academy Management et bénéficiez de l'accompagnement d'experts pour réussir dans l'industrie de la mode.</p>
+                <a href="../index.html#inscription" class="btn btn-primary btn-large">S'inscrire Maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODELS ACADEMY MANAGEMENT</h3>
+                    <p>L'excellence au service de votre talent depuis 2008.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../index.html#formations">Formations</a></li>
+                        <li><a href="../mannequins.html">Nos Mannequins</a></li>
+                        <li><a href="../about.html">À Propos</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class='bx bx-envelope'></i> contact@modelsacademymgnt.com</li>
+                        <li><i class='bx bx-phone'></i> +229 69 89 69 50</li>
+                        <li><i class='bx bx-map'></i> Bénin Calavi Bidossessi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Models Academy Management. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

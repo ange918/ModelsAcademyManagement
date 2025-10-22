@@ -6,13 +6,15 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 
 ## Recent Updates
 
-### ✍️ Système de Blog Complet (October 22, 2025 - Latest)
+### ✍️ Système de Blog Complet avec Pages Dédiées (October 22, 2025 - Latest)
 - ✅ **Nouveau Système de Blog Dynamique:**
   - Créé `data/articles.js` avec 15 articles complets et professionnels
   - Système de génération dynamique des cards d'articles depuis JavaScript
-  - Modal élégante pour lire le contenu complet de chaque article
+  - **15 pages HTML individuelles** créées dans le dossier `articles/` (article-01.html à article-15.html)
+  - Chaque article a sa propre page dédiée avec URL permanente
   - Design cohérent avec le reste du site (couleurs, polices, style)
   - Responsive sur mobile et desktop
+  - Images des cards optimisées avec `object-position: center top` pour meilleure visibilité des visages
 
 - ✅ **15 Articles de Blog Professionnels:**
   1. Comment devenir mannequin professionnel (France, USA, Espagne, Afrique)
@@ -32,18 +34,20 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
   15. Les différences entre mannequin photo, défilé, publicité et e-commerce
 
 - ✅ **Fonctionnalités du Blog:**
-  - Cards avec image, catégorie, date, titre, et extrait
-  - Clic sur une card ouvre le contenu complet dans une modal
-  - Modal avec header coloré, fermeture au clic extérieur ou touche Escape
+  - Cards avec image optimisée (visages visibles), catégorie, date, titre, et extrait
+  - Clic sur une card redirige vers la page dédiée de l'article
+  - Pages d'articles avec header coloré dégradé, bouton retour au blog
   - Contenu formaté avec titres, listes, citations et icônes
-  - Navigation fluide sans rechargement de page
+  - Navigation SEO-friendly avec URLs permanentes (articles/article-XX.html)
   - Catégories: Carrière, Formation, Conseils, Technique, Marketing, Santé, Beauté, Mental, Opportunités
 
 - ✅ **Structure et Maintenance:**
-  - Articles stockés dans un tableau d'objets facilement modifiable
+  - Articles stockés dans `data/articles.js` - tableau d'objets facilement modifiable
   - Chaque article contient: id, title, date, category, image, excerpt, content
   - Contenu HTML formaté pour un affichage professionnel
+  - Script Python `generate_articles.py` pour régénérer les pages après modifications
   - Facilité d'ajout ou modification d'articles dans le futur
+  - Structure de dossiers: `/articles/article-01.html` à `/articles/article-15.html`
 
 ### 📦 Correction Photos Pascal (October 22, 2025)
 - ✅ **Problème Résolu:**

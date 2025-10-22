@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment créer un book de mannequin parfait sans se ruiner - MODELS ACADEMY MANAGEMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Article page styles */
+        .article-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 140px 20px 60px;
+            text-align: center;
+        }
+        
+        .article-back {
+            position: absolute;
+            top: 90px;
+            left: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 300;
+            transition: gap 0.3s ease;
+            z-index: 100;
+        }
+        
+        .article-back:hover {
+            gap: 12px;
+        }
+        
+        .article-back i {
+            font-size: 1.5rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        
+        .article-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .article-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .article-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+        
+        .article-content h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .article-content p {
+            margin-bottom: 18px;
+            color: #444;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+        
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+        
+        .article-content li {
+            margin-bottom: 12px;
+            color: #444;
+            font-weight: 300;
+            font-size: 1.05rem;
+        }
+        
+        .article-content blockquote {
+            background: #f0f7ff;
+            border-left: 4px solid #2563eb;
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #1a1a1a;
+            border-radius: 4px;
+            font-size: 1.1rem;
+        }
+        
+        .article-content strong {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        @media (max-width: 768px) {
+            .article-header {
+                padding: 120px 20px 40px;
+            }
+            
+            .article-content {
+                padding: 30px 20px;
+            }
+            
+            .article-content h2 {
+                font-size: 1.6rem;
+            }
+            
+            .article-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .article-back {
+                top: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../images/gallery/models academy.jpg" alt="Logo MAM" class="logo-icon">
+                <h2>MAM</h2>
+            </a>
+            <div class="nav-menu">
+                <a href="../index.html#home" class="nav-link">Accueil</a>
+                <div class="nav-dropdown">
+                    <span class="nav-dropdown-toggle">
+                        Détails <i class='bx bx-chevron-down'></i>
+                    </span>
+                    <div class="nav-dropdown-content">
+                        <a href="../about.html">À Propos</a>
+                        <a href="../blog.html">Blog</a>
+                    </div>
+                </div>
+                <a href="../index.html#formations" class="nav-link">Formations</a>
+                <a href="../mannequins.html" class="nav-link nav-cta">Nos Mannequins</a>
+                <a href="../index.html#inscription" class="nav-link btn-inscription">S'inscrire</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <a href="../blog.html" class="article-back">
+            <i class='bx bx-left-arrow-alt'></i>
+            Retour au blog
+        </a>
+        <span class="article-category">Conseils</span>
+        <h1 class="article-title">Comment créer un book de mannequin parfait sans se ruiner</h1>
+        <div class="article-meta">
+            <span class="article-date">
+                <i class='bx bx-calendar'></i>
+                8 Octobre 2025
+            </span>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <div class="article-container">
+        <article class="article-content fade-in">
+            <h2>🌟 Introduction</h2>
+<p>Le book de mannequin est votre carte de visite visuelle auprès des agences et des marques. C'est lui qui va présenter votre potentiel, votre style et votre polyvalence.</p>
+<p>Beaucoup pensent qu'un book professionnel coûte une fortune, mais ce n'est pas le cas : avec une bonne stratégie et quelques conseils, il est possible de créer un book de qualité, efficace et abordable. Chez MODELS ACADEMY MANAGEMENT, nous formons nos élèves à valoriser leur image tout en optimisant leur budget.</p>
+
+<h3>1️⃣ Comprendre l'objectif d'un book</h3>
+<p>Le book ne doit pas seulement montrer votre beauté. Il doit :</p>
+<ul>
+<li>Refléter votre polyvalence (poses, expressions, tenues)</li>
+<li>Montrer votre personnalité et votre naturel</li>
+<li>Convaincre les recruteurs que vous pouvez répondre aux exigences d'un shooting ou d'un défilé</li>
+</ul>
+<p><strong>💡 Astuce :</strong> un book réussi est simple, clair et ciblé.</p>
+
+<h3>2️⃣ Les types de photos indispensables</h3>
+<p>Pour un book efficace, certaines photos sont incontournables :</p>
+<ul>
+<li><strong>Portraits en lumière naturelle :</strong> visage, regard et expressions.</li>
+<li><strong>Photos en pied :</strong> posture, silhouette et démarche.</li>
+<li><strong>Photos mode ou style libre :</strong> montrer votre capacité à incarner différents looks.</li>
+<li><strong>Photo sourire simple :</strong> naturelle et engageante, elle humanise votre profil.</li>
+</ul>
+<p>Chaque photo doit être de bonne qualité, mais il n'est pas nécessaire d'avoir un studio coûteux : un photographe professionnel expérimenté ou un bon appareil peut suffire.</p>
+
+<h3>3️⃣ Organiser le book de manière stratégique</h3>
+<ul>
+<li>Commencez par vos meilleures photos pour captiver l'attention dès la première page.</li>
+<li>Classez ensuite les images par type de prestation (portrait, mode, pied, créativité).</li>
+<li>Terminez par une photo simple et naturelle, qui laisse une impression positive et durable.</li>
+</ul>
+<p><strong>💡 Conseil MODELS ACADEMY MANAGEMENT :</strong> moins c'est plus. 12 à 15 photos bien choisies suffisent pour un book convaincant.</p>
+
+<h3>4️⃣ Maximiser les ressources sans dépenser une fortune</h3>
+<ul>
+<li><strong>Photographes en herbe ou étudiants en photo :</strong> souvent très talentueux et abordables.</li>
+<li><strong>Shooting en extérieur ou lumière naturelle :</strong> réduit les coûts et offre un rendu authentique.</li>
+<li><strong>Tenues existantes :</strong> utilisez vos vêtements personnels bien coordonnés plutôt que d'acheter des tenues coûteuses.</li>
+<li><strong>Édition simple et professionnelle :</strong> retouches légères pour uniformiser le rendu, mais sans altérer votre apparence naturelle.</li>
+</ul>
+
+<h3>5️⃣ Mettre à jour régulièrement son book</h3>
+<p>Un book n'est jamais définitif.</p>
+<ul>
+<li>Ajoutez de nouvelles photos après chaque shooting ou défilé.</li>
+<li>Supprimez les images qui ne reflètent plus votre style ou votre évolution.</li>
+<li>Adaptez le book selon le type de casting ou d'agence ciblée.</li>
+</ul>
+
+<h3>✨ Conclusion : un book efficace est à la portée de tous</h3>
+<p>Créer un book de mannequin parfait ne dépend pas de l'argent, mais de l'organisation, de la qualité et de la pertinence des images. Avec de bonnes pratiques, chaque mannequin peut avoir un outil puissant pour se faire remarquer par les agences et marques internationales.</p>
+<blockquote>🌍 Avec MODELS ACADEMY MANAGEMENT, vous apprenez à construire un book professionnel, efficace et accessible, prêt à vous ouvrir les portes du mannequinat mondial.</blockquote>
+        </article>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Prêt à Lancer Votre Carrière ?</h2>
+                <p>Rejoignez Models Academy Management et bénéficiez de l'accompagnement d'experts pour réussir dans l'industrie de la mode.</p>
+                <a href="../index.html#inscription" class="btn btn-primary btn-large">S'inscrire Maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MODELS ACADEMY MANAGEMENT</h3>
+                    <p>L'excellence au service de votre talent depuis 2008.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../index.html#formations">Formations</a></li>
+                        <li><a href="../mannequins.html">Nos Mannequins</a></li>
+                        <li><a href="../about.html">À Propos</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class='bx bx-envelope'></i> contact@modelsacademymgnt.com</li>
+                        <li><i class='bx bx-phone'></i> +229 69 89 69 50</li>
+                        <li><i class='bx bx-map'></i> Bénin Calavi Bidossessi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Models Academy Management. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
