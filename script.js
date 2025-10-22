@@ -236,44 +236,44 @@ function initPageTransitions() {
 
 initPageTransitions();
 
-// Load models data from API and JSON
+// Load models data primarily from models.json
 async function loadModelsData() {
     if (modelsDataLoaded && window.modelsData) {
         return window.modelsData;
     }
     
     try {
-        // 1. Charger les données de l'API (détection automatique des dossiers)
-        const apiResponse = await fetch('/api/models');
-        if (!apiResponse.ok) {
-            throw new Error(`API error! status: ${apiResponse.status}`);
+        // 1. Charger les données depuis models.json (source principale)
+        const jsonResponse = await fetch('data/models.json');
+        if (!jsonResponse.ok) {
+            throw new Error(`Erreur lors du chargement de models.json: ${jsonResponse.status}`);
         }
-        const apiData = await apiResponse.json();
+        const jsonData = await jsonResponse.json();
+        let models = jsonData.models || [];
         
-        // 2. Charger les données détaillées du JSON (si disponible)
-        let jsonModels = [];
+        // 2. Optionnellement, charger l'API pour mettre à jour les galeries d'images
         try {
-            const jsonResponse = await fetch('data/models.json');
-            if (jsonResponse.ok) {
-                const jsonData = await jsonResponse.json();
-                jsonModels = jsonData.models || [];
+            const apiResponse = await fetch('/api/models');
+            if (apiResponse.ok) {
+                const apiData = await apiResponse.json();
+                models = updateModelsWithApiData(models, apiData.models);
             }
         } catch (error) {
-            console.log('Fichier JSON non disponible, utilisation des données API uniquement');
+            console.log('API non disponible, utilisation des données JSON uniquement');
         }
         
-        // 3. Fusionner les données API et JSON
-        const mergedModels = mergeModelsData(apiData.models, jsonModels);
-        
-        window.modelsData = mergedModels;
+        window.modelsData = models;
         modelsDataLoaded = true;
+        
+        console.log(`✅ ${models.length} mannequins chargés depuis models.json`);
+        console.log('Premiers mannequins:', models.slice(0, 3).map(m => ({ id: m.id, name: m.name })));
         
         const modelsGrid = document.getElementById('models-grid');
         if (modelsGrid) {
-            renderModels(mergedModels);
+            renderModels(models);
         }
         
-        return mergedModels;
+        return models;
     } catch (error) {
         console.error('Erreur lors du chargement des données:', error);
         const modelsGrid = document.getElementById('models-grid');
@@ -281,7 +281,7 @@ async function loadModelsData() {
             modelsGrid.innerHTML = `
                 <div class="error-message" style="text-align: center; padding: 60px 20px; color: #666;">
                     <h3 style="color: #1e3a8a; margin-bottom: 20px;">Erreur lors du chargement des mannequins</h3>
-                    <p style="margin-bottom: 10px;">Impossible de charger les données.</p>
+                    <p style="margin-bottom: 10px;">Impossible de charger les données depuis models.json</p>
                     <button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #1e3a8a; color: white; border: none; border-radius: 5px; cursor: pointer;">Réessayer</button>
                 </div>
             `;
@@ -290,75 +290,39 @@ async function loadModelsData() {
     }
 }
 
-// Fusionner les données de l'API avec les données JSON
-function mergeModelsData(apiModels, jsonModels) {
-    const mergedModels = [];
-    let nextId = jsonModels.length > 0 ? Math.max(...jsonModels.map(m => m.id)) + 1 : 1;
+// Mettre à jour les données JSON avec les images détectées par l'API
+function updateModelsWithApiData(jsonModels, apiModels) {
+    // Créer un mapping des mannequins de l'API par nom de dossier
+    const apiModelsByFolder = {};
+    apiModels.forEach(apiModel => {
+        apiModelsByFolder[apiModel.folder_name.toLowerCase()] = apiModel;
+    });
     
-    // Créer un mapping des noms de dossiers vers les données JSON
-    const jsonModelsByFolder = {};
-    jsonModels.forEach(model => {
+    // Mettre à jour chaque mannequin JSON avec les images de l'API si disponibles
+    return jsonModels.map(model => {
         // Extraire le nom du dossier depuis l'image path
         const folderMatch = model.image.match(/images\/([^\/]+)\//);
-        if (folderMatch) {
-            jsonModelsByFolder[folderMatch[1].toLowerCase()] = model;
+        if (!folderMatch) {
+            return model;
         }
-    });
-    
-    // Pour chaque mannequin détecté par l'API
-    apiModels.forEach(apiModel => {
-        const folderName = apiModel.folder_name.toLowerCase();
-        const jsonModel = jsonModelsByFolder[folderName];
         
-        if (jsonModel) {
-            // Mannequin existant dans le JSON - fusionner les données
-            // Utiliser les images de l'API qui sont à jour
-            mergedModels.push({
-                ...jsonModel,
-                folder_name: apiModel.folder_name,
-                profile_image: apiModel.profile_image || jsonModel.image,
-                image: apiModel.profile_image || jsonModel.image,
-                specialty: apiModel.model_type || jsonModel.specialty,
+        const folderName = folderMatch[1].toLowerCase();
+        const apiModel = apiModelsByFolder[folderName];
+        
+        if (apiModel) {
+            // Mettre à jour les galeries avec les images détectées par l'API
+            return {
+                ...model,
                 gallery: {
-                    portfolio: apiModel.portfolio,
-                    fashionShow: apiModel.defile,
-                    shooting: apiModel.shooting
+                    portfolio: apiModel.portfolio.length > 0 ? apiModel.portfolio : (model.gallery?.portfolio || []),
+                    fashionShow: apiModel.defile.length > 0 ? apiModel.defile : (model.gallery?.fashionShow || []),
+                    shooting: apiModel.shooting.length > 0 ? apiModel.shooting : (model.gallery?.shooting || [])
                 }
-            });
-        } else {
-            // Nouveau mannequin détecté - créer un profil basique
-            const modelName = formatModelName(apiModel.folder_name);
-            const profileImage = apiModel.profile_image || 'images/gallery/models academy.jpg';
-            
-            mergedModels.push({
-                id: nextId++,
-                name: modelName,
-                gender: 'Non spécifié',
-                specialty: apiModel.model_type || 'Fashion & Haute Couture',
-                height: 'Non spécifié',
-                bust: 'Non spécifié',
-                waist: 'Non spécifié',
-                hips: 'Non spécifié',
-                shoeSize: 'Non spécifié',
-                hairColor: 'Non spécifié',
-                eyeColor: 'Non spécifié',
-                city: 'Cotonou',
-                experience: 'Non spécifié',
-                languages: ['Français'],
-                image: profileImage,
-                profile_image: profileImage,
-                description: `Mannequin professionnel de Models Academy Management`,
-                folder_name: apiModel.folder_name,
-                gallery: {
-                    portfolio: apiModel.portfolio,
-                    fashionShow: apiModel.defile,
-                    shooting: apiModel.shooting
-                }
-            });
+            };
         }
+        
+        return model;
     });
-    
-    return mergedModels;
 }
 
 // Formater le nom du dossier en nom de mannequin
@@ -419,16 +383,24 @@ function createModelProfilePage() {
     const urlParams = new URLSearchParams(window.location.search);
     const modelId = parseInt(urlParams.get('id')) || parseInt(sessionStorage.getItem('selectedModelId'));
     
+    console.log('🔍 Recherche du mannequin avec ID:', modelId);
+    console.log('📊 Données disponibles:', window.modelsData ? window.modelsData.length + ' mannequins' : 'Aucune donnée');
+    
     if (!modelId || !window.modelsData) {
+        console.error('❌ Erreur: ID manquant ou données non chargées');
         showProfileError();
         return;
     }
     
     const model = window.modelsData.find(m => m.id === modelId);
     if (!model) {
+        console.error(`❌ Mannequin avec ID ${modelId} non trouvé`);
+        console.log('IDs disponibles:', window.modelsData.map(m => m.id));
         showProfileError();
         return;
     }
+    
+    console.log('✅ Mannequin trouvé:', model.name);
     
     document.title = `${model.name} - MODELS ACADEMY MANAGEMENT`;
     

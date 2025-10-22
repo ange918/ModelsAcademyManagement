@@ -24,3 +24,11 @@
 [x] 18. Modifier le JavaScript pour utiliser l'API au lieu du JSON statique
 [x] 19. Fusionner intelligemment les données API avec le JSON existant
 [x] 20. Tester le système - Tous les mannequins s'affichent correctement
+
+## Correction du Chargement des Données - 22 Octobre 2025
+
+[x] 21. Modifier script.js pour charger les données principalement depuis models.json
+[x] 22. Simplifier la fonction loadModelsData() pour prioriser le fichier JSON
+[x] 23. Ajouter des journaux de console pour faciliter le débogage
+[x] 24. Vérifier que les 24 mannequins se chargent correctement depuis models.json
+[x] 25. Confirmer que les IDs des mannequins sont préservés correctement
