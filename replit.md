@@ -6,7 +6,53 @@ MODELS ACADEMY MANAGEMENT is a professional modeling agency website that showcas
 
 ## Recent Updates
 
-### 📦 Architecture Simplification (October 22, 2025 - Latest)
+### ✍️ Système de Blog Complet (October 22, 2025 - Latest)
+- ✅ **Nouveau Système de Blog Dynamique:**
+  - Créé `data/articles.js` avec 15 articles complets et professionnels
+  - Système de génération dynamique des cards d'articles depuis JavaScript
+  - Modal élégante pour lire le contenu complet de chaque article
+  - Design cohérent avec le reste du site (couleurs, polices, style)
+  - Responsive sur mobile et desktop
+
+- ✅ **15 Articles de Blog Professionnels:**
+  1. Comment devenir mannequin professionnel (France, USA, Espagne, Afrique)
+  2. Quelle formation suivre pour percer dans le mannequinat international
+  3. Les étapes clés pour construire une carrière de mannequin à succès
+  4. Les secrets des mannequins à succès : discipline, confiance et image
+  5. Comment MODELS ACADEMY MANAGEMENT prépare les mannequins aux standards mondiaux
+  6. Comment réussir un casting de mannequin : astuces et erreurs à éviter
+  7. Comment créer un book de mannequin parfait sans se ruiner
+  8. Les postures et attitudes à maîtriser pour séduire les recruteurs
+  9. Comment se démarquer sur les réseaux sociaux
+  10. Comment transformer un shooting photo en opportunité de carrière
+  11. Alimentation et bien-être : comment garder la forme sans se priver
+  12. Les meilleures routines beauté des mannequins professionnels
+  13. Les exercices physiques pour améliorer sa démarche et sa prestance
+  14. Comment gérer le stress avant un défilé ou un casting
+  15. Les différences entre mannequin photo, défilé, publicité et e-commerce
+
+- ✅ **Fonctionnalités du Blog:**
+  - Cards avec image, catégorie, date, titre, et extrait
+  - Clic sur une card ouvre le contenu complet dans une modal
+  - Modal avec header coloré, fermeture au clic extérieur ou touche Escape
+  - Contenu formaté avec titres, listes, citations et icônes
+  - Navigation fluide sans rechargement de page
+  - Catégories: Carrière, Formation, Conseils, Technique, Marketing, Santé, Beauté, Mental, Opportunités
+
+- ✅ **Structure et Maintenance:**
+  - Articles stockés dans un tableau d'objets facilement modifiable
+  - Chaque article contient: id, title, date, category, image, excerpt, content
+  - Contenu HTML formaté pour un affichage professionnel
+  - Facilité d'ajout ou modification d'articles dans le futur
+
+### 📦 Correction Photos Pascal (October 22, 2025)
+- ✅ **Problème Résolu:**
+  - Corrigé le nom du dossier portfolio de Pascal (était "porfofio" au lieu de "portfolio")
+  - Déplacé toutes les photos vers le bon dossier
+  - Ajouté tous les chemins d'images dans data/models-data.js
+  - Pascal a maintenant: 21 photos shooting, 4 photos défilé, 6 photos portfolio
+
+### 📦 Architecture Simplification (October 22, 2025)
 - ✅ **Simplified Server Architecture:**
   - Replaced Flask server with lightweight `simple_server.py` (pure Python HTTP server)
   - Removed API dependency - all data now loads directly from `data/models.json`

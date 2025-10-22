@@ -1,0 +1,33 @@
+Je veux que tu modifies mon fichier `blog.html` pour créer **15 cards**, chacune représentant un article de blog.  
+Chaque card doit afficher **le titre de l'article** et s'inspirer du design existant de ma page : couleurs, polices et style des boutons ou des cartes actuelles.
+
+Ensuite, crée un fichier `articles.js` qui contient **tous les 15 articles** sous forme de tableau d’objets JavaScript, avec au moins ces propriétés :  
+- `id` : un identifiant unique  
+- `title` : le titre de l'article  
+- `content` : le contenu complet de l'article  
+
+Dans `blog.html`, fais en sorte que **lorsqu’un utilisateur clique sur une card**, le contenu complet de l'article s'affiche dans une section dédiée de la page (ex: modal ou section en dessous).  
+L'affichage doit respecter le **style et la typographie existants** et rester **responsive pour mobile et desktop**.
+
+Assure-toi que :  
+- Les 15 cards soient générées dynamiquement depuis `articles.js`.  
+- Le système permette de **cliquer sur un article pour lire le texte complet** sans recharger la page.  
+- La solution utilise **HTML, CSS et JavaScript pur** (pas de framework externe).  
+- La navigation soit **fluide et intuitive**, avec un design cohérent avec le reste du site.
+
+Voici les titres des 15 articles :  
+1. Comment réussir un casting de mannequin : astuces et erreurs à éviter  
+2. Comment créer un book de mannequin parfait sans se ruiner  
+3. Les postures et attitudes à maîtriser pour séduire les recruteurs  
+4. Comment se démarquer sur les réseaux sociaux quand on débute dans le mannequinat  
+5. Comment transformer un simple shooting photo en opportunité de carrière  
+6. Alimentation et bien-être : comment garder la forme sans se priver  
+7. Les meilleures routines beauté des mannequins professionnels  
+8. Les exercices physiques pour améliorer sa démarche et sa prestance  
+9. Comment gérer le stress avant un défilé ou un casting  
+10. Les différences entre mannequin photo, défilé, publicité et e-commerce  
+11. [À compléter si tu veux ajouter d’autres titres]  
+12. …  
+15. …
+
+Crée un système **propre, clair et bien structuré** pour que je puisse facilement modifier les articles ou le style des cards dans le futur.

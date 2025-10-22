@@ -52,6 +52,7 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
         
         .blog-card:hover {
@@ -77,6 +78,17 @@
             display: flex;
             align-items: center;
             gap: 5px;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            background: #1e3a8a;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
         
         .blog-card-title {
@@ -108,6 +120,175 @@
         .blog-card-link:hover {
             gap: 12px;
         }
+
+        /* Modal styles */
+        .article-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .article-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 20px;
+            padding: 0;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px 12px 0 0;
+            z-index: 10;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            padding-right: 50px;
+            line-height: 1.3;
+        }
+
+        .modal-meta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            opacity: 0.9;
+        }
+
+        .modal-date,
+        .modal-category {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.95rem;
+        }
+
+        .modal-body {
+            padding: 40px;
+            line-height: 1.8;
+        }
+
+        .modal-body h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .modal-body h3 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            color: #2563eb;
+        }
+
+        .modal-body h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            color: #444;
+            font-weight: 300;
+        }
+
+        .modal-body ul,
+        .modal-body ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+            color: #444;
+            font-weight: 300;
+        }
+
+        .modal-body blockquote {
+            background: #f0f7ff;
+            border-left: 4px solid #2563eb;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #1a1a1a;
+            border-radius: 4px;
+        }
+
+        .modal-body strong {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
         
         @media (max-width: 768px) {
             .blog-header h1 {
@@ -116,6 +297,31 @@
             
             .blog-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 10px;
+                max-height: 95vh;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .modal-body h2 {
+                font-size: 1.4rem;
+            }
+
+            .modal-body h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -161,132 +367,31 @@
 
     <!-- Blog Articles Container -->
     <div class="blog-container">
-        <div class="blog-grid">
-            <!-- Article 1 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/defile1.jpg" alt="Tendances Mode 2025" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
-                        <i class='bx bx-calendar'></i>
-                        15 Octobre 2025
-                    </div>
-                    <h3 class="blog-card-title">Les Tendances Mode qui Marqueront 2025</h3>
-                    <p class="blog-card-excerpt">
-                        Découvrez les principales tendances qui domineront les podiums en 2025. Des coupes audacieuses aux matières innovantes, voici ce qu'il faut savoir pour rester à la pointe de la mode.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </article>
+        <div class="blog-grid" id="blogGrid">
+            <!-- Les articles seront générés dynamiquement par JavaScript -->
+        </div>
+    </div>
 
-            <!-- Article 2 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/shoot.jpg" alt="Conseils Shooting Photo" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
+    <!-- Article Modal -->
+    <div id="articleModal" class="article-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeArticle()">&times;</button>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <div class="modal-meta">
+                    <span class="modal-date" id="modalDate">
                         <i class='bx bx-calendar'></i>
-                        10 Octobre 2025
-                    </div>
-                    <h3 class="blog-card-title">10 Conseils pour Réussir Votre Shooting Photo</h3>
-                    <p class="blog-card-excerpt">
-                        Préparez-vous comme un professionnel avec nos conseils exclusifs pour briller lors de vos séances photo. De la préparation physique à l'expression faciale, maîtrisez tous les aspects.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
+                        <span></span>
+                    </span>
+                    <span class="modal-category" id="modalCategory">
+                        <i class='bx bx-category'></i>
+                        <span></span>
+                    </span>
                 </div>
-            </article>
-
-            <!-- Article 3 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/defile4.jpg" alt="Préparation Défilé" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
-                        <i class='bx bx-calendar'></i>
-                        5 Octobre 2025
-                    </div>
-                    <h3 class="blog-card-title">Comment se Préparer pour un Défilé de Mode</h3>
-                    <p class="blog-card-excerpt">
-                        Le défilé approche ? Découvrez notre guide complet pour vous préparer mentalement et physiquement. Techniques de marche, gestion du stress et conseils de nos experts.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Article 4 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/creativie.jpg" alt="Nutrition Mannequin" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
-                        <i class='bx bx-calendar'></i>
-                        28 Septembre 2025
-                    </div>
-                    <h3 class="blog-card-title">Nutrition et Bien-être : Le Secret des Top Models</h3>
-                    <p class="blog-card-excerpt">
-                        Une alimentation équilibrée est essentielle pour maintenir votre énergie et votre éclat. Nos nutritionnistes partagent leurs meilleurs conseils pour rester en forme naturellement.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Article 5 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/defile7.jpg" alt="Industrie Mode Africaine" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
-                        <i class='bx bx-calendar'></i>
-                        20 Septembre 2025
-                    </div>
-                    <h3 class="blog-card-title">L'Essor de la Mode Africaine sur la Scène Internationale</h3>
-                    <p class="blog-card-excerpt">
-                        L'industrie de la mode africaine connaît une croissance exceptionnelle. Découvrez comment nos mannequins participent à cette révolution culturelle et artistique mondiale.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Article 6 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/shoot6.jpg" alt="Réseaux Sociaux Mannequin" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
-                        <i class='bx bx-calendar'></i>
-                        12 Septembre 2025
-                    </div>
-                    <h3 class="blog-card-title">Construire sa Marque Personnelle sur les Réseaux Sociaux</h3>
-                    <p class="blog-card-excerpt">
-                        Dans l'ère du digital, votre présence en ligne est aussi importante que votre book. Apprenez à développer une stratégie social media efficace pour booster votre carrière.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Article 7 -->
-            <article class="blog-card fade-in">
-                <img src="images/gallery/profe.jpg" alt="Carrière Mannequinat" class="blog-card-image">
-                <div class="blog-card-content">
-                    <div class="blog-card-date">
-                        <i class='bx bx-calendar'></i>
-                        1 Septembre 2025
-                    </div>
-                    <h3 class="blog-card-title">Débuter sa Carrière de Mannequin : Guide Complet</h3>
-                    <p class="blog-card-excerpt">
-                        Vous rêvez de devenir mannequin professionnel ? Ce guide vous accompagne pas à pas : de la création de votre book aux premiers castings, découvrez tous nos secrets.
-                    </p>
-                    <a href="#" class="blog-card-link">
-                        Lire plus <i class='bx bx-right-arrow-alt'></i>
-                    </a>
-                </div>
-            </article>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Le contenu de l'article sera inséré ici -->
+            </div>
         </div>
     </div>
 
@@ -338,6 +443,85 @@
             </div>
         </div>
     </footer>
+
+    <!-- Charger les articles depuis le fichier externe -->
+    <script src="data/articles.js"></script>
+    
+    <!-- Script pour gérer le blog -->
+    <script>
+        // Fonction pour générer les cards d'articles
+        function loadBlogArticles() {
+            const blogGrid = document.getElementById('blogGrid');
+            blogGrid.innerHTML = '';
+
+            BLOG_ARTICLES.forEach(article => {
+                const card = document.createElement('article');
+                card.className = 'blog-card fade-in';
+                card.onclick = () => openArticle(article.id);
+
+                card.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">${article.category}</span>
+                        <div class="blog-card-date">
+                            <i class='bx bx-calendar'></i>
+                            ${article.date}
+                        </div>
+                        <h3 class="blog-card-title">${article.title}</h3>
+                        <p class="blog-card-excerpt">${article.excerpt}</p>
+                        <a href="javascript:void(0)" class="blog-card-link">
+                            Lire l'article <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                `;
+
+                blogGrid.appendChild(card);
+            });
+        }
+
+        // Fonction pour ouvrir un article dans la modal
+        function openArticle(articleId) {
+            const article = BLOG_ARTICLES.find(a => a.id === articleId);
+            if (!article) return;
+
+            document.getElementById('modalTitle').textContent = article.title;
+            document.getElementById('modalDate').querySelector('span').textContent = article.date;
+            document.getElementById('modalCategory').querySelector('span').textContent = article.category;
+            document.getElementById('modalBody').innerHTML = article.content;
+
+            const modal = document.getElementById('articleModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Scroll vers le haut de la modal
+            const modalContent = modal.querySelector('.modal-content');
+            modalContent.scrollTop = 0;
+        }
+
+        // Fonction pour fermer l'article
+        function closeArticle() {
+            const modal = document.getElementById('articleModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer la modal en cliquant à l'extérieur
+        document.getElementById('articleModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeArticle();
+            }
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeArticle();
+            }
+        });
+
+        // Charger les articles au chargement de la page
+        document.addEventListener('DOMContentLoaded', loadBlogArticles);
+    </script>
 
     <script src="script.js"></script>
 </body>
