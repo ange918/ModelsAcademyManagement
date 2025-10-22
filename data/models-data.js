@@ -916,12 +916,46 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "3 ans",
       "languages": ["Francais"],
-      "image": "images/pascal/portfolio/pascal.jpg",
+      "image": "images/pascal/portfolio/IMG-20251017-WA0076.jpg",
       "description": "Expert en défilés de mode avec une présence scénique exceptionnelle",
       "gallery": {
-        "shooting": [],
-        "fashionShow": [],
-        "portfolio": []
+        "shooting": [
+          "images/pascal/shooting/013.jpg",
+          "images/pascal/shooting/014.jpg",
+          "images/pascal/shooting/015.jpg",
+          "images/pascal/shooting/016.jpg",
+          "images/pascal/shooting/017.jpg",
+          "images/pascal/shooting/018.jpg",
+          "images/pascal/shooting/024.jpg",
+          "images/pascal/shooting/IMG-20250126-WA0024.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0059.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0062.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0063.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0064.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0065.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0066.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0067.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0068.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0069.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0071.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0072.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0075.jpg",
+          "images/pascal/shooting/IMG-20251017-WA0080.jpg"
+        ],
+        "fashionShow": [
+          "images/pascal/defile/IMG-20251017-WA0054.jpg",
+          "images/pascal/defile/IMG-20251017-WA0057.jpg",
+          "images/pascal/defile/IMG-20251017-WA0058.jpg",
+          "images/pascal/defile/IMG-20251017-WA0070.jpg"
+        ],
+        "portfolio": [
+          "images/pascal/portfolio/IMG-20251017-WA0076.jpg",
+          "images/pascal/portfolio/IMG-20251017-WA0077.jpg",
+          "images/pascal/portfolio/IMG-20251017-WA0078.jpg",
+          "images/pascal/portfolio/IMG-20251017-WA0079.jpg",
+          "images/pascal/portfolio/IMG-20251017-WA0081.jpg",
+          "images/pascal/portfolio/IMG-20251017-WA0082.jpg"
+        ]
       }
     },
     {
