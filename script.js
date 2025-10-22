@@ -236,31 +236,20 @@ function initPageTransitions() {
 
 initPageTransitions();
 
-// Load models data primarily from models.json
+// Load models data from models.json only
 async function loadModelsData() {
     if (modelsDataLoaded && window.modelsData) {
         return window.modelsData;
     }
     
     try {
-        // 1. Charger les données depuis models.json (source principale)
+        // Charger les données depuis models.json
         const jsonResponse = await fetch('data/models.json');
         if (!jsonResponse.ok) {
             throw new Error(`Erreur lors du chargement de models.json: ${jsonResponse.status}`);
         }
         const jsonData = await jsonResponse.json();
-        let models = jsonData.models || [];
-        
-        // 2. Optionnellement, charger l'API pour mettre à jour les galeries d'images
-        try {
-            const apiResponse = await fetch('/api/models');
-            if (apiResponse.ok) {
-                const apiData = await apiResponse.json();
-                models = updateModelsWithApiData(models, apiData.models);
-            }
-        } catch (error) {
-            console.log('API non disponible, utilisation des données JSON uniquement');
-        }
+        const models = jsonData.models || [];
         
         window.modelsData = models;
         modelsDataLoaded = true;
