@@ -498,7 +498,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/gildas/shooting/IMG-20250917-WA0071.jpg",
+      "image": "images/gildas/portfolio/0.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [
@@ -518,7 +518,30 @@ const MODELS_DATA =
           "images/gildas/shooting/IMG-20250917-WA0085.jpg"
         ],
         "fashionShow": [],
-        "portfolio": []
+        "portfolio": [
+         "images/gildas/portfolio/0.jpg",
+       "images/gildas/portfolio/1.jpg",
+        "images/gildas/portfolio/2.jpg",
+       "images/gildas/portfolio/3.jpg",
+       "images/gildas/portfolio/4.jpg",
+       "images/gildas/portfolio/5.jpg",
+       "images/gildas/portfolio/6.jpg",
+       "images/gildas/portfolio/7.jpg",
+        "images/gildas/portfolio/8.jpg",
+         "images/gildas/portfolio/9.jpg",
+        "images/gildas/portfolio/10.jpg",
+        "images/gildas/portfolio/11.jpg",
+        "images/gildas/portfolio/12.jpg",
+        "images/gildas/portfolio/13.jpg",
+         "images/gildas/portfolio/14.jpg",
+          "images/gildas/portfolio/15.jpg",
+          "images/gildas/portfolio/16.jpg",
+          "images/gildas/portfolio/17.jpg",
+          "images/gildas/portfolio/18.jpg",
+           "images/gildas/portfolio/19.jpg",
+           "images/gildas/portfolio/20.jpg",
+           "images/gildas/portfolio/21.jpg"
+        ]
       }
     },
     {
@@ -916,7 +939,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "3 ans",
       "languages": ["Francais"],
-      "image": "images/pascal/portfolio/IMG-20251017-WA0076.jpg",
+      "image": "images/pascal/portfolio/0.jpg",
       "description": "Expert en défilés de mode avec une présence scénique exceptionnelle",
       "gallery": {
         "shooting": [
@@ -949,15 +972,16 @@ const MODELS_DATA =
           "images/pascal/defile/IMG-20251017-WA0070.jpg"
         ],
         "portfolio": [
-          "images/pascal/portfolio/IMG-20251017-WA0076.jpg",
-          "images/pascal/portfolio/IMG-20251017-WA0077.jpg",
-          "images/pascal/portfolio/IMG-20251017-WA0078.jpg",
-          "images/pascal/portfolio/IMG-20251017-WA0079.jpg",
-          "images/pascal/portfolio/IMG-20251017-WA0081.jpg",
-          "images/pascal/portfolio/IMG-20251017-WA0082.jpg"
+          "images/pascal/portfolio/0.jpg",
+          "images/pascal/portfolio/1.jpg",
+          "images/pascal/portfolio/2.jpg",
+          "images/pascal/portfolio/3.jpg",
+          "images/pascal/portfolio/4.jpg",
+          "images/pascal/portfolio/5.jpg"
         ]
       }
     },
+    
     {
       "id": 24,
       "name": "GBAGUIDI Danielle",
@@ -973,14 +997,71 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/danielle/portfolio/danielle.jpg",
+      "image": "images/danielle/portfolio/4.jpg",
       "description": "Mannequin expérimentée spécialisée dans les campagnes publicitaires et la haute couture",
+      "gallery": {
+        "shooting": [],
+        "fashionShow": [],
+        "portfolio": [
+          "images/danielle/portfolio/0.jpg",
+          "images/danielle/portfolio/1.jpg",
+          "images/danielle/portfolio/2.jpg",
+          "images/danielle/portfolio/3.jpg",
+          "images/danielle/portfolio/4.jpg",
+          "images/danielle/portfolio/5.jpg",
+          "images/danielle/portfolio/6.jpg",
+        ]
+      }
+    },
+     {
+      "id": 25,
+      "name": "SEKPO Meschac",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.92m",
+      "chest": "102cm",
+      "waist": "80cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais", "Anglais"],
+      "image": "images/meshac/portfolio/0.jpeg",
+      "description": "Modèle de luxe, charisme et élégance",
+      "gallery": {
+        "shooting": [
+          "images/meshac/shooting/0.jpg",
+          "images/meshac/shooting/1.jpg",
+          "images/meshac/shooting/2.jpg",
+        ],
+        "fashionShow": [],
+        "portfolio": []
+      }
+    },
+    {
+      "id": 19,
+      "name": "YAO TAMEWA Néri",
+      "gender": "Homme",
+      "specialty": "Fashion & Haute Couture",
+      "height": "1.87m",
+      "chest": "102cm",
+      "waist": "80cm",
+      "shoeSize": "44 EU",
+      "hairColor": "Noir",
+      "eyeColor": "Marron",
+      "city": "Cotonou",
+      "experience": "2 ans",
+      "languages": ["Francais", "Anglais"],
+      "image": "",
+      "description": "Modèle de luxe, charisme et élégance",
       "gallery": {
         "shooting": [],
         "fashionShow": [],
         "portfolio": []
       }
-    }
+    },
+     
   ]
 }
 ;
