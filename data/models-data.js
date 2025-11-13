@@ -16,7 +16,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "3 ans",
       "languages": ["Francais", "Anglais"],
-      "image": "images/lucia/portfolio/lucia.jpg",
+      "image": "images/lucia/portfolio/lucia7.jpg",
       "description": "Mannequin talentueuse de Cotonou, spécialisée dans la haute couture avec une élégance naturelle et une présence scénique remarquable",
       "gallery": {
         "shooting": [],
@@ -53,7 +53,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/rita/portfolio/1.jpeg",
+      "image": "images/rita/portfolio/6.jpeg",
       "description": "Spécialisée dans la haute couture avec une élégance naturelle",
       "gallery": {
         "shooting": [
@@ -111,10 +111,23 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "3 ans",
       "languages": ["Francais"],
-      "image": "images/olerie/portfolio/olerie.jpg",
+      "image": "images/olerie/portfolio/olerie1.jpg",
       "description": "Experte en beauté et mode commerciale, visage photogénique",
       "gallery": {
         "shooting": [
+          "images/olerie/shooting/a.GIF",
+         "images/olerie/shooting/b.GIF",
+           "images/olerie/shooting/c.GIF",
+          "images/olerie/shooting/d.GIF",
+          "images/olerie/shooting/e.GIF",
+         "images/olerie/shooting/f.GIF",
+          "images/olerie/shooting/g.GIF",
+            "images/olerie/shooting/h.GIF",
+           "images/olerie/shooting/i.GIF",
+          "images/olerie/shooting/j.GIF",
+          "images/olerie/shooting/k.GIF",
+          "images/olerie/shooting/l.GIF",
+         "images/olerie/shooting/m.GIF",
           "images/olerie/shooting/001.jpg",
           "images/olerie/shooting/002.jpg",
           "images/olerie/shooting/003.jpg",
@@ -134,17 +147,17 @@ const MODELS_DATA =
           "images/olerie/shooting/11.jpeg"
         ],
         "fashionShow": [
+           "images/olerie/defile/a.jpeg",
+          "images/olerie/defile/b.jpeg",
+          "images/olerie/defile/c.jpeg",
+          "images/olerie/defile/d.jpeg",
+          "images/olerie/defile/e.jpeg",
           "images/olerie/defile/0.jpeg",
           "images/olerie/defile/1.jpeg",
           "images/olerie/defile/2.jpeg",
           "images/olerie/defile/3.jpeg",
           "images/olerie/defile/4.jpeg",
           "images/olerie/defile/5.jpeg",
-          "images/olerie/defile/6.jpeg",
-          "images/olerie/defile/7.jpeg",
-          "images/olerie/defile/8.jpeg",
-          "images/olerie/defile/9.jpeg",
-          "images/olerie/defile/10.jpeg",
           "images/olerie/defile/11.jpeg",
           "images/olerie/defile/12.jpeg",
           "images/olerie/defile/13.jpeg",
@@ -246,7 +259,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "7 ans",
       "languages": ["Francais"],
-      "image": "images/barnard/portfolio/barnard.jpg",
+      "image": "images/barnard/portfolio/barnard2.jpg",
       "description": "Référence en mode masculine de luxe, charisme et sophistication",
       "gallery": {
         "shooting": [],
@@ -283,7 +296,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/prisca/portfolio/IMG-20250820-WA0519.jpg",
+      "image": "images/prisca/portfolio/i.jpg",
       "description": "Ambassadrice beauté internationale, spécialiste des campagnes cosmétiques",
       "gallery": {
         "shooting": [
@@ -306,16 +319,29 @@ const MODELS_DATA =
         ],
         "fashionShow": [],
         "portfolio": [
-          "images/prisca/portfolio/IMG-20250820-WA0519.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0523.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0527.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0535.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0539.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0542.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0548.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0577.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0580.jpg",
-          "images/prisca/portfolio/IMG-20250820-WA0602.jpg"
+          "images/prisca/portfolio/a.jpg",
+           "images/prisca/portfolio/b.jpg",
+            "images/prisca/portfolio/c.jpg",
+             "images/prisca/portfolio/d.jpg",
+              "images/prisca/portfolio/e.jpg",
+               "images/prisca/portfolio/f.jpg",
+                "images/prisca/portfolio/g.jpg",
+                 "images/prisca/portfolio/h.jpg",
+                  "images/prisca/portfolio/i.jpg",
+                   "images/prisca/portfolio/j.jpg",
+                    "images/prisca/portfolio/k.jpg",
+                     "images/prisca/portfolio/l.jpg",
+                      "images/prisca/portfolio/m.jpg",
+                       "images/prisca/portfolio/n.jpg",
+                        "images/prisca/portfolio/o.jpg",
+                         "images/prisca/portfolio/p.jpg",
+                          "images/prisca/portfolio/q.jpg",
+                           "images/prisca/portfolio/r.jpg",
+                            "images/prisca/portfolio/s.jpg",
+                              "images/prisca/portfolio/u.jpg",
+                               "images/prisca/portfolio/v.jpg"
+          
+          
         ]
       }
     },
@@ -356,7 +382,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/roderic/shooting/IMG-20250826-WA0072.jpg",
+      "image": "images/roderic/portfolio/a.jpg",
       "description": "Modèle de luxe parisien, charisme et élégance française",
       "gallery": {
         "shooting": [
@@ -366,7 +392,18 @@ const MODELS_DATA =
           "images/roderic/shooting/IMG-20250826-WA0075.jpg"
         ],
         "fashionShow": [],
-        "portfolio": []
+        "portfolio": [
+          "images/roderic/portfolio/a.jpg",
+           "images/roderic/portfolio/b.jpg",
+            "images/roderic/portfolio/c.jpg",
+             "images/roderic/portfolio/d.jpg",
+              "images/roderic/portfolio/e.jpg",
+               "images/roderic/portfolio/f.jpg",
+                "images/roderic/portfolio/g.jpg",
+                 "images/roderic/portfolio/h.jpg",
+                  "images/roderic/portfolio/i.jpg",
+                   "images/roderic/portfolio/j.jpg"
+        ]
       }
     },
     {
@@ -383,7 +420,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/cyr/portfolio/cyr.jpg",
+      "image": "images/cyr/portfolio/cyr4.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [],
@@ -412,12 +449,17 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/gallery/shoot11.jpg",
+      "image": "images/dalil/portfolio/a.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [],
         "fashionShow": [],
-        "portfolio": []
+        "portfolio": [
+          "images/dalil/portfolio/a.jpg",
+          "images/dalil/portfolio/b.jpg",
+          "images/dalil/portfolio/c.jpg",
+          "images/dalil/portfolio/d.jpg"
+        ]
       }
     },
     {
@@ -435,7 +477,7 @@ const MODELS_DATA =
       "city": "London",
       "experience": "9 ans",
       "languages": ["Francais"],
-      "image": "images/rose/portfolio/IMG-20250820-WA0516.jpg",
+      "image": "images/rose/portfolio/IMG-20250820-WA0534.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
         "shooting": [],
@@ -498,7 +540,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/gildas/portfolio/0.jpg",
+      "image": "images/gildas/portfolio/7.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [
@@ -558,7 +600,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Anglais", "Francais"],
-      "image": "images/gallery/shoot11.jpg",
+      "image": "",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [],
@@ -609,7 +651,7 @@ const MODELS_DATA =
       "city": "London",
       "experience": "9 ans",
       "languages": ["Francais"],
-      "image": "images/merveille/portfolio/IMG-20250820-WA0520.jpg",
+      "image": "images/merveille/portfolio/IMG-20250820-WA0522.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
         "shooting": [],
@@ -648,25 +690,35 @@ const MODELS_DATA =
       "city": "London",
       "experience": "9 ans",
       "languages": ["Francais"],
-      "image": "images/michelle/portfolio/IMG-20250820-WA0512.jpg",
+      "image": "images/michelle/portfolio/13.jpg",
       "description": "Élégance britannique, spécialiste de la haute couture européenne",
       "gallery": {
         "shooting": [],
         "fashionShow": [],
         "portfolio": [
-          "images/michelle/portfolio/IMG-20250820-WA0512.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0526.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0528.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0550.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0552.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0555.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0557.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0563.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0564.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0588.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0599.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0604.jpg",
-          "images/michelle/portfolio/IMG-20250820-WA0606.jpg"
+          "images/michelle/portfolio/1.jpg",
+          "images/michelle/portfolio/2.jpg",
+          "images/michelle/portfolio/3.jpg",
+          "images/michelle/portfolio/4.jpg",
+          "images/michelle/portfolio/5.jpg",
+          "images/michelle/portfolio/6.jpg",
+          "images/michelle/portfolio/7.jpg",
+          "images/michelle/portfolio/8.jpg",
+          "images/michelle/portfolio/9.jpg",
+          "images/michelle/portfolio/10.jpg",
+          "images/michelle/portfolio/11.jpg",
+          "images/michelle/portfolio/12.jpg",
+          "images/michelle/portfolio/13.jpg",
+          "images/michelle/portfolio/14.jpg",
+          "images/michelle/portfolio/15.jpg",
+          "images/michelle/portfolio/16.jpg",
+          "images/michelle/portfolio/17.jpg",
+          "images/michelle/portfolio/18.jpg",
+          "images/michelle/portfolio/19.jpg",
+          "images/michelle/portfolio/20.jpg",
+          "images/michelle/portfolio/21.jpg",
+          "images/michelle/portfolio/22.jpg",
+          "images/michelle/portfolio/23.jpg"
         ]
       }
     },
@@ -684,7 +736,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Francais"],
-      "image": "images/jediel/portfolio/1.jpeg",
+      "image": "images/jediel/portfolio/a.jpg",
       "description": "Modèle fitness et commercial, physique athlétique",
       "gallery": {
         "shooting": [
@@ -727,11 +779,20 @@ const MODELS_DATA =
         ],
         "fashionShow": [],
         "portfolio": [
-          "images/jediel/portfolio/1.jpeg",
-          "images/jediel/portfolio/2.jpeg",
-          "images/jediel/portfolio/3.jpeg",
-          "images/jediel/portfolio/4.jpeg",
-          "images/jediel/portfolio/5.jpeg"
+          "images/jediel/portfolio/a.jpg",
+           "images/jediel/portfolio/b.jpg",
+            "images/jediel/portfolio/c.jpg",
+             "images/jediel/portfolio/d.jpg",
+              "images/jediel/portfolio/e.jpg",
+               "images/jediel/portfolio/f.jpg",
+                "images/jediel/portfolio/g.jpg",
+                 "images/jediel/portfolio/h.jpg",
+                  "images/jediel/portfolio/i.jpg",
+                   "images/jediel/portfolio/j.jpg",
+                    "images/jediel/portfolio/k.jpg",
+                     "images/jediel/portfolio/l.jpg",
+                      "images/jediel/portfolio/m.jpg",
+                       "images/jediel/portfolio/n.jpg"
         ]
       }
     },
@@ -749,18 +810,13 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais", "Anglais"],
-      "image": "images/honel/portfolio/IMG-20251013-WA0002.jpg",
+      "image": "",
       "description": "Modèle de luxe, charisme et élégance",
       "gallery": {
         "shooting": [],
         "fashionShow": [],
         "portfolio": [
-          "images/honel/portfolio/IMG-20251013-WA0002.jpg",
-          "images/honel/portfolio/IMG-20251013-WA0003.jpg",
-          "images/honel/portfolio/IMG-20251013-WA0004.jpg",
-          "images/honel/portfolio/IMG-20251013-WA0005.jpg",
-          "images/honel/portfolio/IMG-20251013-WA0006.jpg",
-          "images/honel/portfolio/IMG-20251013-WA0007.jpg"
+         
         ]
       }
     },
@@ -778,7 +834,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "2 ans",
       "languages": ["Francais"],
-      "image": "images/mathieu/portfolio/1.jpg",
+      "image": "images/mathieu/portfolio/0.jpg",
       "description": "Modèle professionnel avec une grande expérience sur les podiums internationaux",
       "gallery": {
         "shooting": [
@@ -861,7 +917,7 @@ const MODELS_DATA =
       "city": "Cotonou",
       "experience": "1 an",
       "languages": ["Francais"],
-      "image": "images/Joana/shooting/0.jpg",
+      "image": "images/Joana/portfolio/a.jpg",
       "description": "Jeune talent prometteuse avec une élégance naturelle",
       "gallery": {
         "shooting": [
@@ -899,7 +955,22 @@ const MODELS_DATA =
           "images/Joana/shooting/31.jpg"
         ],
         "fashionShow": [],
-        "portfolio": []
+        "portfolio": [
+           "images/Joana/portfolio/a.jpg",
+           "images/Joana/portfolio/b.jpg",
+            "images/Joana/portfolio/c.jpg",
+             "images/Joana/portfolio/d.jpg",
+              "images/Joana/portfolio/e.jpg",
+               "images/Joana/portfolio/f.jpg",
+                "images/Joana/portfolio/g.jpg",
+                 "images/Joana/portfolio/h.jpg",
+                  "images/Joana/portfolio/i.jpg",
+                   "images/Joana/portfolio/j.jpg",
+                    "images/Joana/portfolio/k.jpg",
+                     "images/Joana/portfolio/l.jpg",
+                      "images/Joana/portfolio/m.jpg",
+                       "images/Joana/portfolio/n.jpg"
+        ]
       }
     },
     {
